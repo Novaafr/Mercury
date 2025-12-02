@@ -1,0 +1,66 @@
+---COLOURSETTINGS---
+MenuColour,sliderthingy,[Purple|Red|Yellow|Green|Blue];Ghost Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];Beam Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];ESP Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];Ghost Opacity,sliderthingy,[100%|80%|60%|30%|20%|0%];HitBoxes Opacity,sliderthingy,[100%|80%|60%|30%|20%|0%];HitBoxes Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];Platforms Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];TargetIndicator Colour,sliderthingy,[Purple|Red|Yellow|Green|Blue];Back,submenuthingy,backthingy
+
+---COMPUTER---
+Disconnect,buttonthingy,disconnect;Join GTC,buttonthingy,join GTC;Join TTT,buttonthingy,join TTT;Join YTTV,buttonthingy,join YTTV;Join MODS,buttonthingy,join MODS;Join MOD,buttonthingy,join MOD;Join:,buttonthingy,join,roomtojoin;Join CCMV2 Only,buttonthingy,join CCMV2 Only;Gamemodes,submenuthingy,Gamemodes;Back,submenuthingy,backthingy
+
+---COSMETICSSPOOFER---
+Spaz All Cosmetics,togglethingy,spazallcosmetics;Back,submenuthingy,backthingy
+
+---EXPLOITS---
+Break NameTags,togglethingy,breaknametags;SS Platforms,togglethingy,SSPlatforms,[M] [BASEMENT];Cosmetics Spoofer,submenuthingy,Cosmetics Spoofer;Freeze All,togglethingy,freezeall;Become Guardian,buttonthingy,Become Guardian,[M];Always Guardian,togglethingy,alwaysguardian;Grab All,togglethingy,graball,[GUARDIAN];App Quit All,togglethingy,appquitall,[GUARDIAN];Next,submenuthingy,Exploits2;Back,submenuthingy,backthingy
+
+---EXPLOITS2---
+Max Quest Score,buttonthingy,Max Quest Score;Lag All [DISABLED],togglethingy,lagall;Make Room Private,buttonthingy,Make Room Private,[DISABLE KICK ALL];Make Room Public,buttonthingy,Make Room Public,[KICK ALL];Lock Room,buttonthingy,Lock Room;BroadCast Room,buttonthingy,BroadCast Room;Perm Break Room,buttonthingy,Perm Break Room;Kick All,togglethingy,kickall,[GUARDIAN] OR [JOIN TRIGGER];Make Name KKK,buttonthingy,Make Name KKK;Particle Spam,togglethingy,particlespam,[M] [GR];VC Mute Evade,buttonthingy,VC Mute Evade;Back,submenuthingy,backthingy
+
+---GAMEMODES---
+Modded Gamemode,togglethingy,moddedgamemode;Competitive Gamemode,togglethingy,competitivegamemode;Infection,buttonthingy,cgamemode Infection;Casual,buttonthingy,cgamemode Casual;Hunt,buttonthingy,cgamemode Hunt;PaintBrawl,buttonthingy,cgamemode Paintbrawl;Guardian,buttonthingy,cgamemode Guardian;Ambush,buttonthingy,cgamemode Ambush;Freeze Tag,buttonthingy,cgamemode FreezeTag;Back,submenuthingy,backthingy
+
+---INFO---
+PlayerList,buttonthingy,;GTC Ranked Codes,buttonthingy,;IIDK Menu Users,buttonthingy,;CCMV2 Menu Users,buttonthingy,;Back,submenuthingy,backthingy
+
+---MACRO---
+Macro,sliderthingy,[new];Load Macro,buttonthingy,loadmacro;Stop Macro,buttonthingy,stopmacro;Record Macro,togglethingy,recordmacro;Delete Macro,buttonthingy,deletemacro;Auto Play Proximity,togglethingy,autoplayproximity;Auto Play Distance,sliderthingy,[Really Close|Close|Legit|Semi Legit|Semi Blatant|Blatant|Rage];Macro Lerp Speed,sliderthingy,[0.1|0.2|0.3|0.4|0.5|0.6];Back,submenuthingy,backthingy
+
+---MAINMENU---
+Movement,submenuthingy,Movement;Visual,submenuthingy,Visual;Player,submenuthingy,Player;Computer,submenuthingy,Computer;Exploits,submenuthingy,Exploits;Safety,submenuthingy,Safety;MusicPlayer,submenuthingy,MusicPlayer;Settings,submenuthingy,Settings;Info,submenuthingy,Info;Macro,submenuthingy,Macro,[COMING SOON];Notifications,togglethingy,Notifications;Overlay,togglethingy,overlay;Tool Tips,togglethingy,tooltips
+
+---MOVEMENT---
+ExcelFly,sliderthingy,[[OFF]|Super Slow|Slow|Medium|Fast|Super Fast];TFly,togglethingy,tfly;WallWalk,sliderthingy,[[OFF]|6.8|7|7.5|7.8|8|8.5|8.8|9|9.5|9.8];Speed Options,submenuthingy,Speed Options;Platforms,togglethingy,platforms;UpsideDown Monkey,togglethingy,upsidedownmonkey;WateryAir,togglethingy,wateryair;LongArms,togglethingy,longarms;SpinBot,togglethingy,SpinBot;WASDFly,sliderthingy,[[OFF]|5|7|10|13|16];Next,submenuthingy,Movement2;Back,submenuthingy,backthingy
+
+---MOVEMENT2---
+Timer,sliderthingy,[[OFF]|1.03x|1.06x|1.09x|1.1x|1.13x|1.16x|1.19x|1.2x|1.23x|1.26|1.29|1.3x|2x|3x|4x|5x];FloatyMonkey,sliderthingy,[[OFF]|1.1|1.2|1.4|1.6|1.8|2|2.2|2.4|2.6|2.8|3|3.2|3.4|3.6|3.8|4|Anti Grav];Climbable Gorillas,togglethingy,ClimbableGorillas;Near Pulse,sliderthingy,[[OFF]|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20];Near Pulse Distance,sliderthingy,[[OFF]|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20];Player Scale,togglethingy,PlayerScale;No Clip,togglethingy,NoClip;Force Tag Freeze,togglethingy,forcetagfreeze;Teleport To Random,buttonthingy,teleporttorandom;HZ Hands,sliderthingy,[[OFF]|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20];Throw,togglethingy,Throw;Strafe Options,submenuthingy,Strafe Options;Joystick Fly,togglethingy,joystickfly;Back,submenuthingy,backthingy
+
+---MUSICPLAYER---
+Music,sliderthingy,[new];Play Music,buttonthingy,playmusic;Stop Music,buttonthingy,stopmusic;Shuffle Music,buttonthingy,shufflemusic;Loop Music,togglethingy,loopmusic;Sound Board,togglethingy,soundboard;Volume,sliderthingy,[100%|90%|80%|70%|60%|50%|40%|30%|20%|10%];Back,submenuthingy,backthingy
+
+---NAMETAGS---
+NameTags,togglethingy,NameTags;Show Creation Date,togglethingy,ShowCreationDate;Show Colour Code,togglethingy,ShowColourCode;Show Distance,togglethingy,ShowDistance;Always Visible,togglethingy,AlwaysVisible;Show FPS,togglethingy,ShowFPS;NameTag Height,sliderthingy,[Chest|Above Head];NameTag Size,sliderthingy,[Chest Size|Small|Medium|Large];NameTag Colour,sliderthingy,[White|Yellow|Green|Blue|Red|Cyan|Black];Back,submenuthingy,backthingy
+
+---PLAYER---
+NoFinger,togglethingy,nofinger;TagGun,togglethingy,taggun;CreeperMonkey,togglethingy,creepermonkey;GhostMonkey,togglethingy,ghostmonkey;InvisMonkey,togglethingy,invismonkey;TagAura,sliderthingy,[[OFF]|Really Close|Close|Legit|Semi Legit|Semi Blatant|Blatant|Rage];TagAll,togglethingy,tagall;Desync [DISABLED],togglethingy,desync;HitBoxes,sliderthingy,[[OFF]|Really Close|Close|Legit|Semi Legit|Semi Blatant|Blatant|Rage];No Wind,togglethingy,nowind;Anti Grab,togglethingy,antigrab;Name Changer,togglethingy,namechanger,[STUMP];Next,submenuthingy,Player2;Back,submenuthingy,backthingy
+
+---PLAYER2---
+Decapitation,togglethingy,decapitation;Rainbow Monkey,togglethingy,rainbowmonkey,[STUMP];Bad Apple Monkey,togglethingy,badapplemonkey,[STUMP];Aimbot,sliderthingy,[[OFF]|Silent Aim|Slilent Aim (Preds)],[PAINTBRAWL];Anti Tag,togglethingy,antitag;Fake Lag,togglethingy,fakelag;Disable Ghost Doors,togglethingy,disableghostdoors;Coloured Braclet,sliderthingy,[[OFF]|Rainbow|Purple|Black|White|Red|Green|Blue|Yellow];Ghost Self,buttonthingy,ghostself,[GR];Ghost Revive Self,buttonthingy,ghostreviveself,[M] [GR];FPS Spoof,togglethingy,fpsspoof;Back,submenuthingy,backthingy
+
+---SAFETY---
+Panic,togglethingy,Panic;AntiReport,sliderthingy,[[OFF]|Disconnect|Reconnect|Join Random];RandomIdentity,buttonthingy,randomidentity;Pc Check Bypass,togglethingy,pccheckbypass;Fake Quest Menu,togglethingy,fakequestmenu;Fake Report Menu,togglethingy,fakereportmenu;Back,submenuthingy,backthingy
+
+---SETTINGS---
+Colour Settings,submenuthingy,ColourSettings;MenuPosition,sliderthingy,[Top Left|Middle|Top Right];Config,sliderthingy,[new];Load Config,buttonthingy,loadconfig;Save Config,buttonthingy,saveconfig;Player Logging,togglethingy,PlayerLogging;Inverted Controls,togglethingy,invertedControls;Log Out,buttonthingy,logout;Back,submenuthingy,backthingy
+
+---SPEED---
+Speed,sliderthingy,[[OFF]|7|7.2|7.4|7.6|7.8|8|8.2|8.4|8.6];Speed Toggle,sliderthingy,[[OFF]|7|7.2|7.4|7.6|7.8|8|8.2|8.4|8.6];Near Speed,sliderthingy,[[OFF]|7|7.2|7.4|7.6|7.8|8|8.2|8.4|8.6];Near Speed Distance,sliderthingy,[[OFF]|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25];Back,submenuthingy,backthingy
+
+---STRAFE---
+Strafe,sliderthingy,[[OFF]|Look|Target|Target [TEAM]|L Joystick];Strafe Speed,sliderthingy,[6|8|10|12|14|16|18|20];Strafe Jump Amount,sliderthingy,[1|2|3|4|5|6|7|8];Back,submenuthingy,backthingy
+
+---TRACERS---
+Tracers,sliderthingy,[[OFF]|RHand|LHand|Head|Screen];Tracer Size,sliderthingy,[Extremely Small|Super Small|Small|Medium|Large|Giant|Huge];Back,submenuthingy,backthingy
+
+---VISUAL---
+Chams,togglethingy,chams;BoxESP,togglethingy,boxesp;HollowBoxESP,togglethingy,hollowboxesp;BoneESP,togglethingy,boneesp;Tracers,submenuthingy,Tracers;NameTags,submenuthingy,NameTags;Proximity Alert,togglethingy,ProximityAlert;Full Bright,togglethingy,fullbright;Sky Colour,sliderthingy,[Default|Purple|Red|Cyan|Green|Black];WhyIsEveryoneLookingAtMe,togglethingy,whyiseveryonelookingatme;Next,submenuthingy,Visual2;Back,submenuthingy,backthingy
+
+---VISUAL2---
+SplashMonkey,togglethingy,SplashMonkey;NoLeaves,togglethingy,NoLeaves;ComicTags [DISABLED],togglethingy,ComicTags;Anti Screen Share,sliderthingy,[[OFF]|VR View|PC View];CCM Sight,sliderthingy,[[OFF]|Self & Others|Others|Self];Show Boards,togglethingy,ShowBoards;Back,submenuthingy,backthingy
+
