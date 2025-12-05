@@ -84,7 +84,7 @@ namespace Colossal
 
             CustomConsole.Debug("Spawned Holder");
             holder = new GameObject();
-            holder.name = "HolderCCMV2";
+            holder.name = "HolderCCMV3";
             holder.AddComponent<EventNotifacation>();
             holder.AddComponent<JoinNotifacation>();
             holder.AddComponent<LeaveNotifacation>();

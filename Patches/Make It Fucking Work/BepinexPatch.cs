@@ -157,7 +157,7 @@ namespace Colossal.Patches
     }
 
 
-    [BepInPlugin("ColossusYTTV.ColossalCheatMenuV2", "ColossalCheatMenuV2", "1.0.0")]
+    [BepInPlugin("ColossusYTTV.ColossalCheatMenuV2", "ColossalCheatMenuV3", "1.0.0")]
     class BepInPatcher : BaseUnityPlugin
     {
         public static GameObject gameob = new GameObject();
@@ -175,11 +175,11 @@ namespace Colossal.Patches
         public static int playercount = 0;
         public static bool loggedin = true;
 
-        public const string RegistryPath = @"SOFTWARE\ColossalCheatMenuV2";
+        public const string RegistryPath = @"SOFTWARE\ColossalCheatMenuV3";
 
         BepInPatcher()
         {
-            new Harmony("ColossusYTTV.ColossalCheatMenuV2").PatchAll(Assembly.GetExecutingAssembly());
+            new Harmony("ColossusYTTV.ColossalCheatMenuV3").PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public void Start()

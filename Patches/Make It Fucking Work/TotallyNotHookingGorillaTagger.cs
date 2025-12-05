@@ -39,7 +39,7 @@ namespace Colossal.Patches
 
             if (gameob == null)
                 gameob = new GameObject();
-            gameob.name = "holderCCMV2";
+            gameob.name = "holderCCMV3";
 
            // BepInPatcher.gtagfont = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/TreeRoomInteractables/UI/debugtext/debugtext").GetComponent<UnityEngine.UI.Text>().font;
 

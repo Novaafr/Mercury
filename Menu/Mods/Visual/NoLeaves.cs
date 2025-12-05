@@ -19,24 +19,33 @@ namespace Colossal.Mods
         {
             if (PluginConfig.NoLeaves)
             {
-                //GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest").transform.GetChild(18).gameObject.SetActive(false);
-                //GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest").transform.GetChild(19).gameObject.SetActive(false);
-                //GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest").transform.GetChild(20).gameObject.SetActive(false);
-                //GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest").transform.GetChild(21).gameObject.SetActive(false);
-                foreach (GameObject GOs in Resources.FindObjectsOfTypeAll<GameObject>())
-                    if (GOs.name.Contains("leaves") && GOs != null)
-                        GOs.SetActive(false);
+                GameObject Forest = GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest");
+                foreach (Transform child in Forest.GetComponentsInChildren<Transform>())
+                {
+                    GameObject unityTempFile = child.gameObject;
+                    if (unityTempFile.name.Contains("UnityTempFile-1a1350753b2f46f438d1b5f2c3b9f9db (combined by EdMeshCombiner)") ||
+                        unityTempFile.name == "UnityTempFile-1a1350753b2f46f438d1b5f2c3b9f9db (combined by EdMeshCombiner)")
+                    {
+                        unityTempFile.SetActive(false);
+                    }
+                }
             }
         }
         public void Update()
         {
             if (!PluginConfig.NoLeaves)
             {
+                GameObject Forest = GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest");
+                foreach (Transform child in Forest.GetComponentsInChildren<Transform>())
+                {
+                    GameObject unityTempFile = child.gameObject;
+                    if (unityTempFile.name.Contains("UnityTempFile-1a1350753b2f46f438d1b5f2c3b9f9db (combined by EdMeshCombiner)") ||
+                        unityTempFile.name == "UnityTempFile-1a1350753b2f46f438d1b5f2c3b9f9db (combined by EdMeshCombiner)")
+                    {
+                        unityTempFile.SetActive(true);
+                    }
+                }
                 Destroy(this.GetComponent<NoLeaves>());
-
-                foreach (GameObject GOs in Resources.FindObjectsOfTypeAll<GameObject>())
-                    if (GOs.name.Contains("leaves") && GOs != null)
-                        GOs.SetActive(true);
             }
         }
     }

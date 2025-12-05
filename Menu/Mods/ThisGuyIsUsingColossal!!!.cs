@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using Colossal.Console;
 using Colossal.Patches;
 using ExitGames.Client.Photon;
 using GorillaNetworking;
@@ -48,7 +49,6 @@ namespace Colossal.Menu
         {
             userid = "";
             ccmprefix = "colossal";
-        
         }
 
         void Update()

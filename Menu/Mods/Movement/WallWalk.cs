@@ -19,7 +19,7 @@ namespace Colossal.Mods
         private void Start()
         {
             // Define walkable layers (adjust based on your game's layer setup)
-            walkableLayers = LayerMask.GetMask("Default", "Environment"); // Replace with your walkable surface layers
+            walkableLayers = LayerMask.GetMask("Default", "Environment", "Gorilla Object"); // Replace with your walkable surface layers
         }
 
         private void FixedUpdate()
