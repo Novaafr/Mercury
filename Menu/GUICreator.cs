@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using Colossal;
 using Colossal.Patches;
 using ExitGames.Client.Photon;
@@ -361,6 +361,12 @@ namespace Colossal.Menu
 
         public static MenuOption[] GetMenuOptions(string menuName)
         {
+
+            // this better fix macros dude
+            if (menuName == "Macro")
+                return Menu.Macro;
+
+
             switch (menuName)
             {
                 case "MainMenu": return Menu.MainMenu;
