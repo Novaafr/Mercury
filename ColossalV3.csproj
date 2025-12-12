@@ -117,6 +117,15 @@
     <Reference Include="LIV.LCK">
       <HintPath>D:\SteamLibrary\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\LIV.LCK.dll</HintPath>
     </Reference>
+    <Reference Include="LIV.LCK.Streaming">
+      <HintPath>D:\SteamLibrary\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\LIV.LCK.Streaming.dll</HintPath>
+    </Reference>
+    <Reference Include="LIV.LCKCore">
+      <HintPath>D:\SteamLibrary\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\LIV.LCKCore.dll</HintPath>
+    </Reference>
+    <Reference Include="LIV.LCKCore.ThirdParty.MessagePack">
+      <HintPath>D:\SteamLibrary\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\LIV.LCKCore.ThirdParty.MessagePack.dll</HintPath>
+    </Reference>
     <Reference Include="LIV.LCK_GorillaTag">
       <HintPath>D:\SteamLibrary\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\LIV.LCK_GorillaTag.dll</HintPath>
     </Reference>

@@ -5,6 +5,7 @@ using HarmonyLib;
 using Photon.Pun;
 using UnityEngine;
 using Viveport;
+using GorillaTagScripts;
 
 namespace Colossal
 {
@@ -13,13 +14,14 @@ namespace Colossal
         public static GorillaTagManager infectionmanager = GameObject.Find("GT Systems/GameModeSystem/Gorilla Tag Manager").GetComponent<GorillaTagManager>();
         public static GorillaTagManager competitivemanager = GameObject.Find("GT Systems/GameModeSystem/Gorilla Tag Competitive Manager").GetComponent<GorillaTagCompetitiveManager>();
         public static GorillaPaintbrawlManager paintballmanager = GameObject.Find("GT Systems/GameModeSystem/Gorilla Paintbrawl Manager").GetComponent<GorillaPaintbrawlManager>();
+        public static GorillaFreezeTagManager freezetagmanager = GameObject.Find("GT Systems/GameModeSystem/Gorilla Freeze Tag Manager").GetComponent<GorillaFreezeTagManager>();
 
         public static bool oculus = false;
         public static bool IsInfected(NetPlayer player)
         {
-            if (PhotonNetwork.InRoom && infectionmanager != null && player != null)
+            if (PhotonNetwork.InRoom && infectionmanager != null && freezetagmanager != null && player != null)
             {
-                if (infectionmanager.currentInfected.Contains(player) || competitivemanager.currentInfected.Contains(player))
+                if (infectionmanager.currentInfected.Contains(player) || competitivemanager.currentInfected.Contains(player) || freezetagmanager.currentInfected.Contains(player))
                 {
                     return true;
                 }
