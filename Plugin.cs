@@ -32,7 +32,7 @@ namespace Colossal
         public static Plugin test;
 
         public static GameObject holder;
-        public static float version = 8.1f;
+        public static float version = 8.2f;
 
         public static bool sussy = false;
         public static bool oculus = false;
@@ -205,7 +205,9 @@ namespace Colossal
                         //{ typeof(ParticleSpam), PluginConfig.particlespam },
                         { typeof(FakeLag), PluginConfig.fakelag },
                         { typeof(PullMod), PluginConfig.pullmod },
-                        //{ typeof(SpazAllRopes), PluginConfig.spazallropes },
+                        { typeof(ElfLauncherSpam), PluginConfig.ElfSpammer },
+                        { typeof(ControlTrain), PluginConfig.ControlTrain },
+                        { typeof(SpazAllRopes), PluginConfig.spazallropes },
                         //{ typeof(SmoothRig), PluginConfig.smoothrig },
                     };
                     if (ToggleConditions != null)

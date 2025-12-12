@@ -21,8 +21,8 @@ namespace Colossal.Patches
         public static string hash;
         public static string betahash;
 
-        public static string localversion = "8.1";
-        public static string serverversion = "8.1";
+        public static string localversion = "8.2";
+        public static string serverversion = "8.2";
 
         public static string hwid;
         public static string CredentialEncryptionKey;

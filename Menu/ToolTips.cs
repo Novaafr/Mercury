@@ -160,6 +160,9 @@ namespace Colossal.Menu
         public static string[] Exploit2tips = new string[]
         {
             $"<color={Menu.MenuColour}>Passive</color>\nMakes you stop throwing snowballs",
+            $"<color={Menu.MenuColour}>Custom</color>\nSpams the elf launcher in try on",
+            $"<color={Menu.MenuColour}>R Joystick</color>\nLets you move the train using your joystick",
+            $"<color={Menu.MenuColour}>Passive</color>\nSpazzes out the ropes",
         };
 
         public static string[] Computertips = new string[]

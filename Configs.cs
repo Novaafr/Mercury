@@ -120,6 +120,8 @@ namespace Colossal.Menu
         public static bool matallpaintball = false;
         public static bool particlespam = false;
         public static bool spazallropes = false;
+        public static bool ElfSpammer = false; public static string elfspammer_bind = "";
+        public static bool ControlTrain = false; 
 
         // Menu
         public static bool Notifications = true;
