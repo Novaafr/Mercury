@@ -121,7 +121,7 @@ namespace Colossal.Menu
         public static bool particlespam = false;
         public static bool spazallropes = false;
         public static bool ElfSpammer = false; public static string elfspammer_bind = "";
-        public static bool ControlTrain = false; 
+        public static bool WaterSplash = false; public static string watersplash_bind = "";
 
         // Menu
         public static bool Notifications = true;

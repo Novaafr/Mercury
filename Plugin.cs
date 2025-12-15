@@ -206,7 +206,7 @@ namespace Colossal
                         { typeof(FakeLag), PluginConfig.fakelag },
                         { typeof(PullMod), PluginConfig.pullmod },
                         { typeof(ElfLauncherSpam), PluginConfig.ElfSpammer },
-                        { typeof(ControlTrain), PluginConfig.ControlTrain },
+                        { typeof(WaterSplash), PluginConfig.WaterSplash },
                         { typeof(SpazAllRopes), PluginConfig.spazallropes },
                         //{ typeof(SmoothRig), PluginConfig.smoothrig },
                     };

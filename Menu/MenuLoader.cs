@@ -142,7 +142,7 @@ namespace Colossal
             Menu.Menu.Exploits[1] = new MenuOption { DisplayName = "SS Platforms", _type = "togglethingy", AssociatedBool = PluginConfig.SSPlatforms, extra = "[M] [BASEMENT]" };
             Menu.Menu.Exploits[2] = new MenuOption { DisplayName = "Cosmetics Spoofer", _type = "submenuthingy", AssociatedString = "Cosmetics Spoofer" };
             Menu.Menu.Exploits[3] = new MenuOption { DisplayName = "Freeze All", _type = "togglethingy", AssociatedBool = PluginConfig.freezeall };
-            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
+            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
             Menu.Menu.Exploits[5] = new MenuOption { DisplayName = "Max Quest Score", _type = "buttonthingy", AssociatedString = "Max Quest Score" };
             Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
             Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
@@ -150,7 +150,7 @@ namespace Colossal
             Menu.Menu.Exploits2 = new MenuOption[5];
             Menu.Menu.Exploits2[0] = new MenuOption { DisplayName = "Disable Snowball Throw", _type = "togglethingy", AssociatedBool = PluginConfig.disablesnowballthrow };
             Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" };
-            Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "ControlTrain", _type = "togglethingy", AssociatedBool = PluginConfig.ControlTrain, extra = "[DONT BE IN A ROOM]" };
+            Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
             Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
             Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 

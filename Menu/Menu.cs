@@ -906,7 +906,7 @@ namespace Colossal.Menu
 
                 Exploits2[0].AssociatedBool = PluginConfig.disablesnowballthrow;
                 Exploits2[1].AssociatedBool = PluginConfig.ElfSpammer;
-                Exploits2[2].AssociatedBool = PluginConfig.ControlTrain;
+                Exploits2[2].AssociatedBool = PluginConfig.WaterSplash;
 				Exploits2[3].AssociatedBool = PluginConfig.spazallropes;
 
 				CosmeticsSpoofer[0].AssociatedBool = PluginConfig.spazallcosmetics;

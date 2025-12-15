@@ -161,7 +161,7 @@ namespace Colossal.Menu
         {
             $"<color={Menu.MenuColour}>Passive</color>\nMakes you stop throwing snowballs",
             $"<color={Menu.MenuColour}>Custom</color>\nSpams the elf launcher in try on",
-            $"<color={Menu.MenuColour}>R Joystick</color>\nLets you move the train using your joystick",
+            $"<color={Menu.MenuColour}>Custom</color>\nLets you splash water out your hand",
             $"<color={Menu.MenuColour}>Passive</color>\nSpazzes out the ropes",
         };
 
