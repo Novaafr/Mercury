@@ -50,8 +50,8 @@ namespace Colossal.Mods
 
                         if (lefthand.IsNull() || righthand.IsNull())
                         {
-                            lefthand = vrrig.leftHandPlayer.gameObject;
-                            righthand = vrrig.rightHandPlayer.gameObject;
+                            lefthand = vrrig.leftHandTransform.gameObject;
+                            righthand = vrrig.rightHandTransform.gameObject;
                             head = vrrig.headMesh;
                         }
                         lefthand.transform.position = prevlpos;
@@ -70,17 +70,17 @@ namespace Colossal.Mods
                         vrrig.mainSkin.material.shader = Shader.Find("GUI/Text Shader");
                         vrrig.enabled = false;
 
-                        prevpos = VRRig.LocalRig.transform.position;
-                        prevrot = VRRig.LocalRig.transform.rotation;
+                        prevpos = GorillaTagger.Instance.offlineVRRig.transform.position;
+                        prevrot = GorillaTagger.Instance.offlineVRRig.transform.rotation;
 
-                        prevlpos = VRRig.LocalRig.leftHandTransform.position;
-                        prevlrot = VRRig.LocalRig.leftHandTransform.rotation;
+                        prevlpos = GorillaTagger.Instance.offlineVRRig.leftHandTransform.position;
+                        prevlrot = GorillaTagger.Instance.offlineVRRig.leftHandTransform.rotation;
 
-                        prevrpos = VRRig.LocalRig.rightHandTransform.position;
-                        prevrrot = VRRig.LocalRig.rightHandTransform.rotation;
+                        prevrpos = GorillaTagger.Instance.offlineVRRig.rightHandTransform.position;
+                        prevrrot = GorillaTagger.Instance.offlineVRRig.rightHandTransform.rotation;
 
-                        prevheadpos = VRRig.LocalRig.headMesh.transform.position;
-                        prevheadrot = VRRig.LocalRig.headMesh.transform.rotation;
+                        prevheadpos = GorillaTagger.Instance.offlineVRRig.headMesh.transform.position;
+                        prevheadrot = GorillaTagger.Instance.offlineVRRig.headMesh.transform.rotation;
 
                         prevtime = Time.time;
                     }
