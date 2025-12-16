@@ -115,7 +115,7 @@ namespace Colossal
             Menu.Menu.Player[4] = new MenuOption { DisplayName = "InvisMonkey", _type = "togglethingy", AssociatedBool = PluginConfig.invismonkey };
             Menu.Menu.Player[5] = new MenuOption { DisplayName = "TagAura", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "Really Close", "Close", "Legit", "Semi Legit", "Semi Blatant", "Blatant", "Rage" } };
             Menu.Menu.Player[6] = new MenuOption { DisplayName = "TagAll", _type = "togglethingy", AssociatedBool = PluginConfig.tagall };
-            Menu.Menu.Player[7] = new MenuOption { DisplayName = "Desync", _type = "togglethingy", AssociatedBool = PluginConfig.desync };
+            Menu.Menu.Player[7] = new MenuOption { DisplayName = "Desync [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.desync };
             Menu.Menu.Player[8] = new MenuOption { DisplayName = "HitBoxes", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "Really Close", "Close", "Legit", "Semi Legit", "Semi Blatant", "Blatant", "Rage" } };
             Menu.Menu.Player[9] = new MenuOption { DisplayName = "No Wind", _type = "togglethingy", AssociatedBool = PluginConfig.nowind };
             Menu.Menu.Player[10] = new MenuOption { DisplayName = "Anti Grab", _type = "togglethingy", AssociatedBool = PluginConfig.antigrab };
