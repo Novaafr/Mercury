@@ -78,7 +78,6 @@ namespace Colossal
 
             HarmonyLoader.ApplyHarmonyPatches();
 
-
             //PhotonNetwork.LogLevel = PunLogLevel.Full;
             CustomConsole.Debug("Plugin Start Call");
 

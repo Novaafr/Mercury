@@ -1,4 +1,4 @@
-
+﻿
 using Colossal.Menu;
 using Colossal.Patches;
 using GorillaExtensions;
@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
-using static Colossal.Plugin;
 
 namespace Colossal.Mods
 {
@@ -25,10 +24,13 @@ namespace Colossal.Mods
 
         private GameObject lefthand;
         private GameObject righthand;
+        private GameObject head;
         private Vector3 prevrpos;
         private Vector3 prevlpos;
+        private Vector3 prevheadpos;
         private Quaternion prevrrot;
         private Quaternion prevlrot;
+        private Quaternion prevheadrot;
         public void Update()
         {
             if (PluginConfig.desync)
@@ -36,7 +38,7 @@ namespace Colossal.Mods
                 if (Time.time - prevtime >= (1 / 28))
                 {
                     prevtime = Time.time;
-                    if (Time.time - prevtime >= (PhotonNetwork.GetPing() / 500))
+                    if (Time.time - prevtime >= (PhotonNetwork.GetPing() / 1000))
                     {
                         if (ghost == null)
                             ghost = GhostManager.SpawnGhost();
@@ -50,12 +52,16 @@ namespace Colossal.Mods
                         {
                             lefthand = vrrig.leftHandPlayer.gameObject;
                             righthand = vrrig.rightHandPlayer.gameObject;
+                            head = vrrig.headMesh;
                         }
                         lefthand.transform.position = prevlpos;
                         lefthand.transform.rotation = prevlrot;
 
                         righthand.transform.position = prevrpos;
                         righthand.transform.rotation = prevrrot;
+
+                        head.transform.position = prevheadpos;
+                        head.transform.rotation = prevheadrot;
 
                         vrrig.leftHandPlayer.Pause();
                         vrrig.rightHandPlayer.Pause();
@@ -64,14 +70,17 @@ namespace Colossal.Mods
                         vrrig.mainSkin.material.shader = Shader.Find("GUI/Text Shader");
                         vrrig.enabled = false;
 
-                        prevpos = GorillaTagger.Instance.offlineVRRig.transform.position;
-                        prevrot = GorillaTagger.Instance.offlineVRRig.transform.rotation;
+                        prevpos = VRRig.LocalRig.transform.position;
+                        prevrot = VRRig.LocalRig.transform.rotation;
 
-                        prevlpos = GorillaTagger.Instance.offlineVRRig.leftHandTransform.position;
-                        prevlrot = GorillaTagger.Instance.offlineVRRig.leftHandTransform.rotation;
+                        prevlpos = VRRig.LocalRig.leftHandTransform.position;
+                        prevlrot = VRRig.LocalRig.leftHandTransform.rotation;
 
-                        prevrpos = GorillaTagger.Instance.offlineVRRig.rightHandTransform.position;
-                        prevrrot = GorillaTagger.Instance.offlineVRRig.rightHandTransform.rotation;
+                        prevrpos = VRRig.LocalRig.rightHandTransform.position;
+                        prevrrot = VRRig.LocalRig.rightHandTransform.rotation;
+
+                        prevheadpos = VRRig.LocalRig.headMesh.transform.position;
+                        prevheadrot = VRRig.LocalRig.headMesh.transform.rotation;
 
                         prevtime = Time.time;
                     }
@@ -79,13 +88,10 @@ namespace Colossal.Mods
             }
             else
             {
-                if (!VRRig.LocalRig.enabled)
-                    VRRig.LocalRig.enabled = true;
-
                 if (ghost != null)
                     GhostManager.DestroyGhost(ghost);
 
-                Destroy(holder.GetComponent<Desync>());
+                Destroy(this.GetComponent<Desync>());
             }
         }
     }
