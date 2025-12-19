@@ -28,8 +28,8 @@ namespace Colossal.Menu
         public static GameObject OverlayHubRoom;
         public static Text OverlayHubTextRoom;
 
-        private static PanelElement activePanel;
-        private static PanelElement activePanel2;
+        //private static PanelElement activePanel;
+        //private static PanelElement activePanel2;
 
         private bool ExtraDebugUselessStuff = false; // just for like dev stuff to see if some mods work or not
 

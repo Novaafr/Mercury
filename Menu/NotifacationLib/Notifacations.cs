@@ -30,8 +30,8 @@ namespace Colossal.Notifacation
         public static GameObject NotiHub;
         public static Text NotiHubText;
 
-        private static PanelElement activePanel;
-        private static PanelElement activePanel2;
+        //private static PanelElement activePanel;
+        //private static PanelElement activePanel2;
 
         public static void SpawnNoti()
         {

@@ -191,7 +191,7 @@ namespace Colossal
             Menu.Menu.Safety[5] = new MenuOption { DisplayName = "Fake Report Menu", _type = "togglethingy", AssociatedBool = PluginConfig.fakereportmenu };
             Menu.Menu.Safety[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Settings = new MenuOption[10];
+            Menu.Menu.Settings = new MenuOption[9];
             Menu.Menu.Settings[0] = new MenuOption { DisplayName = "Colour Settings", _type = "submenuthingy", AssociatedString = "ColourSettings" };
             Menu.Menu.Settings[1] = new MenuOption { DisplayName = "MenuPosition", _type = "sliderthingy", StringArray = new string[] { "Top Left", "Middle", "Top Right" } };
             Menu.Menu.Settings[2] = new MenuOption { DisplayName = "Config", _type = "sliderthingy", StringArray = new string[] { } };
@@ -199,9 +199,8 @@ namespace Colossal
             Menu.Menu.Settings[4] = new MenuOption { DisplayName = "Save Config", _type = "buttonthingy", AssociatedString = "saveconfig" };
             Menu.Menu.Settings[5] = new MenuOption { DisplayName = "Player Logging", _type = "togglethingy", AssociatedBool = PluginConfig.PlayerLogging };
             Menu.Menu.Settings[6] = new MenuOption { DisplayName = "Inverted Controls", _type = "togglethingy", AssociatedBool = PluginConfig.invertedControls };
-            Menu.Menu.Settings[7] = new MenuOption { DisplayName = "Legacy UI", _type = "togglethingy", AssociatedBool = PluginConfig.legacyUi, extra = "[BUGGY] [NEXT UPDATE]" };
-            Menu.Menu.Settings[8] = new MenuOption { DisplayName = "Log Out", _type = "buttonthingy", AssociatedString = "logout" };
-            Menu.Menu.Settings[9] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Settings[7] = new MenuOption { DisplayName = "Log Out", _type = "buttonthingy", AssociatedString = "logout" };
+            Menu.Menu.Settings[8] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.Info = new MenuOption[5];
             Menu.Menu.Info[0] = new MenuOption { DisplayName = "PlayerList", _type = "buttonthingy" };
@@ -253,7 +252,7 @@ namespace Colossal
 
         public static void RegisterAllPanels()
         {
-            string[] allMenus = new string[]
+            /*string[] allMenus = new string[]
             {
             "MainMenu",
             "Movement",
@@ -286,8 +285,7 @@ namespace Colossal
                     (GameObject panelObj, UnityEngine.UI.Text _) = GUICreator.NewUI(menu);
                     CustomConsole.Debug($"Registered panel: {menu}");
                 }
-            }
+            }*/
         }
-
     }
 }
