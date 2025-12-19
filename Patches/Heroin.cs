@@ -26,8 +26,6 @@ namespace Colossal.Patches
             {
                 CustomConsole.Debug("Updating boards for banned account");
 
-                string larsy_warsy = "Lars reported ur acc nigga";
-                    
                 int reasonIndex = failMessage.IndexOf("REASON: ");
                 if (reasonIndex != -1)
                 {

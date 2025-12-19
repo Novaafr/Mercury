@@ -168,15 +168,15 @@ namespace Colossal.Menu
         public static int macrolerpspeed = 0;
 
         // Dev
-        public static bool devkickgun = false;
-        public static bool devcrashgun = false;
-        public static bool devmutegun = false;
-        public static bool devunmutegun = false;
-        public static bool devalltohand = false;
-        public static bool devplatformgun = false;
-        public static bool devyttvgun = false;
-        public static bool devbangun = false;
-        public static bool devrcegun = false;
+        //public static bool devkickgun = false;
+        //public static bool devcrashgun = false;
+        //public static bool devmutegun = false;
+        //public static bool devunmutegun = false;
+        //public static bool devalltohand = false;
+        //public static bool devplatformgun = false;
+        //public static bool devyttvgun = false;
+        //public static bool devbangun = false;
+        //public static bool devrcegun = false;
 
         //idfk why this has to go here specifically ---
         public static int nametagheight = 0;
@@ -187,7 +187,7 @@ namespace Colossal.Menu
 
     public class Configs : MonoBehaviour
     {
-        public static string AdminPassword = "Note to starry: The note that had the password some how accidently (dont ask plz) got shoved a bit to far up my ass so im passing it onto you. pass: @il0v3f3mbo7s!";
+        //public static string AdminPassword = "Note to starry: The note that had the password some how accidently (dont ask plz) got shoved a bit to far up my ass so im passing it onto you. pass: @il0v3f3mbo7s!";
 
 
         public static string folderPath = "Colossal";

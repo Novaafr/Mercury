@@ -132,8 +132,8 @@ namespace Colossal
             Menu.Menu.Player2[5] = new MenuOption { DisplayName = "Fake Lag", _type = "togglethingy", AssociatedBool = PluginConfig.fakelag };
             Menu.Menu.Player2[6] = new MenuOption { DisplayName = "Disable Ghost Doors", _type = "togglethingy", AssociatedBool = PluginConfig.disableghostdoors };
             Menu.Menu.Player2[7] = new MenuOption { DisplayName = "Coloured Braclet", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "Rainbow", "Purple", "Black", "White", "Red", "Green", "Blue", "Yellow" } };
-            Menu.Menu.Player2[8] = new MenuOption { DisplayName = "Ghost Self [DISABLED]", _type = "buttonthingy", AssociatedString = "ghostself", extra = "[GR]" };
-            Menu.Menu.Player2[9] = new MenuOption { DisplayName = "Ghost Revive Self [DISABLED]", _type = "buttonthingy", AssociatedString = "ghostreviveself", extra = "[M] [GR]" };
+            Menu.Menu.Player2[8] = new MenuOption { DisplayName = "Ghost Self", _type = "buttonthingy", AssociatedString = "ghostself", extra = "[GR]" };
+            Menu.Menu.Player2[9] = new MenuOption { DisplayName = "Ghost Revive Self", _type = "buttonthingy", AssociatedString = "ghostreviveself", extra = "[M] [GR]" };
             Menu.Menu.Player2[10] = new MenuOption { DisplayName = "FPS Spoof", _type = "togglethingy", AssociatedBool = PluginConfig.fpsspoof };
             Menu.Menu.Player2[11] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
@@ -243,22 +243,6 @@ namespace Colossal
             Menu.Menu.Macro[7] = new MenuOption { DisplayName = "Macro Lerp Speed", _type = "sliderthingy", StringArray = new string[] { "0.1", "0.2", "0.3", "0.4", "0.5", "0.6" } };
             Menu.Menu.Macro[8] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Dev = new MenuOption[14];
-            Menu.Menu.Dev[0] = new MenuOption { DisplayName = "Dev Kick Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devkickgun };
-            Menu.Menu.Dev[1] = new MenuOption { DisplayName = "Dev Kick All", _type = "buttonthingy", AssociatedString = "Dev Kick All" };
-            Menu.Menu.Dev[2] = new MenuOption { DisplayName = "Dev Crash Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devcrashgun };
-            Menu.Menu.Dev[3] = new MenuOption { DisplayName = "Dev Crash All", _type = "buttonthingy", AssociatedString = "Dev Crash All" };
-            Menu.Menu.Dev[4] = new MenuOption { DisplayName = "Dev Mute Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devmutegun };
-            Menu.Menu.Dev[5] = new MenuOption { DisplayName = "Dev UnMute Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devunmutegun };
-            Menu.Menu.Dev[6] = new MenuOption { DisplayName = "Dev Notify All", _type = "buttonthingy", AssociatedString = "Dev Notify All" };
-            Menu.Menu.Dev[7] = new MenuOption { DisplayName = "Dev Clients", _type = "buttonthingy", AssociatedString = "Dev Clients" };
-            Menu.Menu.Dev[8] = new MenuOption { DisplayName = "Dev All To Hand", _type = "togglethingy", AssociatedBool = PluginConfig.devalltohand };
-            Menu.Menu.Dev[9] = new MenuOption { DisplayName = "Dev Platform Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devplatformgun };
-            Menu.Menu.Dev[10] = new MenuOption { DisplayName = "Dev YTTV Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devyttvgun };
-            Menu.Menu.Dev[11] = new MenuOption { DisplayName = "Dev Ban Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devbangun };
-            Menu.Menu.Dev[12] = new MenuOption { DisplayName = "Dev RCE Gun", _type = "togglethingy", AssociatedBool = PluginConfig.devrcegun };
-            Menu.Menu.Dev[13] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
-
             // Only uncomment for dev builds or testing new ui dont uncomment unless you want to see the new ui through stuff while your playing
             // This shit buggy asf when on legacy ui it doesnt disable to show new ui at your camera needs fixing
             // Ill fix this one day like im lazy but ill fix it 
@@ -292,8 +276,7 @@ namespace Colossal
             "Info",
             "Macro",
             "MusicPlayer",
-            "ColourSettings",
-            //"Dev"
+            "ColourSettings"
             };
 
             foreach (string menu in allMenus)

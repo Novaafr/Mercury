@@ -2,6 +2,7 @@
 using Colossal.Patches;
 using ExitGames.Client.Photon;
 using GorillaNetworking;
+using GorillaTagScripts.AI;
 using Photon.Pun;
 using Photon.Realtime;
 using PlayFab;
@@ -1093,20 +1094,47 @@ namespace Colossal.Menu
                         //Player
                         if (option.AssociatedString == "ghostself")
                         {
-                            GhostReactorManager grm = GameObject.Find("GhostReactorManager").GetComponent<GhostReactorManager>();
-                            GREnemyChaser[] GREntity = Resources.FindObjectsOfTypeAll<GREnemyChaser>();
-                            if (PhotonNetwork.InRoom && GREntity != null && GREntity.Length > 0 && grm != null)
-                            {
-                                if (!grm.reactor.shiftManager.ShiftActive)
-                                    grm.RequestShiftStartAuthority(true);
+                            //GhostReactorManager grm = GameObject.Find("GhostReactorManager").GetComponent<GhostReactorManager>();
 
-                                grm.RequestEnemyHitPlayer(GhostReactor.EnemyType.Chaser, GREntity[0].entity.id, GRPlayer.Get(PhotonNetwork.LocalPlayer.ActorNumber), VRRig.LocalRig.transform.position);
-                                RPCProtection.SkiddedRPCProtection();
+                            foreach (GhostReactorManager grm in GameObject.FindObjectsByType<GhostReactorManager>(FindObjectsSortMode.None))
+                            {
+                                GREnemy[] GREntity = GameObject.FindObjectsByType<GREnemy>(FindObjectsSortMode.None);
+                                if (PhotonNetwork.InRoom && GREntity != null && GREntity.Length > 0 && grm != null)
+                                {
+                                    if (!grm.reactor.shiftManager.ShiftActive)
+                                        grm.RequestShiftStartAuthority(true);
+
+                                    grm.RequestEnemyHitPlayer(GhostReactor.EnemyType.Chaser, GREntity[0].gameEntity.id, GRPlayer.Get(PhotonNetwork.LocalPlayer.ActorNumber), VRRig.LocalRig.transform.position);
+                                    RPCProtection.SkiddedRPCProtection();
+                                }
                             }
+                               
                         }
                         if (option.AssociatedString == "ghostreviveself")
                         {
-                            GhostReactorManager grm = GameObject.Find("GhostReactorManager").GetComponent<GhostReactorManager>();
+                            // Testing
+                            foreach (GhostReactorManager grm in GameObject.FindObjectsByType<GhostReactorManager>(FindObjectsSortMode.None))
+                            {
+                                if (PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
+                                {
+                                    if (grm != null)
+                                    {
+                                        if (grm.reactor.shiftManager.ShiftActive)
+                                        {
+                                            GRReviveStation GRRevive = GameObject.Find("GhostReactorRoot/GhostReactorZone/GRReviveStation").GetComponent<GRReviveStation>();
+                                            grm.RequestPlayerRevive(GRRevive, GRPlayer.GetLocal());
+                                            RPCProtection.SkiddedRPCProtection();
+                                        }
+                                        else
+                                        {
+                                            grm.RequestShiftStartAuthority(false);
+                                            RPCProtection.SkiddedRPCProtection();
+                                        }
+                                    }
+                                }
+                            }
+
+                            /*GhostReactorManager grm = GameObject.Find("GhostReactorManager").GetComponent<GhostReactorManager>();
                             GRReviveStation GRRevive = GameObject.Find("GhostReactorRoot/GhostReactorZone/GRReviveStation").GetComponent<GRReviveStation>();
                             if (PhotonNetwork.InRoom && GRRevive != null && grm != null)
                             {
@@ -1119,7 +1147,7 @@ namespace Colossal.Menu
 
                                     RPCProtection.SkiddedRPCProtection();
                                 }
-                            }
+                            }*/
                         }
 
                         //Exploit

@@ -118,7 +118,8 @@ namespace Colossal
                 Notifacations.SpawnNoti();
                 CustomConsole.Debug("Loaded noti");
 
-                PhotonNetwork.NetworkingClient.EventReceived += Console.Console.Receiver; // Some problem with a null ref, will fix later
+                // removed dev stuff
+                //PhotonNetwork.NetworkingClient.EventReceived += Console.Console.Receiver; // Some problem with a null ref, will fix later
             }
         }
 
@@ -175,15 +176,15 @@ namespace Colossal
                         //{ typeof(AppQuitAll), PluginConfig.appquitall },
                         { typeof(SnowBallGun), PluginConfig.snowballgun },
                         { typeof(Throw), PluginConfig.Throw },
-                        { typeof(DevKickGun), PluginConfig.devkickgun },
-                        { typeof(DevCrashGun), PluginConfig.devcrashgun },
-                        { typeof(DevMuteGun), PluginConfig.devmutegun },
-                        { typeof(DevUnmuteGun), PluginConfig.devunmutegun },
-                        { typeof(DevAllToHand), PluginConfig.devalltohand },
-                        { typeof(DevPlatformGun), PluginConfig.devplatformgun },
-                        { typeof(DevYTTVGun), PluginConfig.devyttvgun },
-                        { typeof(DevBanGun), PluginConfig.devbangun },
-                        { typeof(DevRCEGun), PluginConfig.devrcegun },
+                        //{ typeof(DevKickGun), PluginConfig.devkickgun },
+                        //{ typeof(DevCrashGun), PluginConfig.devcrashgun },
+                        //{ typeof(DevMuteGun), PluginConfig.devmutegun },
+                        //{ typeof(DevUnmuteGun), PluginConfig.devunmutegun },
+                        //{ typeof(DevAllToHand), PluginConfig.devalltohand },
+                        //{ typeof(DevPlatformGun), PluginConfig.devplatformgun },
+                        //{ typeof(DevYTTVGun), PluginConfig.devyttvgun },
+                        //{ typeof(DevBanGun), PluginConfig.devbangun },
+                        //{ typeof(DevRCEGun), PluginConfig.devrcegun },
                         //{ typeof(CrashAll), PluginConfig.crashall },
                         { typeof(FakeReportMenu), PluginConfig.fakereportmenu },
                         { typeof(NameChanger), PluginConfig.namechanger },
@@ -271,19 +272,6 @@ namespace Colossal
                 //if (KIDManager.KidEnabled)
                 //    KIDManager.DisableKid();
 
-                if (Menu.Menu.CurrentViewingMenu != null && Menu.Menu.agreement)
-                {
-                    if (DevManager.Admins.ContainsValue(PhotonNetwork.LocalPlayer.UserId) == false)
-                    {
-                        if (Menu.Menu.CurrentViewingMenu == Menu.Menu.Dev)
-                        {
-                            Debug.Log("you arent meant to be here");
-                            Notifacations.SendNotification("you arent meant to be here\nHave fun :3");
-                            Menu.Menu.CurrentViewingMenu = Menu.Menu.MainMenu;
-                            QualitySettings.globalTextureMipmapLimit = int.MaxValue;
-                        }
-                    }
-                }
 
                 // Playtime counter
                 playtime += Time.deltaTime;
