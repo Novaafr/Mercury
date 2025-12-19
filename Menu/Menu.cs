@@ -81,8 +81,6 @@ namespace Colossal.Menu
         public static MenuOption[] Info;
         public static MenuOption[] Macro;
         public static MenuOption[] MusicPlayer;
-        public static MenuOption[] Dev;
-        public static bool devMenuAdded = false;
 
         public static MenuOption[] Speed;
         public static MenuOption[] Strafe;
@@ -247,9 +245,6 @@ namespace Colossal.Menu
             MusicPlayer = SafeLoadMenu("Menu_MusicPlayer", "21"); loadingNumber += 1; UpdateLoadingText(); yield return null;
 
             Macro = SafeLoadMenu("Menu_Macro", "22"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            // Test
-            //Dev = SafeLoadMenu("Menu_Macro", "23"); loadingNumber += 1; UpdateLoadingText(); yield return null;
 
             // Final update
             loadingNumber = 22;
@@ -945,17 +940,6 @@ namespace Colossal.Menu
 				ColourSettings[6].stringsliderind = PluginConfig.HitBoxesColour;
 				ColourSettings[7].stringsliderind = PluginConfig.PlatformsColour;
 				ColourSettings[8].stringsliderind = PluginConfig.TargetIndicatorColour;
-
-
-				Dev[0].AssociatedBool = PluginConfig.devkickgun;
-				Dev[2].AssociatedBool = PluginConfig.devcrashgun;
-				Dev[4].AssociatedBool = PluginConfig.devmutegun;
-				Dev[5].AssociatedBool = PluginConfig.devunmutegun;
-				Dev[8].AssociatedBool = PluginConfig.devalltohand;
-				Dev[9].AssociatedBool = PluginConfig.devplatformgun;
-				Dev[10].AssociatedBool = PluginConfig.devyttvgun;
-				Dev[11].AssociatedBool = PluginConfig.devbangun;
-				Dev[12].AssociatedBool = PluginConfig.devrcegun;
 			}
 			catch (Exception ex)
 			{
