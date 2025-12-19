@@ -1386,7 +1386,7 @@ namespace Colossal.Menu
 
 
                         //Dev
-                        if (option.AssociatedString == "Dev Kick All" && PhotonNetwork.InRoom)
+                        /*if (option.AssociatedString == "Dev Kick All" && PhotonNetwork.InRoom)
                         {
                             PhotonNetwork.RaiseEvent(68, new object[] { "kickall" }, new RaiseEventOptions { Receivers = ReceiverGroup.All }, SendOptions.SendReliable);
                         }
@@ -1401,7 +1401,7 @@ namespace Colossal.Menu
                         if (option.AssociatedString == "Dev Clients" && PhotonNetwork.InRoom)
                         {
                             PhotonNetwork.RaiseEvent(68, new object[] { "isusing" }, new RaiseEventOptions { Receivers = ReceiverGroup.All }, SendOptions.SendReliable);
-                        }
+                        }*/
                     }
 
 
