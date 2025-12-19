@@ -13,16 +13,22 @@ using UnityEngine;
 namespace Colossal.Notifacation
 {
     [HarmonyPatch(typeof(GorillaNot), "SendReport")]
-    internal class ReportNotifacation {
+    internal class ReportNotifacation
+    {
         private static List<string> notifiedPlayers = new List<string>();
         private static float reporttiemr = 0;
 
         [HarmonyPrefix]
-        private static void Postfix(string susReason, string susId, string susNick) {
-            if (!notifiedPlayers.Contains(susId) && PluginConfig.Notifications && !susReason.ToLower().Contains("handtap")) {
+        private static void Postfix(string susReason, string susId, string susNick)
+        {
+            if (!notifiedPlayers.Contains(susId) && PluginConfig.Notifications && !susReason.ToLower().Contains("handtap"))
+            {
+                if (susReason.ToLower() == "empty rig") return;
+
                 notifiedPlayers.Add(susId);
                 Notifacations.SendNotification($"<color=yellow>[ANTICHEAT]</color> Name: {susNick}");
-                if(reporttiemr <= 20) {
+                if (reporttiemr <= 20)
+                {
                     notifiedPlayers.Remove(susId);
                 }
             }
