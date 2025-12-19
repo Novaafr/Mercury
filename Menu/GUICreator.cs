@@ -21,7 +21,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace Colossal.Menu
 {
-    public class PanelElement
+    /*public class PanelElement
     {
         public GameObject RootObject;
         public GameObject grabInstance;
@@ -257,18 +257,18 @@ namespace Colossal.Menu
                 CustomConsole.Error("Back object is null in UpdatePanel!");
             }
         }
-    }
+    }*/
 
     internal class GUICreator : MonoBehaviour
     {
         private static Material mat = new Material(Shader.Find("GUI/Text Shader"));
 
-        public static Dictionary<string, PanelElement> panelMap = new Dictionary<string, PanelElement>();
-        public static List<PanelElement> openPanels = new List<PanelElement>();
-        public static List<PanelElement> panelsToDisable = new List<PanelElement>();
+        //public static Dictionary<string, PanelElement> panelMap = new Dictionary<string, PanelElement>();
+        //public static List<PanelElement> openPanels = new List<PanelElement>();
+        //public static List<PanelElement> panelsToDisable = new List<PanelElement>();
 
-        public const float panelOffset = 0.3f;
-        public static readonly LayerMask UILayerMask = 1 << 14;
+        //public const float panelOffset = 0.3f;
+        //public static readonly LayerMask UILayerMask = 1 << 14;
 
         public static ValueTuple<GameObject, Text> CreateTextGUI(string text, string name, TextAnchor alignment, Vector3 loctrans, bool parent)
         {
@@ -280,7 +280,7 @@ namespace Colossal.Menu
             return GUICreator.LegacyUI(text, name, alignment, loctrans, parent);
         }
 
-        public static (GameObject, Text) NewUI(string name)
+        /*public static (GameObject, Text) NewUI(string name)
         {
             if (AssetBundleLoader.panel == null || AssetBundleLoader.hud == null)
             {
@@ -356,17 +356,28 @@ namespace Colossal.Menu
             PanelElement.UpdatePanel(element, options);
             CustomConsole.Debug($"New UI Created: {name} with {options.Length} options at {spawnPosition}");
             return (newPanel, null);
-        }
+        }*/
 
 
         public static MenuOption[] GetMenuOptions(string menuName)
         {
 
             // this better fix macros dude
-            if (menuName == "Macro")
-                return Menu.Macro;
-
-
+            if (menuName.ToLower() == "macro")
+            {
+                if (Menu.Macro == null)
+                    UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : macros are null how ?!?!?!");
+                else
+                {
+                    Menu.CurrentViewingMenu = Menu.Macro;
+                    UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : loading macros");
+                    if (Menu.CurrentViewingMenu != Menu.Macro)
+                    {
+                        UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : dude wat the actual fuck your mean to be macros yo this is so fucking ass bro fucking work like actually suck a dick cunt ass");
+                    }
+                }
+            }
+                
             switch (menuName)
             {
                 case "MainMenu": return Menu.MainMenu;
@@ -388,7 +399,7 @@ namespace Colossal.Menu
                 case "Safety": return Menu.Safety;
                 case "Settings": return Menu.Settings;
                 case "Info": return Menu.Info;
-                case "Macro": return Menu.Macro;
+                //case "Macro": return Menu.Macro;
                 case "MusicPlayer": return Menu.MusicPlayer;
                 case "ColourSettings": return Menu.ColourSettings;
                 default: return Menu.MainMenu; // Default to MainMenu if unknown

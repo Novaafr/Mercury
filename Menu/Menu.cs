@@ -1,15 +1,11 @@
 ﻿using Colossal.Notifacation;
 using Colossal.Patches;
-using ExitGames.Client.Photon;
 using GorillaNetworking;
-using GorillaTagScripts.AI;
 using Photon.Pun;
-using Photon.Realtime;
 using PlayFab;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -53,13 +49,13 @@ namespace Colossal.Menu
         public static float menurgb = 0;
 
 
-        private static GameObject pointerObj;
-        public static PanelElement activePanel; // Track the currently active panel
-        private static PanelElement grabbedPanel = null; // Ensure this is a field
-        private static Vector3 grabOffset;
-        private static bool isVRModeActive = false;
-        private static bool vrInputDetected = false;
-        private static bool hasReceivedMouseInput = false;
+        //private static GameObject pointerObj;
+        //public static PanelElement activePanel; // Track the currently active panel
+        //private static PanelElement grabbedPanel = null; // Ensure this is a field
+        //private static Vector3 grabOffset;
+        //private static bool isVRModeActive = false;
+        //private static bool vrInputDetected = false;
+        //private static bool hasReceivedMouseInput = false;
 
         public static string MenuState = "MainMenu";
         public static int SelectedOptionIndex = 0;
@@ -153,18 +149,18 @@ namespace Colossal.Menu
                         return;
                     }
 
-                    if (!PluginConfig.legacyUi)
-                    {
-                        if (PointerLine.Instance == null)
-                        {
-                            GameObject pointerObj = new GameObject("PointerLineObj");
-                            pointerObj.AddComponent<PointerLine>();
-                            CustomConsole.Debug("Spawned PointerLineObj in LoadOnce");
-                        }
-                    }
+                    //if (!PluginConfig.legacyUi)
+                    //{
+                    //    if (PointerLine.Instance == null)
+                    //    {
+                    //        GameObject pointerObj = new GameObject("PointerLineObj");
+                    //        pointerObj.AddComponent<PointerLine>();
+                    //        CustomConsole.Debug("Spawned PointerLineObj in LoadOnce");
+                    //    }
+                    //}
 
-                    if (GUICreator.panelMap.TryGetValue("MainMenu", out var mainPanel))
-                        activePanel = mainPanel;
+                    //if (GUICreator.panelMap.TryGetValue("MainMenu", out var mainPanel))
+                        //activePanel = mainPanel;
 
                     UpdateMenuState(new MenuOption(), null, null);
                     CustomConsole.Debug("Updated Menu State");
@@ -318,21 +314,21 @@ namespace Colossal.Menu
 				}
 
 
-                if (GUICreator.panelsToDisable.Count > 0)
-                {
-                    for (int j = GUICreator.panelsToDisable.Count - 1; j >= 0; j--)
-                    {
-                        PanelElement panel = GUICreator.panelsToDisable[j];
-                        Animator panelAnimator = panel.RootObject.GetComponent<Animator>();
-                        AnimatorStateInfo stateInfo = panelAnimator.GetCurrentAnimatorStateInfo(0);
-
-                        if (stateInfo.IsName(AssetBundleLoader.Menu_Out) && stateInfo.normalizedTime >= 1.0f)
-                        {
-                            panel.RootObject.SetActive(false);
-                            GUICreator.panelsToDisable.RemoveAt(j);
-                        }
-                    }
-                }
+                //if (GUICreator.panelsToDisable.Count > 0)
+                //{
+                //    for (int j = GUICreator.panelsToDisable.Count - 1; j >= 0; j--)
+                //    {
+                //        PanelElement panel = GUICreator.panelsToDisable[j];
+                //        Animator panelAnimator = panel.RootObject.GetComponent<Animator>();
+                //        AnimatorStateInfo stateInfo = panelAnimator.GetCurrentAnimatorStateInfo(0);
+                //
+                //        if (stateInfo.IsName(AssetBundleLoader.Menu_Out) && stateInfo.normalizedTime >= 1.0f)
+                //        {
+                //            panel.RootObject.SetActive(false);
+                //            GUICreator.panelsToDisable.RemoveAt(j);
+                //        }
+                //    }
+                //}
                 if ((isBothJoystickPressed || isTabPressed) && !menutogglecooldown)
 				{
 					menutogglecooldown = true;
@@ -342,127 +338,126 @@ namespace Colossal.Menu
 					{
 						MenuHub.active = !MenuHub.active;
 					}
-                    else
-                    {
-                        foreach (PanelElement panel in GUICreator.openPanels)
-                        {
-                            Animator panelAnimator = panel.RootObject.GetComponent<Animator>();
+                    //else
+                    //{
+                    //    foreach (PanelElement panel in GUICreator.openPanels)
+                    //    {
+                    //        Animator panelAnimator = panel.RootObject.GetComponent<Animator>();
+                    //
+                    //        if (GUIToggled)
+                    //        {
+                    //            panel.RootObject.SetActive(true);
+                    //
+                    //            panel.RootObject.transform.LookAt(GorillaLocomotion.GTPlayer.Instance.headCollider.transform.position);
+                    //            panel.RootObject.transform.Rotate(0, 180f, 0f, Space.Self);
 
-                            if (GUIToggled)
-                            {
-                                panel.RootObject.SetActive(true);
-
-                                panel.RootObject.transform.LookAt(GorillaLocomotion.GTPlayer.Instance.headCollider.transform.position);
-                                panel.RootObject.transform.Rotate(0, 180f, 0f, Space.Self);
-
-                                panelAnimator.Play(AssetBundleLoader.Menu_In);
-                            }
-                            else
-                            {
-                                panelAnimator.Play(AssetBundleLoader.Menu_Out);
-                                GUICreator.panelsToDisable.Add(panel);
-                            }
-                        }
-
-                        AssetBundleLoader.hud.transform.position = Camera.main.transform.position;
-                    }
+                    //            panelAnimator.Play(AssetBundleLoader.Menu_In);
+                    //       }
+                    //        else
+                    //        {
+                    //            panelAnimator.Play(AssetBundleLoader.Menu_Out);
+                    //            GUICreator.panelsToDisable.Add(panel);
+                    //        }
+                    //    }
+                    //
+                    //    AssetBundleLoader.hud.transform.position = Camera.main.transform.position;
+                    //}
                     UpdateMenuState(new MenuOption(), null, null);
 				}
-                if (!GUIToggled)
-                {
-                    if (PointerLine.Instance != null) PointerLine.Instance.DisableLine();
-                    return;
-                }
-
+                //if (!GUIToggled)
+                //{
+                //    if (PointerLine.Instance != null) PointerLine.Instance.DisableLine();
+                //    return;
+                //}
 
                 #region newUI
-                if (!PluginConfig.legacyUi)
-                {
-                    if (isTriggerPressed && !isVRModeActive)
-                    {
-                        isVRModeActive = true;
-                        hasReceivedMouseInput = false;
-                    }
+                //if (!PluginConfig.legacyUi)
+                //{
+                //    if (isTriggerPressed && !isVRModeActive)
+                //    {
+                //        isVRModeActive = true;
+                //        hasReceivedMouseInput = false;
+                //    }
+                //
+                //    if (isVRModeActive && Mouse.current != null &&
+                //        (Mouse.current.leftButton.wasPressedThisFrame ||
+                //         Mouse.current.rightButton.wasPressedThisFrame ||
+                //         Mouse.current.delta.ReadValue().sqrMagnitude > 0))
+                //    {
+                //        hasReceivedMouseInput = true;
+                //        isVRModeActive = false;
+                //    }
 
-                    if (isVRModeActive && Mouse.current != null &&
-                        (Mouse.current.leftButton.wasPressedThisFrame ||
-                         Mouse.current.rightButton.wasPressedThisFrame ||
-                         Mouse.current.delta.ReadValue().sqrMagnitude > 0))
-                    {
-                        hasReceivedMouseInput = true;
-                        isVRModeActive = false;
-                    }
+                //    vrInputDetected = isVRModeActive && isTriggerPressed;
+                //
+                //    PanelElement currentPanel = null;
+                //    foreach (var panel in GUICreator.openPanels)
+                //    {
+                //        if (panel.RootObject.activeSelf)
+                //        {
+                //            currentPanel = panel;
+                //            break;
+                //        }
+                //    }
+                //    if (currentPanel == null)
+                //    {
+                //        if (PointerLine.Instance != null) PointerLine.Instance.DisableLine();
+                //        return;
+                //    }
 
-                    vrInputDetected = isVRModeActive && isTriggerPressed;
+                //    RaycastHit hit;
+                //    bool worked = false;
+                //    GameObject hitObject = null;
+                //    string hitName = "";
+                //    Ray rayUsed = new Ray();
+                //
+                //    if (vrInputDetected)
+                //    {
+                //        Vector3 rayOrigin = GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.position - GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.up * 0.05f;
+                //        Vector3 rayDirection = -GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.up;
+                //        rayUsed = new Ray(rayOrigin, rayDirection);
+                //        worked = Physics.Raycast(rayOrigin, rayDirection, out hit, float.PositiveInfinity, GUICreator.UILayerMask);
+                //    }
+                //    else
+                //    {
+                //        rayUsed = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                //        worked = Physics.Raycast(rayUsed, out hit, float.PositiveInfinity, GUICreator.UILayerMask);
+                //    }
 
-                    PanelElement currentPanel = null;
-                    foreach (var panel in GUICreator.openPanels)
-                    {
-                        if (panel.RootObject.activeSelf)
-                        {
-                            currentPanel = panel;
-                            break;
-                        }
-                    }
-                    if (currentPanel == null)
-                    {
-                        if (PointerLine.Instance != null) PointerLine.Instance.DisableLine();
-                        return;
-                    }
+                 //   if (worked && hit.collider != null)
+                 //   {
+                 //       hitObject = hit.collider.gameObject;
+                 //       if (hitObject.layer != 14)
+                 //       {
+                 //           hitObject = null;
+                 //           worked = false;
+                 //       }
+                 //       else
+                 //       {
+                 //           hitName = hitObject.transform.parent != null ? hitObject.transform.parent.name : hitObject.name;
+                 //           foreach (var panel in GUICreator.openPanels)
+                 //           {
+                 //               if (panel.RootObject.activeSelf && IsObjectInPanel(hitObject, panel))
+                 //               {
+                 //                   currentPanel = panel;
+                  //                  break;
+                  //              }
+                 //           }
+                 //       }
+                 //   }
 
-                    RaycastHit hit;
-                    bool worked = false;
-                    GameObject hitObject = null;
-                    string hitName = "";
-                    Ray rayUsed = new Ray();
+                  //  if (PointerLine.Instance != null)
+                  //  {
+                  //      PointerLine.Instance.UpdateLine(rayUsed, worked, hit, currentPanel);
+                  //  }
 
-                    if (vrInputDetected)
-                    {
-                        Vector3 rayOrigin = GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.position - GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.up * 0.05f;
-                        Vector3 rayDirection = -GorillaLocomotion.GTPlayer.Instance.rightHand.controllerTransform.up;
-                        rayUsed = new Ray(rayOrigin, rayDirection);
-                        worked = Physics.Raycast(rayOrigin, rayDirection, out hit, float.PositiveInfinity, GUICreator.UILayerMask);
-                    }
-                    else
-                    {
-                        rayUsed = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                        worked = Physics.Raycast(rayUsed, out hit, float.PositiveInfinity, GUICreator.UILayerMask);
-                    }
-
-                    if (worked && hit.collider != null)
-                    {
-                        hitObject = hit.collider.gameObject;
-                        if (hitObject.layer != 14)
-                        {
-                            hitObject = null;
-                            worked = false;
-                        }
-                        else
-                        {
-                            hitName = hitObject.transform.parent != null ? hitObject.transform.parent.name : hitObject.name;
-                            foreach (var panel in GUICreator.openPanels)
-                            {
-                                if (panel.RootObject.activeSelf && IsObjectInPanel(hitObject, panel))
-                                {
-                                    currentPanel = panel;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-
-                    if (PointerLine.Instance != null)
-                    {
-                        PointerLine.Instance.UpdateLine(rayUsed, worked, hit, currentPanel);
-                    }
-
-                    if ((vrInputDetected || isMouseHeld) && worked && hitObject != null && hitObject.name.Contains("grab") && !isGrabbing)
-                    {
-                        grabbedPanel = currentPanel;
-                        isGrabbing = true;
-                        PointerLine.ShortRangeMode = true;
-                    }
-                    if (isGrabbing && !vrInputDetected && !isMouseHeld)
+                  //  if ((vrInputDetected || isMouseHeld) && worked && hitObject != null && hitObject.name.Contains("grab") && !isGrabbing)
+                 //  {
+                  //      grabbedPanel = currentPanel;
+                  //      isGrabbing = true;
+                  //      PointerLine.ShortRangeMode = true;
+                  // }
+                    /*if (isGrabbing && !vrInputDetected && !isMouseHeld)
                     {
                         isGrabbing = false;
                         grabbedPanel = null;
@@ -550,10 +545,9 @@ namespace Colossal.Menu
                     }
 
                     goto SkipLegacyControls;
-
-                }
+                    */
+                //}
                 #endregion
-
 
                 if (MenuHub == null || MenuHubText == null)
 				{
@@ -920,7 +914,7 @@ namespace Colossal.Menu
 				Settings[1].stringsliderind = PluginConfig.MenuPosition;
 				Settings[5].AssociatedBool = PluginConfig.PlayerLogging;
 				Settings[6].AssociatedBool = PluginConfig.invertedControls;
-				Settings[7].AssociatedBool = PluginConfig.legacyUi;
+				//Settings[7].AssociatedBool = PluginConfig.legacyUi;
 
 				MusicPlayer[4].AssociatedBool = PluginConfig.loopmusic;
 				MusicPlayer[5].AssociatedBool = PluginConfig.soundboard;
@@ -969,7 +963,7 @@ namespace Colossal.Menu
                     {
                         string newMenuState = option.AssociatedString == BepInPatcher.backthingy ? "MainMenu" : option.AssociatedString;
 
-                        if (!PluginConfig.legacyUi)
+                        /*if (!PluginConfig.legacyUi)
                         {
                             // Create a new panel without reusing from panelMap
                             GameObject newPanel = new GameObject();
@@ -1019,16 +1013,16 @@ namespace Colossal.Menu
                             if (activePanel != null) activePanel.RootObject.SetActive(false); // Remove this if you want multiple panels open
 
                             activePanel = newPanelElement; // Set the new panel as active (optional, depending on your needs)
-                        }
+                        }*/
 
                         MenuState = newMenuState;
                         CurrentViewingMenu = GUICreator.GetMenuOptions(newMenuState);
                         SelectedOptionIndex = 0;
                     }
-                    if (!PluginConfig.legacyUi && activePanel != null)
-                    {
-                        PanelElement.UpdatePanel(activePanel, CurrentViewingMenu); // Update the active panel
-                    }
+                    //if (!PluginConfig.legacyUi && activePanel != null)
+                    //{
+                    //    PanelElement.UpdatePanel(activePanel, CurrentViewingMenu); // Update the active panel
+                    //}
 
 
 
@@ -1105,7 +1099,7 @@ namespace Colossal.Menu
                                     {
                                         if (grm.reactor.shiftManager.ShiftActive)
                                         {
-                                            GRReviveStation GRRevive = GameObject.Find("GhostReactorRoot/GhostReactorZone/GRReviveStation").GetComponent<GRReviveStation>();
+                                            GRReviveStation GRRevive = GameObject.Find("GhostReactorRoot/GhostReactorZoneHQNew/GRExitCorridorRevive").GetComponent<GRReviveStation>();
                                             grm.RequestPlayerRevive(GRRevive, GRPlayer.GetLocal());
                                             RPCProtection.SkiddedRPCProtection();
                                         }
