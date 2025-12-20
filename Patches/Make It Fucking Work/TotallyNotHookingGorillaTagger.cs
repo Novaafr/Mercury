@@ -1,15 +1,6 @@
-﻿using GorillaLocomotion;
-using HarmonyLib;
-using Oculus.Interaction;
-using System;
-using System.Diagnostics;
-using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using HarmonyLib;
 using UnityEngine;
 using static Colossal.Patches.BepInPatcher;
-using Debug = UnityEngine.Debug;
 
 namespace Colossal.Patches
 {
@@ -21,8 +12,8 @@ namespace Colossal.Patches
         public static string hash;
         public static string betahash;
 
-        public static string localversion = "8.2";
-        public static string serverversion = "8.2";
+        public static string localversion = "8.3";
+        public static string serverversion = "8.3";
 
         public static string hwid;
         public static string CredentialEncryptionKey;
