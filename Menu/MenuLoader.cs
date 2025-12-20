@@ -175,7 +175,7 @@ namespace Colossal
             Menu.Menu.Gamemodes[1] = new MenuOption { DisplayName = "Competitive Gamemode", _type = "togglethingy", AssociatedBool = PluginConfig.competitivegamemode };
             Menu.Menu.Gamemodes[2] = new MenuOption { DisplayName = "Infection", _type = "buttonthingy", AssociatedString = "cgamemode Infection" };
             Menu.Menu.Gamemodes[3] = new MenuOption { DisplayName = "Casual", _type = "buttonthingy", AssociatedString = "cgamemode Casual" };
-            Menu.Menu.Gamemodes[4] = new MenuOption { DisplayName = "Hunt", _type = "buttonthingy", AssociatedString = "cgamemode Hunt" };
+            Menu.Menu.Gamemodes[4] = new MenuOption { DisplayName = "Hunt", _type = "buttonthingy", AssociatedString = "cgamemode HuntDown" };
             Menu.Menu.Gamemodes[5] = new MenuOption { DisplayName = "PaintBrawl", _type = "buttonthingy", AssociatedString = "cgamemode Paintbrawl" };
             Menu.Menu.Gamemodes[6] = new MenuOption { DisplayName = "Guardian", _type = "buttonthingy", AssociatedString = "cgamemode Guardian" };
             Menu.Menu.Gamemodes[7] = new MenuOption { DisplayName = "Ambush", _type = "buttonthingy", AssociatedString = "cgamemode Ambush" };
