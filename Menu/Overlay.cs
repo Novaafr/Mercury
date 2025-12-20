@@ -32,7 +32,7 @@ namespace Colossal.Menu
         //private static PanelElement activePanel2;
 
         private bool ExtraDebugUselessStuff = false; // just for like dev stuff to see if some mods work or not
-
+        
         public static void SpawnOverlay()
         {
             //BepInPatcher.CallCheckIntegrity(OnGameInit.anti2); //Uncomment for release
