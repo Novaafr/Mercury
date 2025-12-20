@@ -17,7 +17,7 @@ namespace Colossal
             Menu.Menu.MainMenu[6] = new MenuOption { DisplayName = "MusicPlayer", _type = "submenuthingy", AssociatedString = "MusicPlayer" };
             Menu.Menu.MainMenu[7] = new MenuOption { DisplayName = "Settings", _type = "submenuthingy", AssociatedString = "Settings" };
             Menu.Menu.MainMenu[8] = new MenuOption { DisplayName = "Info", _type = "submenuthingy", AssociatedString = "Info" };
-            Menu.Menu.MainMenu[9] = new MenuOption { DisplayName = "Macro", _type = "submenuthingy", AssociatedString = "Macro", extra = "[COMING SOON]" };
+            Menu.Menu.MainMenu[9] = new MenuOption { DisplayName = "Macro", _type = "submenuthingy", AssociatedString = "Macro" };
             Menu.Menu.MainMenu[10] = new MenuOption { DisplayName = "Notifications", _type = "togglethingy", AssociatedBool = PluginConfig.Notifications };
             Menu.Menu.MainMenu[11] = new MenuOption { DisplayName = "Overlay", _type = "togglethingy", AssociatedBool = PluginConfig.overlay };
             Menu.Menu.MainMenu[12] = new MenuOption { DisplayName = "Tool Tips", _type = "togglethingy", AssociatedBool = PluginConfig.tooltips };

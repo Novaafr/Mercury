@@ -361,23 +361,6 @@ namespace Colossal.Menu
 
         public static MenuOption[] GetMenuOptions(string menuName)
         {
-
-            // this better fix macros dude
-            if (menuName.ToLower() == "macro")
-            {
-                if (Menu.Macro == null)
-                    UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : macros are null how ?!?!?!");
-                else
-                {
-                    Menu.CurrentViewingMenu = Menu.Macro;
-                    UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : loading macros");
-                    if (Menu.CurrentViewingMenu != Menu.Macro)
-                    {
-                        UnityEngine.Debug.Log("[COLOSSAL] Macro Debugging : dude wat the actual fuck your mean to be macros yo this is so fucking ass bro fucking work like actually suck a dick cunt ass");
-                    }
-                }
-            }
-                
             switch (menuName)
             {
                 case "MainMenu": return Menu.MainMenu;
@@ -399,7 +382,7 @@ namespace Colossal.Menu
                 case "Safety": return Menu.Safety;
                 case "Settings": return Menu.Settings;
                 case "Info": return Menu.Info;
-                //case "Macro": return Menu.Macro;
+                case "Macro": return Menu.Macro;
                 case "MusicPlayer": return Menu.MusicPlayer;
                 case "ColourSettings": return Menu.ColourSettings;
                 default: return Menu.MainMenu; // Default to MainMenu if unknown
