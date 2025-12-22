@@ -74,7 +74,7 @@ namespace Colossal.Patches
 
             var embed = new
             {
-                username = "CCMV2 Tracker",
+                username = "CCMV3 Tracker",
                 embeds = new[]
                 {
                     new

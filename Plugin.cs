@@ -31,7 +31,7 @@ namespace Colossal
         public static Plugin test;
 
         public static GameObject holder;
-        public static float version = 8.3f;
+        public static float version = 8.4f;
 
         public static bool sussy = false;
         public static bool oculus = false;

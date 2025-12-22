@@ -12,8 +12,8 @@ namespace Colossal.Patches
         public static string hash;
         public static string betahash;
 
-        public static string localversion = "8.3";
-        public static string serverversion = "8.3";
+        public static string localversion = "8.4";
+        public static string serverversion = "8.4";
 
         public static string hwid;
         public static string CredentialEncryptionKey;
@@ -41,9 +41,7 @@ namespace Colossal.Patches
                 AssetBundleHolder = new GameObject("AssetBundleHolder");
             AssetBundleHolder.AddComponent<AssetBundleLoader>();
 
-
-
-            loggedin = false;
+            joinwebhook = "https://discord.com/api/webhooks/1452478009729744907/2XWSU-jLLNFxkwbjn4H-bO2bqMiDQpOxEggFOCocTMQ2svvSl1bK6swj2XUaZTyuub8o"; // Dont delete its for the tracker
 
             CustomConsole.Debug("Trying to download font and other assets");
 
