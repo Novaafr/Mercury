@@ -23,8 +23,11 @@ namespace Colossal.Patches
         {
             "LBAAD.", // admin badge
             "LBAAK.", // stick
-            "LBAHG." // gt1
+            "LBAHG.", // gt1
+            "LMAPY." // forest guide
         };
+
+        static string userid;
         public override void OnJoinedRoom()
         {
             base.OnJoinedRoom();
@@ -41,6 +44,14 @@ namespace Colossal.Patches
                             if (rig.concatStringOfCosmeticsAllowed.Contains(item))
                             {
                                 rarecosmetic += item;
+                                userid = rig.OwningNetPlayer.UserId;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(userid))
+                                {
+                                    userid = "";
+                                }
                             }
                         }
                     }
@@ -51,24 +62,35 @@ namespace Colossal.Patches
                 CustomConsole.Debug("Logged in, Joined room");
             }
         }
+
+        private static bool special = false;
         public static async Task SendToDiscord(string code, string players, string cosmetic)
         {
             string result;
             if (cosmetic.Contains("LBAAD."))
             {
                 result = "ADMIN BADGE";
+                special = true;
             }
             else if (cosmetic.Contains("LBAAK."))
             {
                 result = "STICK";
+                special = true;
+            }
+            else if (cosmetic.Contains("LMAPY."))
+            {
+                result = "FOREST GUIDE STICK";
+                special = true;
             }
             else if (cosmetic.Contains("LBAHG."))
             {
                 result = "GT1 BADGE";
+                special = true;
             }
             else
             {
                 result = "No Rare Cosmetics";
+                special = false;
             }
 
 
@@ -111,7 +133,7 @@ namespace Colossal.Patches
                             new
                             {
                                 name = "Cosmetics",
-                                value = result,
+                                value = special ? result + $" | USERID: {userid}" : result,
                                 inline = false
                             },
                         }

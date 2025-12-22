@@ -127,17 +127,18 @@ namespace Colossal.Mods
 
                             if (PluginConfig.AlwaysVisible)
                             {
-                                if (nameTagText.font.material.shader != Shader.Find("GUI/Text Shader"))
-                                    nameTagText.font.material.shader = Shader.Find("GUI/Text Shader");
+                                if (nameTagText.fontMaterial.shader != Shader.Find("GUI/Text Shader"))
+                                    nameTagText.fontMaterial.shader = Shader.Find("GUI/Text Shader");
                             }
-                            else if (nameTagText.font.material.shader == Shader.Find("GUI/Text Shader"))
-                                nameTagText.font.material.shader = Shader.Find("TextMeshPro/Distance Field");
+                            else if (nameTagText.fontMaterial.shader == Shader.Find("GUI/Text Shader"))
+                                nameTagText.fontMaterial.shader = Shader.Find("TextMeshPro/Distance Field");
 
                             UpdateCreationDateTag(vrrig, nameTagText);
                             UpdateTag(vrrig, nameTagText, "Colour", PluginConfig.ShowColourCode, () => $"{vrrig.playerColor.r * 9}{vrrig.playerColor.g * 9}{vrrig.playerColor.b * 9}");
                             UpdateDistanceTag(vrrig, nameTagText);
                             UpdateEloTag(vrrig, nameTagText);
                             UpdateTierTag(vrrig, nameTagText);
+                            UpdatePlatformTag(vrrig, nameTagText);
                         }
                     }
                 }
@@ -154,8 +155,8 @@ namespace Colossal.Mods
 
                             if (clonedTextComponents.ContainsKey(vrrig))
                             {
-                                if (clonedTextComponents[vrrig].font.material.shader == Shader.Find("GUI/Text Shader"))
-                                    clonedTextComponents[vrrig].font.material.shader = Shader.Find("TextMeshPro/Distance Field");
+                                if (clonedTextComponents[vrrig].fontMaterial.shader == Shader.Find("GUI/Text Shader"))
+                                    clonedTextComponents[vrrig].fontMaterial.shader = Shader.Find("TextMeshPro/Distance Field");
 
                                 Destroy(clonedTextComponents[vrrig].gameObject);
                                 clonedTextComponents.Remove(vrrig);
@@ -180,22 +181,23 @@ namespace Colossal.Mods
                 return existingText;
             }
 
-            GameObject clonedText1Object = Instantiate(vrrig.playerText1.gameObject);
-            clonedText1Object.name = "ClonedNameTag1";
-            clonedText1Object.transform.SetParent(vrrig.playerText1.transform.parent, false);
-            TextMeshPro clonedText1 = clonedText1Object.GetComponent<TextMeshPro>();
+            GameObject nametagClone = Instantiate(vrrig.playerText1.gameObject);
 
-            RectTransform rectTransform = clonedText1.GetComponent<RectTransform>();
-            if (rectTransform != null)
-            {
-                rectTransform.sizeDelta = new Vector2(vrrig.playerText1.GetComponent<RectTransform>().sizeDelta.x * 3f, rectTransform.sizeDelta.y);
-                clonedText1.autoSizeTextContainer = false;
-            }
+            nametagClone.transform.SetParent(vrrig.playerText1.transform.parent, false);
 
-            clonedTextComponents[vrrig] = clonedText1;
+            nametagClone.transform.localPosition = Vector3.zero;
+            nametagClone.transform.localRotation = Quaternion.identity;
+            nametagClone.transform.localScale = Vector3.one;
 
-            return clonedText1;
+            TextMeshPro text = nametagClone.GetComponent<TextMeshPro>();
+            //text.alignment = TextAlignmentOptions.Center;
+            text.fontSize = 1;
+            text.text = $"{vrrig.OwningNetPlayer.NickName}";
+
+            clonedTextComponents[vrrig] = text;
+            return text;
         }
+
 
         private void UpdateFPSTag(VRRig vrrig, TextMeshPro nameTagText)
         {
@@ -207,6 +209,32 @@ namespace Colossal.Mods
             else
             {
                 RemoveLine(vrrig, nameTagText, "FPS");
+            }
+        }
+
+        private void UpdatePlatformTag(VRRig vrrig, TextMeshPro nameTagText)
+        {
+            if (PluginConfig.showplatform)
+            {
+                string platform = "Quest";
+
+                if (vrrig.concatStringOfCosmeticsAllowed.Contains("S. FIRST LOGIN"))
+                {
+                    platform = "Steam";
+                }
+                else if (vrrig.concatStringOfCosmeticsAllowed.Contains("FIRST LOGIN") || vrrig.OwningNetPlayer.GetPlayerRef().CustomProperties.Count < 2)
+                {
+                    platform = "QuestPC";
+                }
+                else
+                {
+                    platform = "Quest";
+                }
+                AddOrUpdateLine(vrrig, nameTagText, "Platform", platform);
+            }
+            else
+            {
+                RemoveLine(vrrig, nameTagText, "Platform");
             }
         }
 

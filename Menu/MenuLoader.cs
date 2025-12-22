@@ -95,17 +95,19 @@ namespace Colossal
             Menu.Menu.Tracers[1] = new MenuOption { DisplayName = "Tracer Size", _type = "sliderthingy", StringArray = new string[] { "Extremely Small", "Super Small", "Small", "Medium", "Large", "Giant", "Huge" } };
             Menu.Menu.Tracers[2] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.NameTags = new MenuOption[10];
+            Menu.Menu.NameTags = new MenuOption[12];
             Menu.Menu.NameTags[0] = new MenuOption { DisplayName = "NameTags [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
             Menu.Menu.NameTags[1] = new MenuOption { DisplayName = "Show Creation Date", _type = "togglethingy", AssociatedBool = PluginConfig.ShowCreationDate };
             Menu.Menu.NameTags[2] = new MenuOption { DisplayName = "Show Colour Code", _type = "togglethingy", AssociatedBool = PluginConfig.ShowColourCode };
             Menu.Menu.NameTags[3] = new MenuOption { DisplayName = "Show Distance", _type = "togglethingy", AssociatedBool = PluginConfig.ShowDistance };
             Menu.Menu.NameTags[4] = new MenuOption { DisplayName = "Always Visible", _type = "togglethingy", AssociatedBool = PluginConfig.AlwaysVisible };
             Menu.Menu.NameTags[5] = new MenuOption { DisplayName = "Show FPS", _type = "togglethingy", AssociatedBool = PluginConfig.ShowFPS };
-            Menu.Menu.NameTags[6] = new MenuOption { DisplayName = "NameTag Height", _type = "sliderthingy", StringArray = new string[] { "Chest", "Above Head" } };
-            Menu.Menu.NameTags[7] = new MenuOption { DisplayName = "NameTag Size", _type = "sliderthingy", StringArray = new string[] { "Chest Size", "Small", "Medium", "Large" } };
-            Menu.Menu.NameTags[8] = new MenuOption { DisplayName = "NameTag Colour", _type = "sliderthingy", StringArray = new string[] { "White", "Yellow", "Green", "Blue", "Red", "Cyan", "Black" } };
-            Menu.Menu.NameTags[9] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.NameTags[6] = new MenuOption { DisplayName = "Show Elo", _type = "togglethingy", AssociatedBool = PluginConfig.showelo };
+            Menu.Menu.NameTags[7] = new MenuOption { DisplayName = "Show Platform", _type = "togglethingy", AssociatedBool = PluginConfig.showplatform };
+            Menu.Menu.NameTags[8] = new MenuOption { DisplayName = "NameTag Height", _type = "sliderthingy", StringArray = new string[] { "Chest", "Above Head" } };
+            Menu.Menu.NameTags[9] = new MenuOption { DisplayName = "NameTag Size", _type = "sliderthingy", StringArray = new string[] { "Chest Size", "Small", "Medium", "Large" } };
+            Menu.Menu.NameTags[10] = new MenuOption { DisplayName = "NameTag Colour", _type = "sliderthingy", StringArray = new string[] { "White", "Yellow", "Green", "Blue", "Red", "Cyan", "Black" } };
+            Menu.Menu.NameTags[11] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.Player = new MenuOption[14];
             Menu.Menu.Player[0] = new MenuOption { DisplayName = "NoFinger", _type = "togglethingy", AssociatedBool = PluginConfig.nofinger };

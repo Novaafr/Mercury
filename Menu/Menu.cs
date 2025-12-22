@@ -889,9 +889,11 @@ namespace Colossal.Menu
 				NameTags[3].AssociatedBool = PluginConfig.ShowDistance;
 				NameTags[4].AssociatedBool = PluginConfig.AlwaysVisible;
 				NameTags[5].AssociatedBool = PluginConfig.ShowFPS;
-				NameTags[6].stringsliderind = PluginConfig.nametagheight;
-				NameTags[7].stringsliderind = PluginConfig.nametagsize;
-				NameTags[8].stringsliderind = PluginConfig.nametagcolour;
+				NameTags[6].AssociatedBool = PluginConfig.showelo;
+				NameTags[7].AssociatedBool = PluginConfig.showplatform;
+				NameTags[8].stringsliderind = PluginConfig.nametagheight;
+				NameTags[9].stringsliderind = PluginConfig.nametagsize;
+				NameTags[10].stringsliderind = PluginConfig.nametagcolour;
 
 				Player[0].AssociatedBool = PluginConfig.nofinger;
 				Player[1].AssociatedBool = PluginConfig.taggun;

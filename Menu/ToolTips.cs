@@ -114,6 +114,8 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nShow distance to other players",
             $"<color={Menu.MenuColour}>Passive</color>\nShow nametags through walls",
             $"<color={Menu.MenuColour}>Passive</color>\nShow current fps of other players",
+            $"<color={Menu.MenuColour}>Passive</color>\nShow current elo of other players",
+            $"<color={Menu.MenuColour}>Passive</color>\nShow current platform of other players",
             $"<color={Menu.MenuColour}>Setting</color>\nThe height the nametag should be",
             $"<color={Menu.MenuColour}>Setting</color>\nThe size the nametag should be",
             $"<color={Menu.MenuColour}>Setting</color>\nThe colour the nametag should be",
