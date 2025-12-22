@@ -192,7 +192,7 @@ namespace Colossal.Menu
             UpdateLoadingText(); // Initial text
 
             // Helper function to safely load a menu
-            MenuOption[] SafeLoadMenu(string menuName, string debugIndex)
+            /*MenuOption[] SafeLoadMenu(string menuName, string debugIndex)
             {
                 try
                 {
@@ -208,39 +208,68 @@ namespace Colossal.Menu
                     CustomConsole.Error($"Error loading menu {menuName}: {ex}");
                     return null;
                 }
+            }*
+
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* MainMenu = SafeLoadMenu("Menu_MainMenu", "1"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Movement = SafeLoadMenu("Menu_Movement", "2"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Movement2 = SafeLoadMenu("Menu_Movement2", "3"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Speed = SafeLoadMenu("Menu_Speed", "4"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Strafe = SafeLoadMenu("Menu_Strafe", "5"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Visual = SafeLoadMenu("Menu_Visual", "6"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Visual2 = SafeLoadMenu("Menu_Visual2", "7"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Tracers = SafeLoadMenu("Menu_Tracers", "8"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* NameTags = SafeLoadMenu("Menu_NameTags", "9"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Player = SafeLoadMenu("Menu_Player", "10"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Player2 = SafeLoadMenu("Menu_Player2", "11"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Exploits = SafeLoadMenu("Menu_Exploits", "12"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Exploits2 = SafeLoadMenu("Menu_Exploits2", "13"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* CosmeticsSpoofer = SafeLoadMenu("Menu_CosmeticsSpoofer", "14"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Computer = SafeLoadMenu("Menu_Computer", "15"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* Gamemodes = SafeLoadMenu("Menu_Gamemodes", "16"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Safety = SafeLoadMenu("Menu_Safety", "17"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Settings = SafeLoadMenu("Menu_Settings", "18"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+            /* ColourSettings = SafeLoadMenu("Menu_ColourSettings", "19"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Info = SafeLoadMenu("Menu_Info", "20"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* MusicPlayer = SafeLoadMenu("Menu_MusicPlayer", "21"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            /* Macro = SafeLoadMenu("Menu_Macro", "22"); */
+            loadingNumber += 1; UpdateLoadingText(); yield return null;
+
+            if (loadingNumber == 22)
+            {
+                MenuLoader.LoadMenu();
             }
-
-            MainMenu = SafeLoadMenu("Menu_MainMenu", "1"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Movement = SafeLoadMenu("Menu_Movement", "2"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Movement2 = SafeLoadMenu("Menu_Movement2", "3"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Speed = SafeLoadMenu("Menu_Speed", "4"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Strafe = SafeLoadMenu("Menu_Strafe", "5"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Visual = SafeLoadMenu("Menu_Visual", "6"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Visual2 = SafeLoadMenu("Menu_Visual2", "7"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Tracers = SafeLoadMenu("Menu_Tracers", "8"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            NameTags = SafeLoadMenu("Menu_NameTags", "9"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Player = SafeLoadMenu("Menu_Player", "10"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Player2 = SafeLoadMenu("Menu_Player2", "11"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Exploits = SafeLoadMenu("Menu_Exploits", "12"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Exploits2 = SafeLoadMenu("Menu_Exploits2", "13"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            CosmeticsSpoofer = SafeLoadMenu("Menu_CosmeticsSpoofer", "14"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Computer = SafeLoadMenu("Menu_Computer", "15"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            Gamemodes = SafeLoadMenu("Menu_Gamemodes", "16"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Safety = SafeLoadMenu("Menu_Safety", "17"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Settings = SafeLoadMenu("Menu_Settings", "18"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-            ColourSettings = SafeLoadMenu("Menu_ColourSettings", "19"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            Info = SafeLoadMenu("Menu_Info", "20"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            MusicPlayer = SafeLoadMenu("Menu_MusicPlayer", "21"); loadingNumber += 1; UpdateLoadingText(); yield return null;
-
-            //Macro = SafeLoadMenu("Menu_Macro", "22"); loadingNumber += 1; UpdateLoadingText(); yield return null;
 
             // Final update
             loadingNumber = 22;

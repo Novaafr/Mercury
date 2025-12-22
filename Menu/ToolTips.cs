@@ -196,8 +196,6 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nSave menu settings",
             $"<color={Menu.MenuColour}>Passive</color>\nLogs all player info in every room into a database",
             $"<color={Menu.MenuColour}>Passive</color>\nSets menu control scheme to inverted",
-            $"<color={Menu.MenuColour}>Passive</color>\nMakes the menu have the new ui",
-            $"<color={Menu.MenuColour}>Passive</color>\nLogs out of your Colossal account",
         };
         public static string[] SettingsColourtips = new string[]
         {
