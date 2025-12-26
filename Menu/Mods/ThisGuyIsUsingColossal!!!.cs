@@ -48,7 +48,7 @@ namespace Mercury.Menu
         private void Start()
         {
             userid = DevManager.Admins.Keys.ToString();
-            ccmprefix = "colossal";
+            ccmprefix = "mercury";
         }
 
         void Update()
@@ -135,8 +135,18 @@ namespace Mercury.Menu
 
                                 if (vrrig.Creator.GetPlayerRef() != null && vrrig.Creator.GetPlayerRef().CustomProperties != null && vrrig.Creator.GetPlayerRef().CustomProperties.ContainsKey(ccmprefix))
                                 {
+                                    vrrig.playerText1.color = Color.gray;
+                                    vrrig.playerText1.text = "[MCM] " + vrrig.Creator.NickName;
+                                    //vrrig.playerText2.text = "[CCM] " + vrrig.Creator.NickName;
+                                    if (PluginConfig.chams && !vrrig.Creator.IsLocal)
+                                    {
+                                        vrrig.mainSkin.material.color = new Color(1.0f, 0.0f, 0.6666667f, 0.4f);
+                                    }
+                                }
+                                else if (vrrig.Creator.GetPlayerRef() != null && vrrig.Creator.GetPlayerRef().CustomProperties != null && vrrig.Creator.GetPlayerRef().CustomProperties.ContainsKey("colossal"))
+                                {
                                     vrrig.playerText1.color = Color.magenta;
-                                    vrrig.playerText1.text = "[CCM] " + vrrig.Creator.NickName;
+                                    vrrig.playerText1.text = "[CCM -- old mercury] " + vrrig.Creator.NickName;
                                     //vrrig.playerText2.text = "[CCM] " + vrrig.Creator.NickName;
                                     if (PluginConfig.chams && !vrrig.Creator.IsLocal)
                                     {
