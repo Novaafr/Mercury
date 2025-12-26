@@ -2,7 +2,7 @@
 using UnityEngine.XR;
 using Valve.VR;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     public class ControlsV2
     {

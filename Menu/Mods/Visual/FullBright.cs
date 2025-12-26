@@ -1,4 +1,4 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class FullBright : MonoBehaviour
     {

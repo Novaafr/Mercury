@@ -7,7 +7,7 @@ using UnityEngine;
 using Viveport;
 using GorillaTagScripts;
 
-namespace Colossal
+namespace Mercury
 {
     public class WhatAmI
     {

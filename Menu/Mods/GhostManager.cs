@@ -1,4 +1,4 @@
-﻿using Colossal.Patches;
+﻿using Mercury.Patches;
 using Photon.Pun;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using UnityEngine;
 using Valve.VR.Extras;
 
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     internal class GhostManager
     {

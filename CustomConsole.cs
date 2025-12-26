@@ -1,4 +1,4 @@
-﻿using Colossal.Patches;
+﻿using Mercury.Patches;
 using System;
 using System.IO;
 using System.Reflection;
@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using UnityEngine;
 
-namespace Colossal
+namespace Mercury
 {
     public class CustomConsole : MonoBehaviour
     {

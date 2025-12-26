@@ -1,5 +1,5 @@
-﻿//using Colossal.Menu;
-//using Colossal.Patches;
+﻿//using Mercury.Menu;
+//using Mercury.Patches;
 //using GorillaNetworking;
 //using Photon.Pun;
 //using System;
@@ -8,7 +8,7 @@
 //using UnityEngine;
 //using UnityEngine.InputSystem;
 
-//namespace Colossal.Mods
+//namespace Mercury.Mods
 //{
 //    public class Disable
 //    {

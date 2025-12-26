@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //Starry wrote this so it prob sucks!!!! kisses <3
     //When Adding More ctrl+c ctrl+v

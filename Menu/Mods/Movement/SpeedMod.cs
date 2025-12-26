@@ -1,9 +1,9 @@
-﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿using Mercury.Menu;
+using Mercury.Patches;
 using Photon.Pun;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class SpeedMod : MonoBehaviour
     {

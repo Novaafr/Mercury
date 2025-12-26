@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using static Colossal.Patches.BepInPatcher;
+using static Mercury.Patches.BepInPatcher;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GorillaTagger), "Awake")]
     internal class OnGameInit

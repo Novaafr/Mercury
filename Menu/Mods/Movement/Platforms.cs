@@ -1,5 +1,5 @@
-﻿﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿﻿using Mercury.Menu;
+using Mercury.Patches;
 using ExitGames.Client.Photon;
 using GorillaLocomotion.Climbing;
 using Photon.Pun;
@@ -8,7 +8,7 @@ using System;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Platforms : MonoBehaviour
     {

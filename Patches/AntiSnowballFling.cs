@@ -1,7 +1,7 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using HarmonyLib;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     // Disables the snowball throwing on your client
     [HarmonyPatch(typeof(SnowballThrowable), "PerformSnowballThrowAuthority")]

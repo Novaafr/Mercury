@@ -1,6 +1,6 @@
-﻿using Colossal;
-using Colossal.Menu;
-using Colossal.Mods;
+﻿using Mercury;
+using Mercury.Menu;
+using Mercury.Mods;
 using HarmonyLib;
 using Photon.Pun;
 using Photon.Realtime;
@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Notifacation
+namespace Mercury.Notifacation
 {
     internal class MasterChangeNotifacation : MonoBehaviourPunCallbacks {
 

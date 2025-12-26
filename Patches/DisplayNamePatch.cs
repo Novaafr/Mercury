@@ -7,7 +7,7 @@ using HarmonyLib;
 using PlayFab.ClientModels;
 using PlayFab;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(PlayFabClientAPI), "UpdateUserTitleDisplayName")]
     public class DisplayNamePatch

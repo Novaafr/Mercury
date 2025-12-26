@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
-using Colossal.Patches;
+using Mercury.Patches;
 using HarmonyLib;
 using UnityEngine;
 
-namespace Colossal
+namespace Mercury
 {
     public class HarmonyLoader
     {

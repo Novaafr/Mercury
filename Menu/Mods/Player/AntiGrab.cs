@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Colossal.Menu;
+using Mercury.Menu;
 using HarmonyLib;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     internal class AntiGrab
     {

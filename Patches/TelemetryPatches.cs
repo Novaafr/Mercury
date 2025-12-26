@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GorillaTelemetry), "EnqueueTelemetryEvent")]
     public class TelemetryPatch1

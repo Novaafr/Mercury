@@ -1,5 +1,5 @@
-﻿﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿﻿using Mercury.Menu;
+using Mercury.Patches;
 using HarmonyLib;
 using Photon.Pun;
 using Photon.Realtime;
@@ -14,9 +14,9 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
-using static Colossal.Plugin;
+using static Mercury.Plugin;
 
-namespace Colossal.Notifacation
+namespace Mercury.Notifacation
 {
     public class Notifacations : MonoBehaviour
     {

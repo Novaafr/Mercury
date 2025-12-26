@@ -1,4 +1,4 @@
-﻿﻿using Colossal;
+﻿﻿using Mercury;
 using HarmonyLib;
 using Photon.Pun;
 using PlayFab.ClientModels;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(VRRig), "OnDisable")]
     public class DisableRig

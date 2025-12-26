@@ -1,5 +1,5 @@
-using Colossal.Mods;
-using Colossal.Menu;
+using Mercury.Mods;
+using Mercury.Menu;
 using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using UnityEngine.Animations.Rigging;
 using UnityEngine.AI;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class BoxEsp : MonoBehaviour
     {

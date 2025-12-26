@@ -1,13 +1,13 @@
-﻿﻿using Colossal.Menu;
-using Colossal.Patches;
-using ColossalV2.Mods;
+﻿﻿using Mercury.Menu;
+using Mercury.Patches;
+using MercuryV2.Mods;
 using GorillaExtensions;
 using GorillaNetworking;
 using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Strafe : MonoBehaviour
     {

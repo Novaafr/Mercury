@@ -1,7 +1,7 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Tracers : MonoBehaviour
     {

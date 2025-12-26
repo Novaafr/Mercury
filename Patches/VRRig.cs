@@ -7,7 +7,7 @@ using System.Threading;
 using System.Net;
 using Photon.Pun;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(VRRig), "OnDisable")]
     internal class SIWniwm__ : MonoBehaviour

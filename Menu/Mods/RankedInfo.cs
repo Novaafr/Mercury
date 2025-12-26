@@ -6,7 +6,7 @@ using UnityEngine;
 using Photon.Pun;
 using static GorillaTagCompetitiveServerApi;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public static class RankedInfo
     {

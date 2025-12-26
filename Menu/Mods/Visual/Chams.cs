@@ -1,4 +1,4 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using GorillaNetworking;
 using Photon.Pun;
 using Photon.Realtime;
@@ -12,7 +12,7 @@ using UnityEngine.UI;
 using UnityEngine.XR;
 using Valve.VR.InteractionSystem;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Chams : MonoBehaviour
     {

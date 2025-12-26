@@ -1,4 +1,4 @@
-﻿using Colossal;
+﻿using Mercury;
 using ExitGames.Client.Photon;
 using HarmonyLib;
 using Photon.Pun;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(PhotonNetwork), "OnEvent")]
     internal class Instantate

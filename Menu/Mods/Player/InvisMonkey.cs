@@ -1,6 +1,6 @@
 
-﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿using Mercury.Menu;
+using Mercury.Patches;
 using Photon.Pun;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class InvisMonkey : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-﻿using Colossal;
-using Colossal.Menu;
-using Colossal.Mods;
-using Colossal.Patches;
+﻿using Mercury;
+using Mercury.Menu;
+using Mercury.Mods;
+using Mercury.Patches;
 using Photon.Pun;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 
-namespace Colossal
+namespace Mercury
 {
     internal class PlayerLog : MonoBehaviour
     {

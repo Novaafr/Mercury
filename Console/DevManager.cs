@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Colossal.Patches;
+using Mercury.Patches;
 using Photon.Pun;
 
-namespace Colossal.Console
+namespace Mercury.Console
 {
     public static class DevManager
     {

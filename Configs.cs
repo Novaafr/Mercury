@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 using TMPro;
 using UnityEngine.Rendering;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public static class PluginConfig
     {
@@ -189,7 +189,6 @@ namespace Colossal.Menu
     {
         //public static string AdminPassword = "Note to starry: The note that had the password some how accidently (dont ask plz) got shoved a bit to far up my ass so im passing it onto you. pass: @il0v3f3mbo7s!";
 
-
         public static string folderPath = "Colossal";
 
         public static string logPath = "Colossal\\Logs";
@@ -199,6 +198,8 @@ namespace Colossal.Menu
         public static string configPath = "Colossal\\Configs";
         public static string fileExtension = ".json";
         public static string fileName = "NewConfig";
+
+        public static string path = folderPath + "\\CustomColour.txt";
 
         public void Update()
         {
@@ -215,6 +216,9 @@ namespace Colossal.Menu
 
             if (!Directory.Exists(macroPath))
                 Directory.CreateDirectory(macroPath);
+
+            if (!File.Exists(path))
+                File.Create(path);
         }
         public static string[] GetConfigFileNames()
         {

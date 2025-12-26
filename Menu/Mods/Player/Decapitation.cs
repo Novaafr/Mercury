@@ -1,11 +1,11 @@
-﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿using Mercury.Menu;
+using Mercury.Patches;
 using HarmonyLib;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Decapitation : MonoBehaviour
     {

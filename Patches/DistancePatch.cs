@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(VRRig), "IsPositionInRange")]
     public class DistancePatch

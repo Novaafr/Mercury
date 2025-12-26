@@ -1,4 +1,4 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class FirstPerson : MonoBehaviour
     {

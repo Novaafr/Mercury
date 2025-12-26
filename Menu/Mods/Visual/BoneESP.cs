@@ -1,10 +1,10 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using GorillaTag;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class BoneESP : MonoBehaviour
     {

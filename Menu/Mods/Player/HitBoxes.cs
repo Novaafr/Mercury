@@ -1,11 +1,11 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using UnityEngine;
 using HarmonyLib;
 using System;
-using Colossal.Mods;
-using Colossal.Patches;
+using Mercury.Mods;
+using Mercury.Patches;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class HitBoxes : MonoBehaviour
     {
@@ -139,7 +139,7 @@ namespace Colossal.Mods
     }
 }
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GorillaTagger), "get_sphereCastRadius")]
     public class HitBoxesPatch

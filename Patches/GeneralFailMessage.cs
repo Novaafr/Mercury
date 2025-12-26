@@ -2,7 +2,7 @@
 using GorillaNetworking;
 using HarmonyLib;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(GorillaComputer), "GeneralFailureMessage")]
     public class GeneralFailMessage

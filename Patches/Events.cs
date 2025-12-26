@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(PhotonNetwork), "RaiseEvent")]
     internal class Events

@@ -6,9 +6,9 @@ using PlayFab;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using BepInEx;
-using Colossal.Menu;
+using Mercury.Menu;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GorillaComputer), "GeneralFailureMessage")]
     internal class Heroin

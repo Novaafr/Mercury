@@ -1,11 +1,11 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using GorillaNetworking;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class ProximityAlert : MonoBehaviour
     {

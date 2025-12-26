@@ -1,9 +1,9 @@
 ﻿using System;
-using Colossal.Menu;
+using Mercury.Menu;
 using HarmonyLib;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(GorillaMouthFlap), "UpdateMouthFlapFlipbook")]
     //[HarmonyPatch(typeof(GorillaMouthFlap), "CheckMouthflapChange")]

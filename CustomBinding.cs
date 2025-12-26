@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using Colossal.Patches;
+using Mercury.Patches;
 using UnityEngine;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public class CustomBinding : MonoBehaviour
     {

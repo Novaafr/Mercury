@@ -1,6 +1,6 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 
-using Colossal.Mods;
+using Mercury.Mods;
 using ExitGames.Client.Photon;
 using HarmonyLib;
 using Photon.Pun;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Notifacation
+namespace Mercury.Notifacation
 {
     internal class EventNotifacation : MonoBehaviourPunCallbacks {
         public override void OnConnected()

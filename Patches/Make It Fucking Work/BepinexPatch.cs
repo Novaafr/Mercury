@@ -1,6 +1,6 @@
 ﻿using BepInEx;
-using Colossal.Console;
-using Colossal.Menu;
+using Mercury.Console;
+using Mercury.Menu;
 using Fusion;
 ﻿using HarmonyLib;
 using Microsoft.Win32;
@@ -29,11 +29,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using WebSocketSharp;
-using static Colossal.Patches.BepInPatcher;
+using static Mercury.Patches.BepInPatcher;
 using static UnityEngine.Rendering.DebugUI;
 using Debug = UnityEngine.Debug;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     public class GTCCompCode
     {
@@ -169,7 +169,8 @@ namespace Colossal.Patches
     }
 
 
-    [BepInPlugin("ColossusYTTV.ColossalCheatMenuV2", "ColossalCheatMenuV3", "1.0.0")]
+    //[BepInPlugin("ColossusYTTV.ColossalCheatMenuV2", "ColossalCheatMenuV3", "1.0.0")]
+    [BepInPlugin("Nova.MercuryCheatMenuV2", "MercuryCheatMenuV2", "1.0.0")]
     class BepInPatcher : BaseUnityPlugin
     {
         public static GameObject gameob = new GameObject();
@@ -187,11 +188,12 @@ namespace Colossal.Patches
         public static int playercount = 0;
         public static bool loggedin = true;
 
-        public const string RegistryPath = @"SOFTWARE\ColossalCheatMenuV3";
+        public const string RegistryPath = @"SOFTWARE\MercuryCheatMenuV2";
 
         BepInPatcher()
         {
-            new Harmony("ColossusYTTV.ColossalCheatMenuV3").PatchAll(Assembly.GetExecutingAssembly());
+            //new Harmony("ColossusYTTV.MercuryCheatMenuV2").PatchAll(Assembly.GetExecutingAssembly());
+            new Harmony("Nova.MercuryCheatMenuV2").PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public void Start()

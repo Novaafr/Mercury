@@ -1,4 +1,4 @@
-﻿using Colossal.Patches;
+﻿using Mercury.Patches;
 using GorillaNetworking;
 using HarmonyLib;
 using Photon.Pun;
@@ -14,9 +14,9 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
-using static Colossal.Plugin;
+using static Mercury.Plugin;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public class Overlay : MonoBehaviour
     {

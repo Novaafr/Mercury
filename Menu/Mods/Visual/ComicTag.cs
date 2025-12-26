@@ -1,5 +1,5 @@
-﻿﻿using Colossal;
-using Colossal.Menu;
+﻿﻿using Mercury;
+using Mercury.Menu;
 using GorillaGameModes;
 using HarmonyLib;
 using Photon.Pun;
@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GameMode), "ReportTag")]
     internal class ComicTag

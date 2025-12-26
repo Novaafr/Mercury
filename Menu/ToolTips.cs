@@ -1,5 +1,5 @@
 ﻿using BepInEx;
-using Colossal.Patches;
+using Mercury.Patches;
 using HarmonyLib;
 using Photon.Pun;
 using System;
@@ -12,15 +12,21 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using static GorillaTagCompetitiveServerApi;
-using Colossal.Mods;
+using Mercury.Mods;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     internal class ToolTips : MonoBehaviour
     {
-        public static string[] MainMenutips = new string[]
-        {
-            $"<color={Menu.MenuColour}>Submenu</color>\nMovement mods",
+        // making it get { new string[] } makes it actually update colours
+
+        public static string[] MainMenutips
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Submenu</color>\nMovement mods",
             $"<color={Menu.MenuColour}>Submenu</color>\nVisual mods",
             $"<color={Menu.MenuColour}>Submenu</color>\nPlayer mods",
             $"<color={Menu.MenuColour}>Submenu</color>\nComputer mods",
@@ -29,15 +35,21 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Submenu</color>\nMusic Player",
             $"<color={Menu.MenuColour}>Submenu</color>\nSettings",
             $"<color={Menu.MenuColour}>Submenu</color>\nInformation",
-            $"<color={Menu.MenuColour}>Submenu</color>\nSoon",
+            $"<color={Menu.MenuColour}>Submenu</color>\nMacros",
             $"<color={Menu.MenuColour}>Passive</color>\nToggles noti",
             $"<color={Menu.MenuColour}>Passive</color>\nToggles overlay",
             $"<color={Menu.MenuColour}>Passive</color>\nToggles tooltips",
-        };
+                };
+            }
+        }
 
-        public static string[] Movementtips = new string[]
+        public static string[] Movementtips
         {
-            $"<color={Menu.MenuColour}>Custom</color>\nFly Like IronMan",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Custom</color>\nFly Like IronMan",
             $"<color={Menu.MenuColour}>L Secondary & Custom</color>\nFly in your right hands direction",
             $"<color={Menu.MenuColour}>Custom</color>\nPoint palms towards walls to stick",
             $"<color={Menu.MenuColour}>Submenu</color>\nDisplays Speed Options",
@@ -48,10 +60,16 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nConstantly spins your ss rig",
             $"<color={Menu.MenuColour}>W & A & S & D</color>\nFly when not in vr",
             $"<color={Menu.MenuColour}>L Joystick & R Joystick</color>\nFly with your joystick movements",
-        };
-        public static string[] Movement2tips = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nSpeed up time",
+                };
+            }
+        }
+        public static string[] Movement2tips
+        { 
+            get
+            {
+                return new string[]
+                {
+                $"<color={Menu.MenuColour}>Passive</color>\nSpeed up time",
             $"<color={Menu.MenuColour}>Custom</color>\nScale gravity",
             $"<color={Menu.MenuColour}>L Or R Grip</color>\nClimb Gorillas",
             $"<color={Menu.MenuColour}>Passive</color>\nFly away from tagged players",
@@ -64,24 +82,42 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Custom</color>\nThrow yourself by swinging your arms",
             $"<color={Menu.MenuColour}>Submenu</color>\nStrafe Options",
             $"<color={Menu.MenuColour}>Custom</color>\nLets you pull better",
-        };
-        public static string[] Speedtips = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nAdds a speed boost",
+                };
+            }
+        }
+        public static string[] Speedtips
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nAdds a speed boost",
             $"<color={Menu.MenuColour}>Custom</color>\nAdds a speed boost",
             $"<color={Menu.MenuColour}>Custom</color>\nAdds a speed boost when near infected",
             $"<color={Menu.MenuColour}>Passive</color>\nAdds a speed boost when near infected",
-        };
-        public static string[] Strafetips = new string[]
-        {
-            $"<color={Menu.MenuColour}>Custom</color>\nDifferent strafe modes",
+                };
+            }
+        }
+        public static string[] Strafetips
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Custom</color>\nDifferent strafe modes",
             $"<color={Menu.MenuColour}>Setting</color>\nStrafe speed amount",
             $"<color={Menu.MenuColour}>Setting</color>\nStrafe jump amount",
-        };
+                };
+            }
+        }
 
-        public static string[] Visualtips = new string[]
+        public static string[] Visualtips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nHighlight monkies and ghosts through walls",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nHighlight monkies and ghosts through walls",
             $"<color={Menu.MenuColour}>Passive</color>\nA filled box you can see through walls",
             $"<color={Menu.MenuColour}>Passive</color>\nA box you can see through walls",
             $"<color={Menu.MenuColour}>Passive</color>\nShows the skeleton of monkies through walls",
@@ -91,24 +127,42 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nMakes everything max brightness",
             $"<color={Menu.MenuColour}>Passive</color>\nChange the sky colour",
             $"<color={Menu.MenuColour}>Passive</color>\nMake everyone look at you",
-        };
-        public static string[] Visual2tips = new string[]
+                };
+            }
+        }
+        public static string[] Visual2tips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nPlays splashing effects",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nPlays splashing effects",
             $"<color={Menu.MenuColour}>Passive</color>\nRemoves all leaves in forest",
             $"<color={Menu.MenuColour}>Passive</color>\nDisplays a cool comic visual when tagging someone",
             $"<color={Menu.MenuColour}>Passive</color>\nHides all traces on the select view",
             $"<color={Menu.MenuColour}>Passive</color>\nAllows you to see other CCM users",
             $"<color={Menu.MenuColour}>Passive</color>\nShows the custom boards",
-        };
-        public static string[] Tracers = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nPosition of tracers",
+                };
+            }
+        }
+        public static string[] Tracers
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nPosition of tracers",
             $"<color={Menu.MenuColour}>Passive</color>\nSize of tracers",
-        };
-        public static string[] Nametags = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nTurn nametags on and off",
+                };
+            }
+        }
+        public static string[] Nametags
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nTurn nametags on and off",
             $"<color={Menu.MenuColour}>Passive</color>\nShow account creation date of other players",
             $"<color={Menu.MenuColour}>Passive</color>\nShow other players colour code",
             $"<color={Menu.MenuColour}>Passive</color>\nShow distance to other players",
@@ -119,11 +173,17 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Setting</color>\nThe height the nametag should be",
             $"<color={Menu.MenuColour}>Setting</color>\nThe size the nametag should be",
             $"<color={Menu.MenuColour}>Setting</color>\nThe colour the nametag should be",
-        };
+                };
+            }
+        }
 
-        public static string[] Playertips = new string[]
+        public static string[] Playertips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nRemoves hand animations",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nRemoves hand animations",
             $"<color={Menu.MenuColour}>Custom</color>\nTag with a gun",
             $"<color={Menu.MenuColour}>L Trigger & R Trigger</color>\nPoints and looks at monkies",
             $"<color={Menu.MenuColour}>Custom</color>\nLocks rig in place",
@@ -135,10 +195,16 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nRemoves wind guards",
             $"<color={Menu.MenuColour}>Passive</color>\nMakes guardian unable to pick you up",
             $"<color={Menu.MenuColour}>Passive</color>\nChanges your name to names from a file",
-        };
-        public static string[] Playertips2 = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nDesyncs your head and body rotations",
+                };
+            }
+        }
+        public static string[] Playertips2
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nDesyncs your head and body rotations",
             $"<color={Menu.MenuColour}>Passive</color>\nMakes your colour rainbow for everyone",
             $"<color={Menu.MenuColour}>Passive</color>\nPlays bad apple through your mic & sets your colour to the video",
             $"<color={Menu.MenuColour}>Passive</color>\nAutomatically aims at players in paintbrawl",
@@ -148,28 +214,46 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nGives you a braclet that changes colours for everyone",
             $"<color={Menu.MenuColour}>Passive</color>\nKills yourself and turns you into a ghost",
             $"<color={Menu.MenuColour}>Passive</color>\nRevives you from being a ghost",
-        };
+                };
+            }
+        }
 
-        public static string[] Exploittips = new string[]
+        public static string[] Exploittips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nBreaks nametag mods",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nBreaks nametag mods",
             $"<color={Menu.MenuColour}>R Trigger (Other Player: Fist)</color>\nGives selected players platforms",
             $"<color={Menu.MenuColour}>SubMenu</color>\nDifferent cosmetic options",
             $"<color={Menu.MenuColour}>Passive</color>\nFreezes everyone (takes a while)",
             $"<color={Menu.MenuColour}>Custom</color>\nA gun that launches giant snowballs",
             $"<color={Menu.MenuColour}>Passive</color>\nGives quest badge 99999",
-        };
-        public static string[] Exploit2tips = new string[]
+                };
+            }
+        }
+        public static string[] Exploit2tips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nMakes you stop throwing snowballs",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nMakes you stop throwing snowballs",
             $"<color={Menu.MenuColour}>Custom</color>\nSpams the elf launcher in try on",
             $"<color={Menu.MenuColour}>Custom</color>\nLets you splash water out your hand",
             $"<color={Menu.MenuColour}>Passive</color>\nSpazzes out the ropes",
-        };
+                };
+            }
+        }
 
-        public static string[] Computertips = new string[]
+        public static string[] Computertips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nDisconnects from room",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nDisconnects from room",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code GTC",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code TTT",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code YTTV",
@@ -177,31 +261,51 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code MOD",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins custom code",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins a CCMV3 only code",
-        };
+                };
+            }
+        }
 
-        public static string[] Safetytips = new string[]
+        public static string[] Safetytips
         {
-            $"<color={Menu.MenuColour}>All Face Buttons</color>\nDisables Everything",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>All Face Buttons</color>\nDisables Everything",
             $"<color={Menu.MenuColour}>Passive</color>\nAnti Report",
             $"<color={Menu.MenuColour}>Passive</color>\nRandomly changes name",
             $"<color={Menu.MenuColour}>Passive</color>\nDisables Igloo to pass a PC check",
             $"<color={Menu.MenuColour}>Passive</color>\nFakes having your quest menu open",
             $"<color={Menu.MenuColour}>Passive</color>\nFakes having your report menu open",
-        };
+                };
+            }
+        }
 
-        public static string[] Settingstips = new string[]
+
+        public static string[] Settingstips 
         {
-            $"<color={Menu.MenuColour}>Submenu</color>\nMenu Colour options",
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Submenu</color>\nMenu Colour options",
             $"<color={Menu.MenuColour}>Passive</color>\nMenu position",
             $"<color={Menu.MenuColour}>Passive</color>\nConfig to load",
             $"<color={Menu.MenuColour}>Passive</color>\nLoad selected config",
             $"<color={Menu.MenuColour}>Passive</color>\nSave menu settings",
             $"<color={Menu.MenuColour}>Passive</color>\nLogs all player info in every room into a database",
             $"<color={Menu.MenuColour}>Passive</color>\nSets menu control scheme to inverted",
-        };
-        public static string[] SettingsColourtips = new string[]
+                };
+            }
+        }
+
+        public static string[] SettingsColourtips
         {
-            $"<color={Menu.MenuColour}>Passive</color>\nGUI colour",
+            get
+            {
+                return new string[]
+                {
+                $"<color={Menu.MenuColour}>Passive</color>\nGUI colour",
             $"<color={Menu.MenuColour}>Passive</color>\nExtra rig colour",
             $"<color={Menu.MenuColour}>Passive</color>\nTagging beam colour",
             $"<color={Menu.MenuColour}>Passive</color>\nESP colour",
@@ -210,17 +314,25 @@ namespace Colossal.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nHitboxes colour",
             $"<color={Menu.MenuColour}>Passive</color>\nPlatforms colour",
             $"<color={Menu.MenuColour}>Passive</color>\nTarget Indicator colour",
-        };
+                };
+            }
+        }
 
-        public static string[] Musictips = new string[]
-        {
-            $"<color={Menu.MenuColour}>Passive</color>\nSelected music",
-            $"<color={Menu.MenuColour}>Passive</color>\nPlays the selected music",
-            $"<color={Menu.MenuColour}>Passive</color>\nStops selected music",
-            $"<color={Menu.MenuColour}>Passive</color>\nLoops selected music",
-            $"<color={Menu.MenuColour}>Passive</color>\nLets everyone else hear it",
-            $"<color={Menu.MenuColour}>Passive</color>\nVolume of the music",
-        };
+        public static string[] Musictips
+        { 
+            get
+            {
+                return new string[]
+                {
+                    $"<color={Menu.MenuColour}>Passive</color>\nSelected music",
+                    $"<color={Menu.MenuColour}>Passive</color>\nPlays the selected music",
+                    $"<color={Menu.MenuColour}>Passive</color>\nStops selected music",
+                    $"<color={Menu.MenuColour}>Passive</color>\nLoops selected music",
+                    $"<color={Menu.MenuColour}>Passive</color>\nLets everyone else hear it",
+                    $"<color={Menu.MenuColour}>Passive</color>\nVolume of the music",
+                };
+            }
+        }
 
         public static string[] Info
         {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Colossal.Menu;
+using Mercury.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class DisableGhostDoors : MonoBehaviour
     {

@@ -1,8 +1,8 @@
-﻿﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿﻿using Mercury.Menu;
+using Mercury.Patches;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class WallWalk : MonoBehaviour
     {

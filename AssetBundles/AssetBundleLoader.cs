@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Colossal.Patches;
+using Mercury.Patches;
 using PlayFab.MultiplayerModels;
 using TMPro;
 using UnityEngine;
@@ -13,7 +13,7 @@ using UnityEngine.UI;
 using Viveport;
 using static Photon.Voice.OpusCodec;
 
-namespace Colossal
+namespace Mercury
 {
     internal class AssetBundleLoader : MonoBehaviour
     {
@@ -63,7 +63,7 @@ namespace Colossal
         {
             CustomConsole.Debug("Asset Bundle Loader Start");
 
-            bundle = LoadAssetBundle("ColossalV3.AssetBundles.ccmv2assets");
+            bundle = LoadAssetBundle("Mercury.AssetBundles.ccmv2assets");
             if (bundle == null)
             {
                 CustomConsole.Error("bundle is null - check resource path and bundle contents!");

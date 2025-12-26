@@ -1,6 +1,6 @@
 using BepInEx;
-using Colossal;
-using Colossal.Patches;
+using Mercury;
+using Mercury.Patches;
 using ExitGames.Client.Photon;
 using GorillaLocomotion;
 using System;
@@ -19,7 +19,7 @@ using WebSocketSharp;
 using static BuilderMaterialOptions;
 using static UnityEngine.Rendering.DebugUI;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     /*public class PanelElement
     {

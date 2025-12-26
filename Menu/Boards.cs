@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Colossal;
+using Mercury;
 
 using GorillaNetworking;
 using Photon.Pun;
@@ -9,11 +9,11 @@ using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
 using TMPro;
 using Valve.VR;
-using Colossal.Patches;
-using Colossal.Menu;
+using Mercury.Patches;
+using Mercury.Menu;
 using System.Diagnostics;
 
-namespace Colossal
+namespace Mercury
 {
     internal class Boards : MonoBehaviour
     {
@@ -112,9 +112,9 @@ namespace Colossal
             {
                 if (PluginConfig.ShowBoards)
                 {
-                    cocktext.GetComponent<TextMeshPro>().text = $"Thank you for using CCMV3, the successor to the first cheat menu!\n\nContributors:\nNova: Menu Maker/Reviver\nColossusYTTV: Menu Maker/Mod Creator\nLars/LHAX: Menu Base\nStarry: Dev/Tester\nMios: Tester/Manager/Pain In The Ass\nWM/Will: No Fingers/Full Bright/HzHands\nVentern: Anti Screen Share\n\nMenu Version: {OnGameInit.localversion}, Server Version: {OnGameInit.serverversion}\nCCMV3 Users Online: {BepInPatcher.playercount}".ToUpper(); // doing this because the font is so fucked
-                    if(cock.GetComponent<TextMeshPro>().text != "COLOSSAL CHEAT MENU V3")
-                        cock.GetComponent<TextMeshPro>().text = "COLOSSAL CHEAT MENU V3";
+                    cocktext.GetComponent<TextMeshPro>().text = $"Thank you for using MCMV2, the menu will be getting updated frequently!\n\nContributors:\nNova: Menu Maker/Mod Creator\nColossusYTTV: Menu Maker/Menu Base\nLars/LHAX: Menu Base\nStarry: Dev/Tester\nMios: Tester/Manager/Pain In The Ass\nWM/Will: No Fingers/Full Bright/HzHands\nVentern: Anti Screen Share\n\nMenu Version: {OnGameInit.localversion}, Server Version: {OnGameInit.serverversion}\nCCMV3 Users Online: {BepInPatcher.playercount}".ToUpper(); // doing this because the font is so fucked
+                    if(cock.GetComponent<TextMeshPro>().text != "MERCURY CHEAT MENU V2")
+                        cock.GetComponent<TextMeshPro>().text = "MERCURY CHEAT MENU V2";
 
                     //if (Menu.Menu.agreement)
                     //{

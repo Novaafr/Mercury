@@ -1,9 +1,9 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NoLeaves : MonoBehaviour
     {

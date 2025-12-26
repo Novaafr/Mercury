@@ -1,9 +1,9 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class HzHands : MonoBehaviour
     {

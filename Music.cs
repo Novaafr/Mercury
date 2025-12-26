@@ -1,6 +1,6 @@
 ﻿
-using Colossal.Menu;
-using Colossal.Notifacation;
+using Mercury.Menu;
+using Mercury.Notifacation;
 using CSCore;
 using Photon.Pun;
 using System;
@@ -15,7 +15,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Networking;
 
-namespace Colossal
+namespace Mercury
 {
     public class Music
     {

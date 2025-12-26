@@ -1,6 +1,6 @@
 
-﻿using Colossal.Menu;
-using Colossal.Patches;
+﻿using Mercury.Menu;
+using Mercury.Patches;
 using GorillaNetworking;
 using Photon.Pun;
 using System;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class GhostMonkey : MonoBehaviour
     {

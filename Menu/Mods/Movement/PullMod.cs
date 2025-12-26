@@ -1,6 +1,6 @@
 ﻿
-using Colossal.Menu;
-using Colossal.Patches;
+using Mercury.Menu;
+using Mercury.Patches;
 using GorillaLocomotion;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class PullMod : MonoBehaviour
     {
@@ -30,7 +30,11 @@ namespace Colossal.Mods
                     Vector3 plrTrans = GTPlayer.Instance.transform.position;
                     if (GTPlayer.Instance.IsHandTouching(false) || GTPlayer.Instance.IsHandTouching(true))
                     {
-                        GTPlayer.Instance.transform.forward += new Vector3(plrTrans.x * 10f, 0, plrTrans.z * 10f);
+                        //GTPlayer.Instance.transform.forward += new Vector3(plrTrans.x * 10f, 0, plrTrans.z * 10f);
+                        var local = plrTrans;
+                        local.x += local.z * 2 / 0.5f;
+                        // trust me this will work
+                        GTPlayer.Instance.transform.position += GTPlayer.Instance.transform.forward + local;
                     }
                     return;
                 }

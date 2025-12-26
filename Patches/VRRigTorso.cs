@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Colossal.Menu;
-using Colossal.Mods;
+using Mercury.Menu;
+using Mercury.Mods;
 using HarmonyLib;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(VRRig), "PostTick")]
     class VRRRigTorsoPatch

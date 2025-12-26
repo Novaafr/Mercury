@@ -1,20 +1,20 @@
-﻿using Colossal.Mods;
-using Colossal;
+﻿using Mercury.Mods;
+using Mercury;
 using HarmonyLib;
 using Photon.Pun;
 using System.Net;
 using Photon.Realtime;
 using UnityEngine;
-using Colossal.Menu;
+using Mercury.Menu;
 using System.Collections.Generic;
-using static Colossal.Patches.BepInPatcher;
+using static Mercury.Patches.BepInPatcher;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     internal class JoinRoom : MonoBehaviourPunCallbacks
     {

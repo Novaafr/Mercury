@@ -1,12 +1,12 @@
-﻿﻿/*using Colossal;
-using Colossal.Patches;
+﻿﻿/*using Mercury;
+using Mercury.Patches;
 using System;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     internal class ButtonCreator : MonoBehaviour
     {

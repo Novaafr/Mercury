@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
-using Colossal.Menu;
+using Mercury.Menu;
 using Photon.Pun;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NameChanger : MonoBehaviour
     {

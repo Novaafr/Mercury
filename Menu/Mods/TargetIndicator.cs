@@ -1,10 +1,10 @@
 ﻿﻿using System;
 using System.Collections.Generic;
-using Colossal.Menu;
-using Colossal;
+using Mercury.Menu;
+using Mercury;
 using UnityEngine;
 
-namespace ColossalV2.Mods
+namespace MercuryV2.Mods
 {
     internal class TargetIndicator
     {

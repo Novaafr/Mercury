@@ -1,8 +1,8 @@
 ﻿using BepInEx;
-using Colossal.Menu;
+using Mercury.Menu;
 using UnityEngine;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Timer : MonoBehaviour
     {

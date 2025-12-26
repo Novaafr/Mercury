@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Colossal.Console
+namespace Mercury.Console
 {
     public class CoroutineManager : MonoBehaviour // Thanks to ShibaGT for helping with the coroutines
     {

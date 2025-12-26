@@ -1,13 +1,13 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using UnityEngine;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using Photon.Pun;
-using ColossalV2.Mods;
-using Colossal.Patches;
+using MercuryV2.Mods;
+using Mercury.Patches;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Aimbot : MonoBehaviour
     {
@@ -26,7 +26,7 @@ namespace Colossal.Mods
     }
 }
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(Slingshot), "GetLaunchVelocity", MethodType.Normal)]
     public class AimbotPatch

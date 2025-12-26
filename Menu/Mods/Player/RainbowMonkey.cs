@@ -3,11 +3,11 @@ using Photon.Pun;
 using System;
 using GorillaLocomotion;
 using GorillaTagScripts;
-using Colossal.Menu;
-using Colossal.Patches;
+using Mercury.Menu;
+using Mercury.Patches;
 using GorillaNetworking;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class RainbowMonkey : MonoBehaviour
     {

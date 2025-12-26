@@ -1,8 +1,8 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using HarmonyLib;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(VRRig), "PackCompetitiveData")]
     public class FPSSpoof

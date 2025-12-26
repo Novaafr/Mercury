@@ -1,14 +1,14 @@
-﻿using Colossal.Mods;
-using Colossal;
+﻿using Mercury.Mods;
+using Mercury;
 using HarmonyLib;
 using Photon.Pun;
 using System.Net;
 using Photon.Realtime;
 using UnityEngine;
-using Colossal.Menu;
+using Mercury.Menu;
 using System.Collections.Generic;
 
-namespace Colossal.Notifacation
+namespace Mercury.Notifacation
 {
     internal class LeaveNotifacation : MonoBehaviourPunCallbacks {
         private static List<Player> notifiedPlayers = new List<Player>();

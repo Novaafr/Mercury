@@ -1,4 +1,4 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Splines.Interpolators;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class HollowBoxEsp : MonoBehaviour
     {

@@ -1,10 +1,10 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using HarmonyLib;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NoWind
     {

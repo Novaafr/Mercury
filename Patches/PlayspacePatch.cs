@@ -1,7 +1,7 @@
 ﻿using GorillaLocomotion;
 using HarmonyLib;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(Playspace), "Update")]
     public class PlayspacePatch

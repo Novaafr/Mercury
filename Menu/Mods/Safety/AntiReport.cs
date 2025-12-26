@@ -1,4 +1,4 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using GorillaNetworking;
 using Photon.Pun;
 using System;
@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class AntiReport : MonoBehaviour
     {

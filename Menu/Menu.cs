@@ -1,5 +1,6 @@
-﻿using Colossal.Notifacation;
-using Colossal.Patches;
+﻿using Mercury.Notifacation;
+using Mercury.Patches;
+using g3;
 using GorillaNetworking;
 using Photon.Pun;
 using PlayFab;
@@ -14,7 +15,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using JoinType = GorillaNetworking.JoinType;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public class MenuOption
     {
@@ -47,6 +48,7 @@ namespace Colossal.Menu
 
         public static string MenuColour = "magenta";
         public static float menurgb = 0;
+        public static bool RGBMenu = false;
 
 
         //private static GameObject pointerObj;
@@ -786,7 +788,7 @@ namespace Colossal.Menu
 
 
                     // Draw menu text for legacy UI
-                    string ToDraw = Plugin.sussy ? $"<color={MenuColour}>SUSSY : {MenuState}</color>\n" : $"<color={MenuColour}>COLOSSAL : {MenuState}</color>\n";
+                    string ToDraw = Plugin.sussy ? $"<color={MenuColour}>SUSSY : {MenuState}</color>\n" : $"<color={MenuColour}>MERCURY : {MenuState}</color>\n";
                     int i = 0;
                     if (CurrentViewingMenu == null)
                     {
@@ -965,7 +967,31 @@ namespace Colossal.Menu
 				ColourSettings[6].stringsliderind = PluginConfig.HitBoxesColour;
 				ColourSettings[7].stringsliderind = PluginConfig.PlatformsColour;
 				ColourSettings[8].stringsliderind = PluginConfig.TargetIndicatorColour;
-			}
+
+                if (PluginConfig.MenuColour != 6)
+                {
+                    if (menurgb != 0)
+                        menurgb = 0;
+                }
+                else
+                {
+                    menurgb += Time.deltaTime;
+                    MenuColour = "magenta";
+                    if (menurgb >= 0.2f)
+                        MenuColour = "red";
+                    if (menurgb >= 0.3f)
+                        MenuColour = "green";
+                    if (menurgb >= 0.4f)
+                        MenuColour = "blue";
+                    if (menurgb >= 0.5f)
+                        MenuColour = "cyan";
+                    if (menurgb >= 0.6f)
+                        MenuColour = "yellow";
+
+                    if (menurgb >= 0.6f)
+                        menurgb = 0;
+                }
+            }
 			catch (Exception ex)
 			{
 				CustomConsole.Error(ex.ToString());
@@ -1430,30 +1456,39 @@ namespace Colossal.Menu
                     }
 
 
-                    if (PluginConfig.MenuColour != 6)
-                    {
-                        if (menurgb != 0)
-                            menurgb = 0;
-                    }
                     switch (PluginConfig.MenuColour)
                     {
                         case 0:
                             MenuColour = "magenta";
+                            RGBMenu = false;
                             break;
                         case 1:
                             MenuColour = "red";
+                            RGBMenu = false;
                             break;
                         case 2:
                             MenuColour = "yellow";
+                            RGBMenu = false;
                             break;
                         case 3:
                             MenuColour = "green";
+                            RGBMenu = false;
                             break;
                         case 4:
                             MenuColour = "blue";
+                            RGBMenu = false;
                             break;
                         case 5:
                             MenuColour = "black";
+                            RGBMenu = false;
+                            break;
+                        case 6:
+                            RGBMenu = true;
+                            break;
+                        case 7:
+                            RGBMenu = false;
+                            if (string.IsNullOrEmpty(Configs.path)) return;
+                            MenuColour = System.IO.File.ReadAllText(Configs.path);
                             break;
                     }
                     switch (PluginConfig.MenuPosition)

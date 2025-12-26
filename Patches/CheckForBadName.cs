@@ -8,7 +8,7 @@ using HarmonyLib;
 using PlayFab.CloudScriptModels;
 using PlayFab;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     //[HarmonyPatch(typeof(GorillaServer), "CheckForBadName")]
     public static class CheckForBadName

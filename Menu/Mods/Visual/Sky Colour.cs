@@ -1,8 +1,8 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class SkyColour : MonoBehaviour
     {

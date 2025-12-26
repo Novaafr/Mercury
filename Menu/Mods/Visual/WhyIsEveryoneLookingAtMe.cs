@@ -1,4 +1,4 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods {
+namespace Mercury.Mods {
     public class WhyIsEveryoneLookingAtMe : MonoBehaviour {
         public void Update() {
             if (PluginConfig.whyiseveryonelookingatme) {

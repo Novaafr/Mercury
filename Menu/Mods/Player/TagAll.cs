@@ -1,6 +1,6 @@
-﻿﻿using Colossal.Menu;
-using Colossal.Patches;
-using ColossalV2.Mods;
+﻿﻿using Mercury.Menu;
+using Mercury.Patches;
+using MercuryV2.Mods;
 using GorillaGameModes;
 using Photon.Pun;
 using Photon.Realtime;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class TagAll : MonoBehaviour
     {

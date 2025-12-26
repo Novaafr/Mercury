@@ -10,7 +10,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-namespace ColossalV2.Mods
+namespace MercuryV2.Mods
 {
     internal class HyperSerialization
     {

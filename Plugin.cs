@@ -1,9 +1,9 @@
 ﻿using BepInEx;
-using Colossal.Console;
-using Colossal.Menu;
-using Colossal.Mods;
-using Colossal.Notifacation;
-using Colossal.Patches;
+using Mercury.Console;
+using Mercury.Menu;
+using Mercury.Mods;
+using Mercury.Notifacation;
+using Mercury.Patches;
 using GorillaLocomotion;
 using GorillaNetworking;
 using HarmonyLib;
@@ -24,7 +24,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
-namespace Colossal
+namespace Mercury
 {
     public class Plugin : MonoBehaviour
     {
@@ -46,7 +46,7 @@ namespace Colossal
         static AssetBundle assetBundle;
         private static void LoadAssetBundle()
         {
-            Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"ColossalV3.AssetBundles.utopium");
+            Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"Mercury.AssetBundles.utopium");
             if (stream != null)
                 assetBundle = AssetBundle.LoadFromStream(stream);
             else
@@ -62,12 +62,21 @@ namespace Colossal
             return gameObject;
         }
 
+
+        public void LoadConfigOnStart()
+        {
+            if (Directory.Exists(Configs.configPath))
+            {
+                Configs.LoadConfig($"{Configs.configPath}\\{Menu.Menu.Settings[2].StringArray[Menu.Menu.Settings[2].stringsliderind]}.json");
+            }
+        }
+
         public void Start()
         {
             LoadAssetBundle();
             GameObject go = LoadAsset<GameObject>("utopium");
             Text t = go.GetComponent<Text>();
-            //Debug.Log("[COLOSSAL] LOADED " + t.name);
+            Debug.Log("[Mercury] LOADED " + t.name);
             BepInPatcher.gtagfont = t.font;
 
             test = this;
@@ -82,7 +91,7 @@ namespace Colossal
 
             CustomConsole.Debug("Spawned Holder");
             holder = new GameObject();
-            holder.name = "HolderCCMV3";
+            holder.name = "HolderMCMV2";
             holder.AddComponent<EventNotifacation>();
             holder.AddComponent<JoinNotifacation>();
             holder.AddComponent<LeaveNotifacation>();
@@ -91,8 +100,8 @@ namespace Colossal
             holder.AddComponent<Configs>();
             //holder.AddComponent<AssetBundleLoader>();
             holder.AddComponent<GUICreator>();
-            holder.AddComponent<Colossal.Menu.CustomBinding>();
-            holder.AddComponent<Colossal.Console.CoroutineManager>();
+            holder.AddComponent<Mercury.Menu.CustomBinding>();
+            holder.AddComponent<Mercury.Console.CoroutineManager>();
             Music.MusicAudio = holder.AddComponent<AudioSource>();
 
 
@@ -326,7 +335,7 @@ namespace Colossal
                 if (Music.MusicAudio.volume != PluginConfig.volume)
                     Music.MusicAudio.volume = Music.volume;
 
-                string bind = Colossal.Menu.CustomBinding.GetBinds("playmusic");
+                string bind = Mercury.Menu.CustomBinding.GetBinds("playmusic");
                 if (!string.IsNullOrEmpty(bind) || bind != "UNBOUND")
                 {
                     if (ControlsV2.GetControl(bind))

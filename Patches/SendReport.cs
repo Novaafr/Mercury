@@ -1,4 +1,4 @@
-﻿using Colossal;
+﻿using Mercury;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(GorillaNot), "SendReport")]
     internal class SendReport

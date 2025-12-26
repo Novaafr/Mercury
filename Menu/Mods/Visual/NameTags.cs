@@ -6,11 +6,11 @@ using UnityEngine;
 using Photon.Pun;
 using TMPro;
 using GorillaNetworking;
-using Colossal.Menu;
+using Mercury.Menu;
 using HarmonyLib;
 using static GorillaTagCompetitiveServerApi;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NameTags : MonoBehaviour
     {
@@ -37,7 +37,9 @@ namespace Colossal.Mods
         {
             if (PluginConfig.NameTags)
             {
-                switch (PluginConfig.nametagheight)
+                TheShittyNameTags();
+
+                /*switch (PluginConfig.nametagheight)
                 {
                     case 0: // Chest
                         height = new Vector3(25.30f, 25.00f, 0f);
@@ -141,11 +143,11 @@ namespace Colossal.Mods
                             UpdatePlatformTag(vrrig, nameTagText);
                         }
                     }
-                }
+                }*/
             }
             else
             {
-                if (PhotonNetwork.InRoom)
+                /*if (PhotonNetwork.InRoom)
                 {
                     foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
                     {
@@ -168,7 +170,8 @@ namespace Colossal.Mods
                 {
                     RankedInfo.ClearData();
                 }
-
+                */
+                rigTag.Clear();
                 requestedIds.Clear();
                 Destroy(this);
             }
@@ -416,6 +419,40 @@ namespace Colossal.Mods
             }
             clonedTextComponents.Clear();
             requestedIds.Clear();
+        }
+
+
+
+
+        public static Dictionary<VRRig, GameObject> rigTag = new Dictionary<VRRig, GameObject>();
+        public static void TheShittyNameTags()
+        {
+            if (!PhotonNetwork.InRoom)
+            {
+                rigTag.Clear();
+                return;
+            }
+
+            if (PhotonNetwork.InRoom)
+            {
+                foreach (VRRig rig in GorillaParent.instance.vrrigs)
+                {
+                    if (rig != null && rig != VRRig.LocalRig)
+                    {
+                        if (rigTag.TryGetValue(rig, out GameObject nametagholder))
+                        {
+                            nametagholder.transform.position = rig.headMesh.transform.position + new Vector3(0, 0.7f, 0);
+                            TextMeshPro nametag = nametagholder.AddComponent<TextMeshPro>();
+                            nametag.transform.position = rig.headMesh.transform.position + new Vector3(0, 0.7f, 0);
+                            nametag.alignment = TextAlignmentOptions.Center;
+                            nametag.font = GorillaTagger.Instance.offlineVRRig.playerText1.font;
+                            nametag.fontSize = 1f;
+                            nametag.richText = true;
+                            nametag.text = $"{rig.OwningNetPlayer.NickName}\nUSERID: {rig.OwningNetPlayer.UserId}\nFPS: {Traverse.Create(rig).Field("fps").GetValue<int>()}";
+                        }
+                    }
+                }
+            }
         }
     }
 }

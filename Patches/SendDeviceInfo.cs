@@ -3,7 +3,7 @@ using HarmonyLib;
 using PlayFab.Internal;
 using UnityEngine;
 
-namespace Colossal.Patches
+namespace Mercury.Patches
 {
     [HarmonyPatch(typeof(PlayFabDeviceUtil), "SendDeviceInfoToPlayFab")]
     public class PlayFabInfoPatch

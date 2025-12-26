@@ -1,6 +1,6 @@
-﻿using Colossal.Menu;
-using Colossal.Mods;
-using Colossal;
+﻿using Mercury.Menu;
+using Mercury.Mods;
+using Mercury;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Photon.Pun;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NearPulse : MonoBehaviour
     {

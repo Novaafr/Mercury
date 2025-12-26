@@ -1,6 +1,6 @@
 ﻿
-using Colossal.Menu;
-using Colossal.Patches;
+using Mercury.Menu;
+using Mercury.Patches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 using Valve.VR;
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class TFly : MonoBehaviour
     {

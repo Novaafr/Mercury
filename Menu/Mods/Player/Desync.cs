@@ -1,6 +1,6 @@
 ﻿
-using Colossal.Menu;
-using Colossal.Patches;
+using Mercury.Menu;
+using Mercury.Patches;
 using GorillaExtensions;
 using Photon.Pun;
 using System;
@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class Desync : MonoBehaviour
     {

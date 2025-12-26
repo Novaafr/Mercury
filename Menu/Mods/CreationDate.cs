@@ -1,11 +1,11 @@
-﻿using Colossal;
+﻿using Mercury;
 using PlayFab.ClientModels;
 using PlayFab;
 using System;
 using UnityEngine;
 using System.Threading.Tasks;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public static class CreationDate
     {

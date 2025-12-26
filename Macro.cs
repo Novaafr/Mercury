@@ -3,16 +3,18 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
-using Colossal.Menu;
-using Colossal.Patches;
+using Mercury.Menu;
+using Mercury.Patches;
 using System;
 using System.Diagnostics;
-using ColossalV2.Mods;
+using MercuryV2.Mods;
 using UnityEngine.XR;
 using UnityEngine.SpatialTracking;
 using OVR.OpenVR;
-using Colossal.Mods;
+using Mercury.Mods;
 using Photon.Pun;
+using UnityEngine.InputSystem;
+using Mercury;
 
 public class MacroRecorder : MonoBehaviour
 {
@@ -650,8 +652,9 @@ public class MacroRecorder : MonoBehaviour
             if (OnMacroListChanged != null)
                 OnMacroListChanged.Invoke();
         }
-        catch (System.Exception)
+        catch (System.Exception e)
         {
+            UnityEngine.Debug.LogError("[COLOSSAL] MACRO : " + e);
         }
     }
 
@@ -765,8 +768,9 @@ public class MacroRecorder : MonoBehaviour
                     OnMacroListChanged.Invoke();
             }
         }
-        catch (System.Exception)
+        catch (System.Exception e)
         {
+            UnityEngine.Debug.LogError("[COLOSSAL] MACRO : " + e);
         }
     }
 }

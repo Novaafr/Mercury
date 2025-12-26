@@ -1,7 +1,7 @@
-﻿using Colossal.Menu;
+﻿using Mercury.Menu;
 using UnityEngine;
 
-namespace Colossal
+namespace Mercury
 {
     public static class MenuLoader
     {
@@ -96,7 +96,7 @@ namespace Colossal
             Menu.Menu.Tracers[2] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.NameTags = new MenuOption[12];
-            Menu.Menu.NameTags[0] = new MenuOption { DisplayName = "NameTags [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
+            Menu.Menu.NameTags[0] = new MenuOption { DisplayName = "NameTags", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
             Menu.Menu.NameTags[1] = new MenuOption { DisplayName = "Show Creation Date", _type = "togglethingy", AssociatedBool = PluginConfig.ShowCreationDate };
             Menu.Menu.NameTags[2] = new MenuOption { DisplayName = "Show Colour Code", _type = "togglethingy", AssociatedBool = PluginConfig.ShowColourCode };
             Menu.Menu.NameTags[3] = new MenuOption { DisplayName = "Show Distance", _type = "togglethingy", AssociatedBool = PluginConfig.ShowDistance };
@@ -144,7 +144,7 @@ namespace Colossal
             Menu.Menu.Exploits[1] = new MenuOption { DisplayName = "SS Platforms", _type = "togglethingy", AssociatedBool = PluginConfig.SSPlatforms, extra = "[M] [BASEMENT]" };
             Menu.Menu.Exploits[2] = new MenuOption { DisplayName = "Cosmetics Spoofer", _type = "submenuthingy", AssociatedString = "Cosmetics Spoofer" };
             Menu.Menu.Exploits[3] = new MenuOption { DisplayName = "Freeze All", _type = "togglethingy", AssociatedBool = PluginConfig.freezeall };
-            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
+            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
             Menu.Menu.Exploits[5] = new MenuOption { DisplayName = "Max Quest Score", _type = "buttonthingy", AssociatedString = "Max Quest Score" };
             Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
             Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
@@ -221,7 +221,7 @@ namespace Colossal
             Menu.Menu.MusicPlayer[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.ColourSettings = new MenuOption[10];
-            Menu.Menu.ColourSettings[0] = new MenuOption { DisplayName = "MenuColour", _type = "sliderthingy", StringArray = new string[] { "Purple", "Red", "Yellow", "Green", "Blue", "Black" } };
+            Menu.Menu.ColourSettings[0] = new MenuOption { DisplayName = "MenuColour", _type = "sliderthingy", StringArray = new string[] { "Purple", "Red", "Yellow", "Green", "Blue", "Black", "RGB", "Custom" } };
             Menu.Menu.ColourSettings[1] = new MenuOption { DisplayName = "Ghost Colour", _type = "sliderthingy", StringArray = new string[] { "Purple", "Red", "Yellow", "Green", "Blue", "Black" } };
             Menu.Menu.ColourSettings[2] = new MenuOption { DisplayName = "Beam Colour", _type = "sliderthingy", StringArray = new string[] { "Purple", "Red", "Yellow", "Green", "Blue", "Black" } };
             Menu.Menu.ColourSettings[3] = new MenuOption { DisplayName = "ESP Colour", _type = "sliderthingy", StringArray = new string[] { "Purple", "Red", "Yellow", "Green", "Blue", "Black" } };

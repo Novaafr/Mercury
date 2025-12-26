@@ -1,6 +1,6 @@
 ﻿/*using UnityEngine;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public class PointerLine : MonoBehaviour
     {

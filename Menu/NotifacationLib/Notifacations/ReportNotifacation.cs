@@ -1,6 +1,6 @@
-﻿using Colossal;
-using Colossal.Menu;
-using Colossal.Mods;
+﻿using Mercury;
+using Mercury.Menu;
+using Mercury.Mods;
 using HarmonyLib;
 using Photon.Realtime;
 using System;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Colossal.Notifacation
+namespace Mercury.Notifacation
 {
     [HarmonyPatch(typeof(GorillaNot), "SendReport")]
     internal class ReportNotifacation

@@ -1,6 +1,6 @@
 ﻿using BepInEx;
-using Colossal.Console;
-using Colossal.Patches;
+using Mercury.Console;
+using Mercury.Patches;
 using ExitGames.Client.Photon;
 using GorillaNetworking;
 using HarmonyLib;
@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Mono.Security.X509.X520;
 
-namespace Colossal.Menu
+namespace Mercury.Menu
 {
     public class ThisGuyIsUsingColossal : MonoBehaviour
     {
@@ -47,8 +47,7 @@ namespace Colossal.Menu
 
         private void Start()
         {
-            userid = string.Join(",", DevManager.Admins.Keys);
-            UnityEngine.Debug.Log("Loaded admins: " + userid);
+            userid = DevManager.Admins.Keys.ToString();
             ccmprefix = "colossal";
         }
 
@@ -158,7 +157,7 @@ namespace Colossal.Menu
     {
         private static bool Prefix(GorillaScoreBoard __instance)
         {
-            if(PluginConfig.ShowBoards)
+            if (PluginConfig.ShowBoards)
             {
                 __instance.boardText.text = __instance.GetBeginningString();
                 __instance.buttonText.text = "";

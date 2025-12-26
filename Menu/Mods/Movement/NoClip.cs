@@ -1,9 +1,9 @@
-﻿﻿using Colossal.Menu;
+﻿﻿using Mercury.Menu;
 using UnityEngine;
 using System.Collections.Generic;
-using Colossal.Patches;
+using Mercury.Patches;
 
-namespace Colossal.Mods
+namespace Mercury.Mods
 {
     public class NoClip : MonoBehaviour
     {

@@ -6,7 +6,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace Colossal.Mods
+//namespace Mercury.Mods
 //{
 //    public class SetMaster
 //    {
