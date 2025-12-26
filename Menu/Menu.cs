@@ -879,7 +879,7 @@ namespace Mercury.Menu
 				Visual2[1].AssociatedBool = PluginConfig.NoLeaves;
 				Visual2[2].AssociatedBool = PluginConfig.ComicTags;
 				Visual2[3].stringsliderind = PluginConfig.AntiScreenShare;
-				Visual2[4].stringsliderind = PluginConfig.CCMSight;
+				Visual2[4].stringsliderind = PluginConfig.MCMSight;
 				Visual2[5].AssociatedBool = PluginConfig.ShowBoards;
 
 				Tracers[0].stringsliderind = PluginConfig.tracers;

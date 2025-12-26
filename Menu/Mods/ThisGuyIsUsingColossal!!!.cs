@@ -59,13 +59,13 @@ namespace Mercury.Menu
                 float t = Mathf.PingPong(timer / duration, 1);
                 gradientColor = GetGradientColor(t);
 
-                if (PluginConfig.CCMSight == 0)
+                if (PluginConfig.MCMSight == 0)
                 {
                     return;
                 }
 
                 // Option 1 - Self & Others
-                if (PluginConfig.CCMSight == 1)
+                if (PluginConfig.MCMSight == 1)
                 {
                     if (GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties != null && !GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties.ContainsKey(ccmprefix))
                     {
@@ -77,7 +77,7 @@ namespace Mercury.Menu
                 }
 
                 // Option 2 - Others (No custom property for self)
-                if (PluginConfig.CCMSight == 2)
+                if (PluginConfig.MCMSight == 2)
                 {
                     if (GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties != null && GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties.ContainsKey(ccmprefix))
                     {
@@ -89,7 +89,7 @@ namespace Mercury.Menu
                 }
 
                 // Option 3 - Self (Set properties only for self)
-                if (PluginConfig.CCMSight == 3)
+                if (PluginConfig.MCMSight == 3)
                 {
                     if (GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties != null && !GorillaTagger.Instance.myVRRig.GetView.Controller.CustomProperties.ContainsKey(ccmprefix))
                     {
@@ -102,7 +102,7 @@ namespace Mercury.Menu
 
 
                 HashSet<VRRig> processedVRRigs = new HashSet<VRRig>();
-                if (PluginConfig.CCMSight == 1 || PluginConfig.CCMSight == 2)
+                if (PluginConfig.MCMSight == 1 || PluginConfig.MCMSight == 2)
                 {
                     foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
                     {

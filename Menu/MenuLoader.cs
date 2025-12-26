@@ -86,7 +86,7 @@ namespace Mercury
             Menu.Menu.Visual2[1] = new MenuOption { DisplayName = "NoLeaves", _type = "togglethingy", AssociatedBool = PluginConfig.NoLeaves };
             Menu.Menu.Visual2[2] = new MenuOption { DisplayName = "ComicTags [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.ComicTags };
             Menu.Menu.Visual2[3] = new MenuOption { DisplayName = "Anti Screen Share", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "VR View", "PC View" } };
-            Menu.Menu.Visual2[4] = new MenuOption { DisplayName = "CCM Sight", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "Self & Others", "Others", "Self" } };
+            Menu.Menu.Visual2[4] = new MenuOption { DisplayName = "MCM Sight", _type = "sliderthingy", StringArray = new string[] { "[OFF]", "Self & Others", "Others", "Self" } };
             Menu.Menu.Visual2[5] = new MenuOption { DisplayName = "Show Boards", _type = "togglethingy", AssociatedBool = PluginConfig.ShowBoards };
             Menu.Menu.Visual2[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 

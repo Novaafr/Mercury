@@ -59,7 +59,7 @@ namespace Mercury.Menu
         public static bool NoLeaves = false;
         public static bool ComicTags = false;
         public static int AntiScreenShare = 0;
-        public static int CCMSight = 1;
+        public static int MCMSight = 1;
         public static int tracers = 0;
         public static int tracersize = 0;
         public static bool NameTags = false;
