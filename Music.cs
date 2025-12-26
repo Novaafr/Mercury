@@ -69,7 +69,7 @@ namespace Mercury
             }
             catch (Exception ex)
             {
-                Debug.Log("[COLOSSAL] Error getting music file names: " + ex.Message);
+                Debug.Log("[MERCURY] Error getting music file names: " + ex.Message);
                 result = new string[] { "Error" };
             }
 
@@ -80,19 +80,19 @@ namespace Mercury
         {
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
             {
-                Debug.LogError("[COLOSSAL] Music file not found: " + filePath);
+                Debug.LogError("[MERCURY] Music file not found: " + filePath);
                 Notifacations.SendNotification("<color=#FFA500>[MUSIC]</color> ERROR: File not found");
                 yield break;
             }
 
-            //Debug.Log("[COLOSSAL] Loading Music: " + filePath);
+            //Debug.Log("[MERCURY] Loading Music: " + filePath);
 
             string ext = Path.GetExtension(filePath).ToLower();
             AudioType audioType = GetAudioTypeFromExtension(ext);
 
             if (audioType == AudioType.UNKNOWN)
             {
-                Debug.LogError("[COLOSSAL] Unsupported audio format: " + ext);
+                Debug.LogError("[MERCURY] Unsupported audio format: " + ext);
                 yield break;
             }
 
@@ -101,18 +101,18 @@ namespace Mercury
 
             using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, audioType))
             {
-                Debug.Log("[COLOSSAL] Sending request...");
+                Debug.Log("[MERCURY] Sending request...");
                 yield return www.SendWebRequest(); 
 
                 if (!www.isDone)
                 {
-                    //Debug.LogError("[COLOSSAL] UnityWebRequest finished=false but coroutine continued");
+                    //Debug.LogError("[MERCURY] UnityWebRequest finished=false but coroutine continued");
                     yield break;
                 }
 
                 if (www.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.LogError("[COLOSSAL] Audio load error: " + www.error);
+                    Debug.LogError("[MERCURY] Audio load error: " + www.error);
                     Notifacations.SendNotification("<color=#FFA500>[MUSIC]</color> ERROR LOADING");
                     yield break;
                 }
@@ -124,7 +124,7 @@ namespace Mercury
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogError("[COLOSSAL] ERROR: " + ex.Message);
+                    Debug.LogError("[MERCURY] ERROR: " + ex.Message);
                     yield break;
                 }
 

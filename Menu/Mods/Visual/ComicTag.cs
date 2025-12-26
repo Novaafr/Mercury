@@ -91,7 +91,7 @@ namespace Mercury.Patches
             //                    }
             //                    else
             //                    {
-            //                        Debug.Log("[COLOSSAL] Comic text is null");
+            //                        Debug.Log("[MERCURY] Comic text is null");
             //                    }
             //                }
             //            }

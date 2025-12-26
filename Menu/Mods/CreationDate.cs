@@ -45,7 +45,7 @@ namespace Mercury.Menu
                     return OnAccountInfoReceived(result);
                 else
                 {
-                    Debug.Log($"[COLOSSAL] PlayFab request timed out for user {vrrig.Creator.UserId}");
+                    Debug.Log($"[MERCURY] PlayFab request timed out for user {vrrig.Creator.UserId}");
                     return null;
                 }
             }
@@ -67,7 +67,7 @@ namespace Mercury.Menu
         }
         private static void OnPlayFabError(PlayFabError error, VRRig vrrig)
         {
-            Debug.Log($"[COLOSSAL] PlayFab error: {error.ErrorMessage}");
+            Debug.Log($"[MERCURY] PlayFab error: {error.ErrorMessage}");
         }
     }
 }

@@ -189,13 +189,13 @@ namespace Mercury.Menu
     {
         //public static string AdminPassword = "Note to starry: The note that had the password some how accidently (dont ask plz) got shoved a bit to far up my ass so im passing it onto you. pass: @il0v3f3mbo7s!";
 
-        public static string folderPath = "Colossal";
+        public static string folderPath = "Mercury";
 
-        public static string logPath = "Colossal\\Logs";
-        public static string musicPath = "Colossal\\Music";
-        public static string macroPath = "Colossal\\Macro";
+        public static string logPath = "Mercury\\Logs";
+        public static string musicPath = "Mercury\\Music";
+        public static string macroPath = "Mercury\\Macro";
 
-        public static string configPath = "Colossal\\Configs";
+        public static string configPath = "Mercury\\Configs";
         public static string fileExtension = ".json";
         public static string fileName = "NewConfig";
 
@@ -225,7 +225,7 @@ namespace Mercury.Menu
             string[] result;
             try
             {
-                //CustomConsole.LogToConsole("[COLOSSAL] Getting Config Files");
+                //CustomConsole.LogToConsole("[MERCURY] Getting Config Files");
 
                 string[] files = Directory.GetFiles(Configs.configPath, "*" + Configs.fileExtension);
                 string[] array = new string[files.Length];
@@ -237,7 +237,7 @@ namespace Mercury.Menu
             }
             catch (Exception ex)
             {
-                Debug.Log("[COLOSSAL] Error getting config file names: " + ex.Message);
+                Debug.Log("[MERCURY] Error getting config file names: " + ex.Message);
                 result = new string[]
                 {
                     "Error"
@@ -249,7 +249,7 @@ namespace Mercury.Menu
         {
             try
             {
-                Debug.Log("[COLOSSAL] Saving Config");
+                Debug.Log("[MERCURY] Saving Config");
 
                 // Ensure directory exists
                 if (!Directory.Exists(configPath))
@@ -278,11 +278,11 @@ namespace Mercury.Menu
                 string jsonContent = JsonConvert.SerializeObject(values, Formatting.Indented);
                 File.WriteAllText(filePath, jsonContent);
 
-                Debug.Log($"[COLOSSAL] Config Saved: {filePath}");
+                Debug.Log($"[MERCURY] Config Saved: {filePath}");
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[COLOSSAL] Error saving config: {ex.Message}");
+                Debug.LogError($"[MERCURY] Error saving config: {ex.Message}");
             }
         }
 
@@ -290,7 +290,7 @@ namespace Mercury.Menu
         {
             try
             {
-                Debug.Log("[COLOSSAL] Loading Config");
+                Debug.Log("[MERCURY] Loading Config");
 
                 if (File.Exists(filePath))
                 {
@@ -311,16 +311,16 @@ namespace Mercury.Menu
                         }
                     }
 
-                    Debug.Log($"[COLOSSAL] Config Loaded: {filePath}");
+                    Debug.Log($"[MERCURY] Config Loaded: {filePath}");
                 }
                 else
                 {
-                    Debug.LogError($"[COLOSSAL] Config file not found: {filePath}");
+                    Debug.LogError($"[MERCURY] Config file not found: {filePath}");
                 }
             }
             catch (Exception ex)
             {
-                Debug.LogError($"[COLOSSAL] Error loading config: {ex.Message}");
+                Debug.LogError($"[MERCURY] Error loading config: {ex.Message}");
             }
         }
     }

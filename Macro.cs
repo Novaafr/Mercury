@@ -654,7 +654,7 @@ public class MacroRecorder : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            UnityEngine.Debug.LogError("[COLOSSAL] MACRO : " + e);
+            UnityEngine.Debug.LogError("[MERCURY] MACRO : " + e);
         }
     }
 
@@ -770,7 +770,7 @@ public class MacroRecorder : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            UnityEngine.Debug.LogError("[COLOSSAL] MACRO : " + e);
+            UnityEngine.Debug.LogError("[MERCURY] MACRO : " + e);
         }
     }
 }
