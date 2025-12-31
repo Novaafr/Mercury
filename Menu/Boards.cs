@@ -112,7 +112,7 @@ namespace Mercury
             {
                 if (PluginConfig.ShowBoards)
                 {
-                    cocktext.GetComponent<TextMeshPro>().text = $"Thank you for using MCMV2, the menu will be getting updated frequently!\n\nContributors:\nNova: Menu Maker/Mod Creator\nColossusYTTV: Menu Maker/Menu Base\nLars/LHAX: Menu Base\nStarry: Dev/Tester\nMios: Tester/Manager/Pain In The Ass\nWM/Will: No Fingers/Full Bright/HzHands\nVentern: Anti Screen Share\n\nMenu Version: {OnGameInit.localversion}, Server Version: {OnGameInit.serverversion}\nCCMV3 Users Online: {BepInPatcher.playercount}".ToUpper(); // doing this because the font is so fucked
+                    cocktext.GetComponent<TextMeshPro>().text = $"Thank you for using MCMV2, the menu will be getting updated frequently!\n\nContributors:\nNova: Menu Maker/Mod Creator\nColossusYTTV: Menu Maker/Menu Base\nLars/LHAX: Menu Base\nStarry: Dev/Tester\nMios: Tester/Manager/Pain In The Ass\nWM/Will: No Fingers/Full Bright/HzHands\nVentern: Anti Screen Share\n\nMenu Version: {OnGameInit.localversion}, Server Version: {OnGameInit.serverversion}\nMCMV3 Users Online: {BepInPatcher.playercount}".ToUpper(); // doing this because the font is so fucked
                     if(cock.GetComponent<TextMeshPro>().text != "MERCURY CHEAT MENU V2")
                         cock.GetComponent<TextMeshPro>().text = "MERCURY CHEAT MENU V2";
 

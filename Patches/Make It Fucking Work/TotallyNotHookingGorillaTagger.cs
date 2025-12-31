@@ -12,8 +12,8 @@ namespace Mercury.Patches
         public static string hash;
         public static string betahash;
 
-        public static string localversion = "8.4";
-        public static string serverversion = "8.4";
+        public static string localversion = "8.5";
+        public static string serverversion = "8.5";
 
         public static string hwid;
         public static string CredentialEncryptionKey;
@@ -30,7 +30,7 @@ namespace Mercury.Patches
 
             if (gameob == null)
                 gameob = new GameObject();
-            gameob.name = "holderCCMV3";
+            gameob.name = "holderMCMV2";
 
            // BepInPatcher.gtagfont = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/TreeRoomInteractables/UI/debugtext/debugtext").GetComponent<UnityEngine.UI.Text>().font;
 

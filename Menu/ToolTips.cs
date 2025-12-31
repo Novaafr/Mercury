@@ -260,7 +260,7 @@ namespace Mercury.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code MODS",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins code MOD",
             $"<color={Menu.MenuColour}>Passive</color>\nJoins custom code",
-            $"<color={Menu.MenuColour}>Passive</color>\nJoins a CCMV3 only code",
+            $"<color={Menu.MenuColour}>Passive</color>\nJoins a MCMV2 only code",
                 };
             }
         }
@@ -343,7 +343,7 @@ namespace Mercury.Menu
                     $"<color={Menu.MenuColour}>PlayerList</color>\n{playerinfo}",
                     $"<color={Menu.MenuColour}>GTC Codes</color>\n{Threadthingys.GTCCodeInfo}",
                     $"<color={Menu.MenuColour}>IIDK Users</color>\n{Threadthingys.IIDKInfo}",
-                    $"<color={Menu.MenuColour}>CCMV3 Users</color>\n{BepInPatcher.playercount}",
+                    $"<color={Menu.MenuColour}>MCMV2 Users</color>\n{BepInPatcher.playercount}",
                 };
             }
         }
@@ -514,7 +514,8 @@ namespace Mercury.Menu
                             string prefix = "";
                             Dictionary<string, (string displayPrefix, string color)> prefixMapping = new Dictionary<string, (string, string)>
 {
-    { ThisGuyIsUsingColossal.ccmprefix, ("CCM", "magenta") },
+    { ThisGuyIsUsingColossal.ccmprefix, ("MCM", "grey") },
+    { "colossal", ("CCM", "magenta") },
     { "GC", ("GC", "#216300") },
     { "BarkVersion", ("BARK", "#5c4417") },
     { "GrateVersion", ("GRATE", "#6e6e6e") },

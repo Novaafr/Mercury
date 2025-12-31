@@ -18,6 +18,7 @@ using Mercury;
 
 public class MacroRecorder : MonoBehaviour
 {
+    [Serializable]
     public class FrameData
     {
         public float timestamp;
@@ -30,6 +31,41 @@ public class MacroRecorder : MonoBehaviour
         public Vector3 bodyVelocity;
         public Vector3 cameraPosition;
         public Quaternion cameraRotation;
+    }
+
+    public sealed class Vector3JsonConverter : JsonConverter<Vector3>
+    {
+        public override void WriteJson(JsonWriter writer, Vector3 value, JsonSerializer serializer)
+        {
+            writer.WriteStartObject();
+            writer.WritePropertyName("x"); writer.WriteValue(value.x);
+            writer.WritePropertyName("y"); writer.WriteValue(value.y);
+            writer.WritePropertyName("z"); writer.WriteValue(value.z);
+            writer.WriteEndObject();
+        }
+        public override Vector3 ReadJson(JsonReader reader, Type objectType, Vector3 existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
+            var obj = Newtonsoft.Json.Linq.JObject.Load(reader);
+            return new Vector3((float)obj["x"], (float)obj["y"], (float)obj["z"]);
+        }
+    }
+
+    public sealed class QuaternionJsonConverter : JsonConverter<Quaternion>
+    {
+        public override void WriteJson(JsonWriter writer, Quaternion value, JsonSerializer serializer)
+        {
+            writer.WriteStartObject();
+            writer.WritePropertyName("x"); writer.WriteValue(value.x);
+            writer.WritePropertyName("y"); writer.WriteValue(value.y);
+            writer.WritePropertyName("z"); writer.WriteValue(value.z);
+            writer.WritePropertyName("w"); writer.WriteValue(value.w);
+            writer.WriteEndObject();
+        }
+        public override Quaternion ReadJson(JsonReader reader, Type objectType, Quaternion existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
+            var obj = Newtonsoft.Json.Linq.JObject.Load(reader);
+            return new Quaternion((float)obj["x"], (float)obj["y"], (float)obj["z"], (float)obj["w"]);
+        }
     }
 
     private static List<FrameData> recordedFrames = new List<FrameData>();
@@ -646,7 +682,11 @@ public class MacroRecorder : MonoBehaviour
             string newFileName = $"{baseFileName}_{nextFileNumber}{fileExtension}";
             string filePath = Path.Combine(Configs.macroPath, newFileName);
 
-            string jsonContent = JsonConvert.SerializeObject(recordedFrames, Formatting.Indented);
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                Converters = { new Vector3JsonConverter(), new QuaternionJsonConverter() } 
+            };
+            string jsonContent = JsonConvert.SerializeObject(recordedFrames, Formatting.Indented,settings);
             File.WriteAllText(filePath, jsonContent);
 
             if (OnMacroListChanged != null)
@@ -675,7 +715,11 @@ public class MacroRecorder : MonoBehaviour
                 return;
             }
 
-            recordedFrames = JsonConvert.DeserializeObject<List<FrameData>>(json) ?? new List<FrameData>();
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                Converters = { new Vector3JsonConverter(), new QuaternionJsonConverter() }
+            };
+            recordedFrames = JsonConvert.DeserializeObject<List<FrameData>>(json, settings) ?? new List<FrameData>();
             if (recordedFrames.Any(frame => frame == null))
             {
                 recordedFrames = recordedFrames.Where(frame => frame != null).ToList();

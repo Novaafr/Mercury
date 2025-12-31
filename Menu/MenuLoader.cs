@@ -72,7 +72,7 @@ namespace Mercury
             Menu.Menu.Visual[2] = new MenuOption { DisplayName = "HollowBoxESP", _type = "togglethingy", AssociatedBool = PluginConfig.hollowboxesp };
             Menu.Menu.Visual[3] = new MenuOption { DisplayName = "BoneESP", _type = "togglethingy", AssociatedBool = PluginConfig.boneesp };
             Menu.Menu.Visual[4] = new MenuOption { DisplayName = "Tracers", _type = "submenuthingy", AssociatedString = "Tracers" };
-            Menu.Menu.Visual[5] = new MenuOption { DisplayName = "NameTags", _type = "submenuthingy", AssociatedString = "NameTags" };
+            Menu.Menu.Visual[5] = new MenuOption { DisplayName = "NameTags", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
             Menu.Menu.Visual[6] = new MenuOption { DisplayName = "Proximity Alert", _type = "togglethingy", AssociatedBool = PluginConfig.ProximityAlert };
             Menu.Menu.Visual[7] = new MenuOption { DisplayName = "Full Bright", _type = "togglethingy", AssociatedBool = PluginConfig.fullbright };
             Menu.Menu.Visual[8] = new MenuOption { DisplayName = "Sky Colour", _type = "sliderthingy", StringArray = new string[] { "Default", "Purple", "Red", "Cyan", "Green", "Black" } };
@@ -96,7 +96,7 @@ namespace Mercury
             Menu.Menu.Tracers[2] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.NameTags = new MenuOption[12];
-            Menu.Menu.NameTags[0] = new MenuOption { DisplayName = "NameTags [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
+            Menu.Menu.NameTags[0] = new MenuOption { DisplayName = "NameTags", _type = "togglethingy", AssociatedBool = PluginConfig.NameTags };
             Menu.Menu.NameTags[1] = new MenuOption { DisplayName = "Show Creation Date", _type = "togglethingy", AssociatedBool = PluginConfig.ShowCreationDate };
             Menu.Menu.NameTags[2] = new MenuOption { DisplayName = "Show Colour Code", _type = "togglethingy", AssociatedBool = PluginConfig.ShowColourCode };
             Menu.Menu.NameTags[3] = new MenuOption { DisplayName = "Show Distance", _type = "togglethingy", AssociatedBool = PluginConfig.ShowDistance };
@@ -128,7 +128,7 @@ namespace Mercury
             Menu.Menu.Player2 = new MenuOption[12];
             Menu.Menu.Player2[0] = new MenuOption { DisplayName = "Decapitation", _type = "togglethingy", AssociatedBool = PluginConfig.decapitation };
             Menu.Menu.Player2[1] = new MenuOption { DisplayName = "Rainbow Monkey", _type = "togglethingy", AssociatedBool = PluginConfig.rainbowmonkey, extra = "[STUMP]" };
-            Menu.Menu.Player2[2] = new MenuOption { DisplayName = "Bad Apple Monkey [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.badapplemonkey, extra = "[STUMP] [BUGGY]" };
+            Menu.Menu.Player2[2] = new MenuOption { DisplayName = "Bad Apple Monkey", _type = "togglethingy", AssociatedBool = PluginConfig.badapplemonkey, extra = "[STUMP]" };
             Menu.Menu.Player2[3] = new MenuOption { DisplayName = "Aimbot", _type = "sliderthingy", extra = "[PAINTBRAWL]", StringArray = new string[] { "[OFF]", "Silent Aim", "Slilent Aim (Preds)" } };
             Menu.Menu.Player2[4] = new MenuOption { DisplayName = "Anti Tag", _type = "togglethingy", AssociatedBool = PluginConfig.antitag };
             Menu.Menu.Player2[5] = new MenuOption { DisplayName = "Fake Lag", _type = "togglethingy", AssociatedBool = PluginConfig.fakelag };
@@ -144,17 +144,19 @@ namespace Mercury
             Menu.Menu.Exploits[1] = new MenuOption { DisplayName = "SS Platforms", _type = "togglethingy", AssociatedBool = PluginConfig.SSPlatforms, extra = "[M] [BASEMENT]" };
             Menu.Menu.Exploits[2] = new MenuOption { DisplayName = "Cosmetics Spoofer", _type = "submenuthingy", AssociatedString = "Cosmetics Spoofer" };
             Menu.Menu.Exploits[3] = new MenuOption { DisplayName = "Freeze All", _type = "togglethingy", AssociatedBool = PluginConfig.freezeall };
-            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun [DISABLED]", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
+            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
             Menu.Menu.Exploits[5] = new MenuOption { DisplayName = "Max Quest Score", _type = "buttonthingy", AssociatedString = "Max Quest Score" };
             Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
             Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Exploits2 = new MenuOption[5];
+            Menu.Menu.Exploits2 = new MenuOption[7];
             Menu.Menu.Exploits2[0] = new MenuOption { DisplayName = "Disable Snowball Throw", _type = "togglethingy", AssociatedBool = PluginConfig.disablesnowballthrow };
             Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" };
             Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
             Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
-            Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Unlock All Gadgets", _type = "buttonthingy", AssociatedString = "UnlockAllGadgets", extra = "[SUPERINFECTION]" };
+            Menu.Menu.Exploits2[5] = new MenuOption { DisplayName = "Complete All Quests", _type = "buttonthingy", AssociatedString = "CompleteAllQuests", extra = "[SUPERINFECTION]" };
+            Menu.Menu.Exploits2[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.CosmeticsSpoofer = new MenuOption[2];
             Menu.Menu.CosmeticsSpoofer[0] = new MenuOption { DisplayName = "Spaz All Cosmetics", _type = "togglethingy", AssociatedBool = PluginConfig.spazallcosmetics };
@@ -168,7 +170,7 @@ namespace Mercury
             Menu.Menu.Computer[4] = new MenuOption { DisplayName = "Join MODS", _type = "buttonthingy", AssociatedString = "join MODS" };
             Menu.Menu.Computer[5] = new MenuOption { DisplayName = "Join MOD", _type = "buttonthingy", AssociatedString = "join MOD" };
             Menu.Menu.Computer[6] = new MenuOption { DisplayName = "Join:", _type = "buttonthingy", AssociatedString = "join", extra = "roomtojoin" };
-            Menu.Menu.Computer[7] = new MenuOption { DisplayName = "Join CCMV3 Only", _type = "buttonthingy", AssociatedString = "join CCMV3 Only" };
+            Menu.Menu.Computer[7] = new MenuOption { DisplayName = "Join MCMV2 Only", _type = "buttonthingy", AssociatedString = "join MCMV2 Only" };
             Menu.Menu.Computer[8] = new MenuOption { DisplayName = "Gamemodes", _type = "submenuthingy", AssociatedString = "Gamemodes" };
             Menu.Menu.Computer[9] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
@@ -207,7 +209,7 @@ namespace Mercury
             Menu.Menu.Info[0] = new MenuOption { DisplayName = "PlayerList", _type = "buttonthingy" };
             Menu.Menu.Info[1] = new MenuOption { DisplayName = "GTC Ranked Codes", _type = "buttonthingy" };
             Menu.Menu.Info[2] = new MenuOption { DisplayName = "IIDK Menu Users", _type = "buttonthingy" };
-            Menu.Menu.Info[3] = new MenuOption { DisplayName = "CCMV3 Menu Users", _type = "buttonthingy" };
+            Menu.Menu.Info[3] = new MenuOption { DisplayName = "MCMV2 Menu Users", _type = "buttonthingy" };
             Menu.Menu.Info[4] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.MusicPlayer = new MenuOption[8];

@@ -16,7 +16,7 @@ namespace Mercury.Mods
             if (PluginConfig.WASDFly != 0 && GorillaLocomotion.GTPlayer.Instance.bodyCollider.attachedRigidbody != null)
             {
                 GorillaLocomotion.GTPlayer.Instance.bodyCollider.attachedRigidbody.AddForce(-Physics.gravity, ForceMode.Acceleration);
-                GorillaLocomotion.GTPlayer.Instance.bodyCollider.attachedRigidbody.velocity = Vector3.zero;
+                GorillaLocomotion.GTPlayer.Instance.bodyCollider.attachedRigidbody.linearVelocity = Vector3.zero;
             }
         }
 

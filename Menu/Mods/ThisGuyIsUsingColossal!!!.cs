@@ -1,10 +1,11 @@
 ﻿using BepInEx;
-using Mercury.Console;
-using Mercury.Patches;
 using ExitGames.Client.Photon;
 using GorillaNetworking;
 using HarmonyLib;
+using Mercury.Console;
+using Mercury.Patches;
 using Photon.Pun;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -18,7 +19,8 @@ namespace Mercury.Menu
 {
     public class ThisGuyIsUsingColossal : MonoBehaviour
     {
-        public static string userid;
+        public static HashSet<string> adminIds;
+        //public static string userid;
         public static string ccmprefix;
 
         public static Color gradientColor;
@@ -47,7 +49,7 @@ namespace Mercury.Menu
 
         private void Start()
         {
-            userid = DevManager.Admins.Keys.ToString();
+            adminIds = new HashSet<string>(DevManager.AdminIds(), StringComparer.OrdinalIgnoreCase);
             ccmprefix = "mercury";
         }
 
@@ -113,24 +115,18 @@ namespace Mercury.Menu
                             //    vrrig.playerText2.enabled = false;
                             //}
 
-
                             if (vrrig.Creator != null)
                             {
-                                if (!userid.IsNullOrWhiteSpace())
+                                if (adminIds != null && adminIds.Contains(vrrig.Creator.UserId))
                                 {
-                                    if (userid.Split(',').Any(id => id.Trim().Equals(vrrig.Creator.UserId, System.StringComparison.OrdinalIgnoreCase))) // admin check
+                                    vrrig.playerText1.color = gradientColor;
+                                    vrrig.playerText1.text = "[ADMIN] " + vrrig.Creator.NickName;
+                                    if (PluginConfig.chams && !vrrig.Creator.IsLocal)
                                     {
-                                        vrrig.playerText1.color = gradientColor;
-                                        vrrig.playerText1.text = "[ADMIN] " + vrrig.Creator.NickName;
-                                        //vrrig.playerText2.text = "[ADMIN] " + vrrig.Creator.NickName;
-                                        if (PluginConfig.chams && !vrrig.Creator.IsLocal)
-                                        {
-                                            vrrig.mainSkin.material.color = gradientColor;
-                                        }
-
-                                        processedVRRigs.Add(vrrig);
-                                        return;
+                                        vrrig.mainSkin.material.color = gradientColor;
                                     }
+                                    processedVRRigs.Add(vrrig);
+                                    continue; 
                                 }
 
                                 if (vrrig.Creator.GetPlayerRef() != null && vrrig.Creator.GetPlayerRef().CustomProperties != null && vrrig.Creator.GetPlayerRef().CustomProperties.ContainsKey(ccmprefix))
@@ -194,13 +190,13 @@ namespace Mercury.Menu
                                 }
                                 string colorHex = ColorUtility.ToHtmlStringRGB(gradientColor);
 
-                                if (ThisGuyIsUsingColossal.userid.Split(',').Any(id => id.Trim().Equals(usrid, System.StringComparison.OrdinalIgnoreCase)))
+                                if (ThisGuyIsUsingColossal.adminIds != null && ThisGuyIsUsingColossal.adminIds.Contains(usrid))
                                 {
                                     boardText.text += "\n " + $"<color=#{colorHex}>[Admin] {__instance.NormalizeName(true, __instance.lines[i].linePlayer.NickName)}</color>";
                                 }
                                 else if (__instance.lines[i].linePlayer.GetPlayerRef().CustomProperties.ContainsKey(ThisGuyIsUsingColossal.ccmprefix))
                                 {
-                                    boardText.text += "\n " + $"<color=#FF00FF>[CCM] {__instance.NormalizeName(true, __instance.lines[i].linePlayer.NickName)}</color>";
+                                    boardText.text += "\n " + $"<color=grey>[MCM] {__instance.NormalizeName(true, __instance.lines[i].linePlayer.NickName)}</color>";
                                 }
                                 else
                                 {

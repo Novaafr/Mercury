@@ -869,6 +869,7 @@ namespace Mercury.Menu
 				Visual[1].AssociatedBool = PluginConfig.boxesp;
 				Visual[2].AssociatedBool = PluginConfig.hollowboxesp;
 				Visual[3].AssociatedBool = PluginConfig.boneesp;
+				Visual[5].AssociatedBool = PluginConfig.NameTags;
 				Visual[6].AssociatedBool = PluginConfig.ProximityAlert;
 				Visual[7].AssociatedBool = PluginConfig.fullbright;
 				Visual[8].stringsliderind = PluginConfig.skycolour;
@@ -1125,6 +1126,23 @@ namespace Mercury.Menu
                             GorillaLocomotion.GTPlayer.Instance.TeleportTo(randomVRRig.transform.position - GorillaLocomotion.GTPlayer.Instance.bodyCollider.transform.position + GorillaLocomotion.GTPlayer.Instance.transform.position, new Quaternion(0, 0, 0, 0));
                         }
 
+                        if (option.AssociatedString == "CompleteAllQuests")
+                        {
+                            for (int i = 0; i < SIProgression.Instance.activeQuestIds.Length; i++)
+                            {
+                                RotatingQuest quest = SIProgression.Instance.questSourceList.GetQuestById(SIProgression.Instance.activeQuestIds[i]);
+                                quest.SetProgress(quest.requiredOccurenceCount);
+                            }
+                        }
+                        if (option.AssociatedString == "UnlockAllGadgets")
+                        {
+                            foreach (var page in SIProgression.Instance.unlockedTechTreeData)
+                            {
+                                for (int i = 0; i < page.Length; i++)
+                                    page[i] = true;
+                            }
+                        }
+
 
                         //Player
                         if (option.AssociatedString == "ghostself")
@@ -1371,9 +1389,9 @@ namespace Mercury.Menu
                                 Destroy(Plugin.holder.GetComponent<BadApple>());
                             }
                         }
-                        if (option.AssociatedString == "join CCMV3 Only")
+                        if (option.AssociatedString == "join MCMV2 Only")
                         {
-                            PhotonNetworkController.Instance.AttemptToJoinSpecificRoom("@CCMV3@", JoinType.Solo);
+                            PhotonNetworkController.Instance.AttemptToJoinSpecificRoom("@MCMV2@", JoinType.Solo);
                         }
                         if (option.AssociatedString.Contains("cgamemode"))
                         {

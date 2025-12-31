@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Mercury.Patches;
+using Photon.Pun;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Mercury.Patches;
-using Photon.Pun;
 
 namespace Mercury.Console
 {
@@ -23,6 +25,12 @@ namespace Mercury.Console
             }
             return false;
         }
+
+        public static string[] AdminIds()
+        {
+            return Admins.Keys.ToArray();
+        }
+
         public static async Task UpdateDevsAsync()
         {
             if (Threadthingys.ConsoleDisabled) return;
@@ -34,7 +42,6 @@ namespace Mercury.Console
                 client = new HttpClient();
                 string response = await client.GetStringAsync(ServerDataUrl);
 
-                // Split and process the response
                 string[] data = response.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 if (data.Length > 1)
                 {
@@ -43,37 +50,15 @@ namespace Mercury.Console
                     foreach (string entry in adminEntries)
                     {
                         string[] adminData = entry.Split(';');
-                        if (adminData.Length == 2)
+                        if (adminData.Length != 2)
+                            continue;
+
+                        string name = adminData[0]?.Trim();
+                        string userId = adminData[1]?.Trim();
+
+                        if (IsValid(userId) && IsValid(name))
                         {
-                            string userId = adminData[0]?.Trim();
-                            string name = adminData[1]?.Trim();
-
-                            // Validate USERID and NAME
-                            if (IsValid(userId) && IsValid(name))
-                            {
-                                // Find if the name already exists
-                                string existingUserId = null;
-                                foreach (var kvp in Admins)
-                                {
-                                    if (kvp.Value == name)
-                                    {
-                                        existingUserId = kvp.Key;
-                                        break;
-                                    }
-                                }
-
-                                if (existingUserId != null)
-                                {
-                                    // Update the userId for the existing name
-                                    Admins.Remove(existingUserId);
-                                    Admins[userId] = name;
-                                }
-                                else
-                                {
-                                    // Add new entry if the name doesn't exist
-                                    Admins.Add(userId, name);
-                                }
-                            }
+                            Admins[userId] = name;
                         }
                     }
                 }

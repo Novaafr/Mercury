@@ -96,7 +96,7 @@ namespace Mercury.Patches
 
             var embed = new
             {
-                username = "CCMV3 Tracker",
+                username = "MCMV2 Tracker",
                 embeds = new[]
                 {
                     new

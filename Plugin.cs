@@ -31,7 +31,7 @@ namespace Mercury
         public static Plugin test;
 
         public static GameObject holder;
-        public static float version = 8.4f;
+        public static float version = 8.5f;
 
         public static bool sussy = false;
         public static bool oculus = false;
@@ -60,15 +60,6 @@ namespace Mercury
 
             T gameObject = assetBundle.LoadAsset(assetName) as T;
             return gameObject;
-        }
-
-
-        public void LoadConfigOnStart()
-        {
-            if (Directory.Exists(Configs.configPath))
-            {
-                Configs.LoadConfig($"{Configs.configPath}\\{Menu.Menu.Settings[2].StringArray[Menu.Menu.Settings[2].stringsliderind]}.json");
-            }
         }
 
         public void Start()
@@ -112,6 +103,7 @@ namespace Mercury
             if (GameObject.Find("Environment Objects/TriggerZones_Prefab/ZoneTransitions_Prefab/QuitBox").activeSelf)
             {
                 GameObject.Find("Environment Objects/TriggerZones_Prefab/ZoneTransitions_Prefab/QuitBox").SetActive(false);
+                GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest/Super Infection Zone - Forest Variant/ForestDome_Prefab").SetActive(false);
             }
 
 

@@ -1,95 +1,122 @@
-﻿
 ﻿using Mercury;
+using Mercury.Menu;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class BadAppleMonkey : MonoBehaviour
 {
     private VideoClip videoClip;
-    private static RenderTexture renderTexture;
+    private RenderTexture renderTexture;
+    private VideoPlayer videoPlayer;
+    private AudioSource audioSource;
     private Material videoMaterial;
-    private static VideoPlayer videoPlayer;
-    private static AudioSource audioSource;
-    private static Material[] originalMaterials;
-    private static Renderer[] renderers;
 
-    void Start()
+    private Material[] originalMaterials;
+    private Renderer[] renderers;
+
+    private bool isPlaying;
+
+    void Update()
+    {
+        if (PluginConfig.badapplemonkey && !isPlaying)
+        {
+            StartBadApple();
+        }
+        else if (!PluginConfig.badapplemonkey && isPlaying)
+        {
+            StopBadApple();
+        }
+    }
+
+    void StartBadApple()
     {
         if (AssetBundleLoader.bundle == null)
-        {
             return;
-        }
 
-        // Load the video clip from the AssetBundle
         videoClip = AssetBundleLoader.bundle.LoadAsset<VideoClip>("badapple");
         if (videoClip == null)
-        {
             return;
-        }
 
-        // Create RenderTexture to display the video
-        renderTexture = new RenderTexture(1920, 1080, 16); // Adjust size as needed
-
-        // Create a material with a shader that can display the video
+        renderTexture = new RenderTexture(1920, 1080, 16);
         videoMaterial = new Material(Shader.Find("Unlit/Texture"));
         videoMaterial.mainTexture = renderTexture;
 
-        // Find all objects with a Renderer component in the scene
         renderers = FindObjectsOfType<Renderer>();
         originalMaterials = new Material[renderers.Length];
 
-        // Save the original materials and apply the video material to each renderer
         for (int i = 0; i < renderers.Length; i++)
         {
-            // Save the original material of the renderer
             originalMaterials[i] = renderers[i].material;
-            // Apply the video material to the object
             renderers[i].material = videoMaterial;
         }
 
-        // Set up the VideoPlayer
         videoPlayer = gameObject.AddComponent<VideoPlayer>();
         audioSource = gameObject.AddComponent<AudioSource>();
 
-        videoPlayer.playOnAwake = false; // Prevent automatic playback
+        videoPlayer.playOnAwake = false;
         videoPlayer.source = VideoSource.VideoClip;
         videoPlayer.clip = videoClip;
         videoPlayer.renderMode = VideoRenderMode.RenderTexture;
-        videoPlayer.targetTexture = renderTexture; // Set the RenderTexture as the target
+        videoPlayer.targetTexture = renderTexture;
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
-        videoPlayer.SetTargetAudioSource(0, audioSource); // Set the AudioSource for the video
+        videoPlayer.SetTargetAudioSource(0, audioSource);
 
-        // Prepare and play the video
+        videoPlayer.prepareCompleted += OnPrepared;
         videoPlayer.Prepare();
-        videoPlayer.prepareCompleted += (vp) => vp.Play(); // Start playing once prepared
+
+        isPlaying = true;
     }
 
-    public static void stop()
+    void OnPrepared(VideoPlayer vp)
     {
-        // Restore the original materials of the renderers
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            renderers[i].material = originalMaterials[i];
-        }
+        vp.Play();
+    }
 
-        // Clean up the RenderTexture and VideoPlayer when the object is destroyed
-        if (renderTexture != null)
-        {
-            Destroy(renderTexture);
-        }
+    void StopBadApple()
+    {
+        isPlaying = false;
 
         if (videoPlayer != null)
         {
-            videoPlayer.Stop(); // Ensure the video stops
+            videoPlayer.prepareCompleted -= OnPrepared;
+            videoPlayer.Stop();
             Destroy(videoPlayer);
+            videoPlayer = null;
         }
 
         if (audioSource != null)
         {
-            audioSource.Stop(); // Ensure the audio stops
+            audioSource.Stop();
             Destroy(audioSource);
+            audioSource = null;
         }
 
-        // Optionally log that everything has been cleaned up
+        if (renderTexture != null)
+        {
+            renderTexture.Release();
+            Destroy(renderTexture);
+            renderTexture = null;
+        }
+
+        if (videoMaterial != null)
+        {
+            Destroy(videoMaterial);
+            videoMaterial = null;
+        }
+
+        if (renderers != null && originalMaterials != null)
+        {
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                if (renderers[i] != null)
+                    renderers[i].material = originalMaterials[i];
+            }
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (isPlaying)
+            StopBadApple();
     }
 }
