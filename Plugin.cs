@@ -72,6 +72,7 @@ namespace Mercury
 
             test = this;
 
+            // Environment Objects/MonkeBlocksRoomPersistent/MonkeBlocksComputer/UI FOR ATTIC COMPUTER/Text/downtext
             //if (BepInPatcher.gtagfont == null)
             // BepInPatcher.gtagfont = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/TreeRoomInteractables/UI/debugtext/debugtext").GetComponent<Text>().font;
 
