@@ -240,6 +240,7 @@ namespace Mercury.Menu
                 return new string[]
                 {
                     $"<color={Menu.MenuColour}>Passive</color>\nMakes you stop throwing snowballs",
+                    $"<color={Menu.MenuColour}>Passive</color>\nMakes you immune to snowball flings",
             $"<color={Menu.MenuColour}>Custom</color>\nSpams the elf launcher in try on",
             $"<color={Menu.MenuColour}>Custom</color>\nLets you splash water out your hand",
             $"<color={Menu.MenuColour}>Passive</color>\nSpazzes out the ropes",
@@ -601,6 +602,7 @@ namespace Mercury.Menu
     { "fys cool magic mod", ("FYSMAGICMOD", "#707070") },
     { "silliness", ("SILLINESS", "#FFBAFF") },
     { "CoolCustomProperty", ("Axo's Custom Property", "#FFB6FA") },
+    { "BoyDoILoveInformation Public", ("BDILI Dee Checker", "#0d0080") }
 };
 
 

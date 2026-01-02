@@ -9,10 +9,10 @@ namespace Mercury.Patches
     {
         public static bool Prefix()
         {
-            //if (PluginConfig.antisnowballfling)
-            //{
-            //    return false;
-            //}
+            if (PluginConfig.antisnowballfling)
+            {
+                return false;
+            }
             return true;
         }
     }

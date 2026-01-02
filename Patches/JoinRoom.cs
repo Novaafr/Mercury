@@ -24,10 +24,12 @@ namespace Mercury.Patches
             "LBAAD.", // admin badge
             "LBAAK.", // stick
             "LBAHG.", // gt1
-            "LMAPY." // forest guide
+            "LMAPY.", // forest guide
+            "LBADE.", // finger painter
+            "LBAGS.", // illustrator
+            "LBANI.", // aa badge
         };
 
-        static string userid;
         public override void OnJoinedRoom()
         {
             base.OnJoinedRoom();
@@ -44,54 +46,52 @@ namespace Mercury.Patches
                             if (rig.concatStringOfCosmeticsAllowed.Contains(item))
                             {
                                 rarecosmetic += item;
-                                userid = rig.OwningNetPlayer.UserId;
-                            }
-                            else
-                            {
-                                if (!string.IsNullOrEmpty(userid))
-                                {
-                                    userid = "";
-                                }
                             }
                         }
                     }
                 }
 
-                SendToDiscord(PhotonNetwork.CurrentRoom.Name, PhotonNetwork.CurrentRoom.PlayerCount.ToString(), rarecosmetic);
+                SendToDiscord(PhotonNetwork.CurrentRoom.Name, PhotonNetwork.CurrentRoom.PlayerCount.ToString(), rarecosmetic, PhotonNetwork.MasterClient.NickName, PhotonNetwork.CurrentRoom.CustomProperties.ToJson().ToString());
 
                 CustomConsole.Debug("Logged in, Joined room");
             }
         }
-
-        private static bool special = false;
-        public static async Task SendToDiscord(string code, string players, string cosmetic)
+        public static async Task SendToDiscord(string code, string players, string cosmetic, string master, string roomprops)
         {
             string result;
             if (cosmetic.Contains("LBAAD."))
             {
                 result = "ADMIN BADGE";
-                special = true;
             }
             else if (cosmetic.Contains("LBAAK."))
             {
                 result = "STICK";
-                special = true;
             }
             else if (cosmetic.Contains("LMAPY."))
             {
                 result = "FOREST GUIDE STICK";
-                special = true;
             }
             else if (cosmetic.Contains("LBAHG."))
             {
                 result = "GT1 BADGE";
-                special = true;
+            }
+            else if (cosmetic.Contains("LBADE."))
+            {
+                result = "FINGER PAINTER";
+            }
+            else if (cosmetic.Contains("LBAGS."))
+            {
+                result = "ILLUSTRATOR";
+            }
+            else if (cosmetic.Contains("LBANI."))
+            {
+                result = "AA BADGE";
             }
             else
             {
                 result = "No Rare Cosmetics";
-                special = false;
             }
+
 
 
             var embed = new
@@ -118,11 +118,17 @@ namespace Mercury.Patches
                                 value = players,
                                 inline = true
                             },
+                             new
+                            {
+                                name = "Master",
+                                value = master,
+                                inline = true
+                            },
                             new
                             {
-                                name = "Username",
-                                value = "",
-                                inline = false
+                                name = "Room Props",
+                                value = roomprops,
+                                inline = true
                             },
                             new
                             {
@@ -133,9 +139,21 @@ namespace Mercury.Patches
                             new
                             {
                                 name = "Cosmetics",
-                                value = special ? result + $" | USERID: {userid}" : result,
+                                value = result,
                                 inline = false
                             },
+                            new
+                            {
+                                name = "FPS On Join",
+                                value = (1f / Time.deltaTime).ToString("F0"),
+                                inline = false
+                            },
+                            new
+                            {
+                                name = "Ping + Server IP",
+                                value = $"Ping: {PhotonNetwork.GetPing()} | ServerIP: {PhotonNetwork.ServerAddress} (ServerIP From PhotonNetwork.ServerAddress)",
+                                inline = false
+                            }
                         }
                     }
                 }

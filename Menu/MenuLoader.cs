@@ -149,14 +149,15 @@ namespace Mercury
             Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
             Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Exploits2 = new MenuOption[7];
+            Menu.Menu.Exploits2 = new MenuOption[8];
             Menu.Menu.Exploits2[0] = new MenuOption { DisplayName = "Disable Snowball Throw", _type = "togglethingy", AssociatedBool = PluginConfig.disablesnowballthrow };
-            Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" }; // once this coosmetic is removed make anti snowball fling | slingshot projectile aoeknockback
-            Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
-            Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
-            Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Unlock All Gadgets", _type = "buttonthingy", AssociatedString = "UnlockAllGadgets", extra = "[SUPERINFECTION]" };
-            Menu.Menu.Exploits2[5] = new MenuOption { DisplayName = "Complete All Quests", _type = "buttonthingy", AssociatedString = "CompleteAllQuests", extra = "[SUPERINFECTION]" };
-            Menu.Menu.Exploits2[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "Anti Snowball Fling", _type = "togglethingy", AssociatedBool = PluginConfig.antisnowballfling };
+            Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" }; // once this coosmetic is removed make anti snowball fling | slingshot projectile aoeknockback
+            Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
+            Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
+            Menu.Menu.Exploits2[5] = new MenuOption { DisplayName = "Unlock All Gadgets", _type = "buttonthingy", AssociatedString = "UnlockAllGadgets", extra = "[SUPERINFECTION]" };
+            Menu.Menu.Exploits2[6] = new MenuOption { DisplayName = "Complete All Quests", _type = "buttonthingy", AssociatedString = "CompleteAllQuests", extra = "[SUPERINFECTION]" };
+            Menu.Menu.Exploits2[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.CosmeticsSpoofer = new MenuOption[2];
             Menu.Menu.CosmeticsSpoofer[0] = new MenuOption { DisplayName = "Spaz All Cosmetics", _type = "togglethingy", AssociatedBool = PluginConfig.spazallcosmetics };

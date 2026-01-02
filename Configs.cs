@@ -116,6 +116,7 @@ namespace Mercury.Menu
         public static bool kickall = false;
         public static bool lagall = false;
         public static bool disablesnowballthrow = false;
+        public static bool antisnowballfling = false;
         //public static bool sspenisgun = false; public static string sspenisgun_bind = "";
         public static bool matallpaintball = false;
         public static bool particlespam = false;

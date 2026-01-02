@@ -1,27 +1,16 @@
-﻿using BepInEx;
-using Mercury.Console;
+﻿using GorillaNetworking;
 using Mercury.Menu;
 using Mercury.Mods;
 using Mercury.Notifacation;
 using Mercury.Patches;
-using GorillaLocomotion;
-using GorillaNetworking;
-using HarmonyLib;
-using Microsoft.CSharp;
 using Photon.Pun;
-﻿using System;
-using System.CodeDom.Compiler;
+using PlayFab;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
 namespace Mercury
@@ -31,7 +20,7 @@ namespace Mercury
         public static Plugin test;
 
         public static GameObject holder;
-        public static float version = 8.5f;
+        public static float version = 8.6f;
 
         public static bool sussy = false;
         public static bool oculus = false;
@@ -40,6 +29,40 @@ namespace Mercury
         public static float playtime = 0;
         public static string rutimestring;
         public static string playtimestring;
+
+        public static bool devOnGUI = false; // for debugging shit
+        private Rect devRect = new Rect(125, 125, 250, 250);
+        public void OnGUI()
+        {
+            if (!devOnGUI)
+                return;
+            devRect = GUILayout.Window(6969, devRect, dvGUI, "Mercury Dev UI");
+        }
+        public void dvGUI(int devint)
+        {
+            if (devOnGUI)
+            {
+                GUILayout.Label($"Photon Conncet: {PhotonNetwork.IsConnected}");
+                GUILayout.Label($"PlayFab Conncet: {PlayFabSettings.staticPlayer.IsClientLoggedIn()}");
+                GUILayout.Label($"RoomCount: {PhotonNetwork.CountOfRooms}");
+                GUILayout.Label($"PlayerCount: {PhotonNetwork.CountOfPlayers}");
+                if (GUILayout.Button("Dump RPC's"))
+                {
+                    foreach (string rpc in PhotonNetwork.PhotonServerSettings.RpcList)
+                    {
+                        Debug.Log(rpc);
+                    }
+                }
+                if (GUILayout.Button("Dump RoomInfo"))
+                {
+                    foreach (Photon.Realtime.Player plr in PhotonNetwork.PlayerListOthers)
+                    {
+                        Debug.Log($"NickName: {plr.NickName} : UserId: {plr.UserId} : Mater: {plr.IsMasterClient}\nRoomName: {PhotonNetwork.CurrentRoom.Name} : PlayreCount: {PhotonNetwork.CurrentRoom.PlayerCount}");
+                    }
+                }
+            }
+        }
+
 
         private static bool boughtcosmetics = false;
 
@@ -99,12 +122,17 @@ namespace Mercury
 
             WhatAmI.OculusCheck();
 
+            if (PhotonNetworkController.Instance.disableAFKKick == false)
+            {
+                PhotonNetworkController.Instance.disableAFKKick = true;
+            }
 
             //quit box disable
             if (GameObject.Find("Environment Objects/TriggerZones_Prefab/ZoneTransitions_Prefab/QuitBox").activeSelf)
             {
-                GameObject.Find("Environment Objects/TriggerZones_Prefab/ZoneTransitions_Prefab/QuitBox").SetActive(false);
                 GameObject.Find("Environment Objects/LocalObjects_Prefab/Forest/Super Infection Zone - Forest Variant/ForestDome_Prefab").SetActive(false);
+                GameObject.Find("Environment Objects/LocalObjects_Prefab/ForestToHoverboard/TurnOnInForestAndHoverboard").SetActive(false);
+                GameObject.Find("Environment Objects/TriggerZones_Prefab/ZoneTransitions_Prefab/QuitBox").SetActive(false);
             }
 
 
