@@ -151,7 +151,7 @@ namespace Mercury
 
             Menu.Menu.Exploits2 = new MenuOption[7];
             Menu.Menu.Exploits2[0] = new MenuOption { DisplayName = "Disable Snowball Throw", _type = "togglethingy", AssociatedBool = PluginConfig.disablesnowballthrow };
-            Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" };
+            Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "ElfSpammer", _type = "togglethingy", AssociatedBool = PluginConfig.ElfSpammer, extra = "[CITY] [TRY ON]" }; // once this coosmetic is removed make anti snowball fling | slingshot projectile aoeknockback
             Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
             Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
             Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Unlock All Gadgets", _type = "buttonthingy", AssociatedString = "UnlockAllGadgets", extra = "[SUPERINFECTION]" };

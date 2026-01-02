@@ -1,19 +1,18 @@
 ﻿using Mercury.Menu;
 using HarmonyLib;
+using UnityEngine;
 
 namespace Mercury.Patches
 {
-    // Disables the snowball throwing on your client
-    [HarmonyPatch(typeof(SnowballThrowable), "PerformSnowballThrowAuthority")]
-    //[HarmonyPatch(typeof(GrowingSnowballThrowable), "PerformSnowballThrowAuthority")]
+    [HarmonyPatch(typeof(SlingshotProjectile), "CheckForAOEKnockback")]
     public class AntiSnowballFling
     {
         public static bool Prefix()
         {
-            if (PluginConfig.disablesnowballthrow)
-            {
-                return false;
-            }
+            //if (PluginConfig.antisnowballfling)
+            //{
+            //    return false;
+            //}
             return true;
         }
     }
