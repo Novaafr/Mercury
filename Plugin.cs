@@ -46,6 +46,8 @@ namespace Mercury
                 GUILayout.Label($"PlayFab Conncet: {PlayFabSettings.staticPlayer.IsClientLoggedIn()}");
                 GUILayout.Label($"RoomCount: {PhotonNetwork.CountOfRooms}");
                 GUILayout.Label($"PlayerCount: {PhotonNetwork.CountOfPlayers}");
+                GUILayout.Label($"FPS: {(1f / Time.deltaTime).ToString("F1")}");
+                GUILayout.Label($"Ping: {PhotonNetwork.GetPing()}");
                 if (GUILayout.Button("Dump RPC's"))
                 {
                     foreach (string rpc in PhotonNetwork.PhotonServerSettings.RpcList)
@@ -234,7 +236,7 @@ namespace Mercury
                         //{ typeof(ParticleSpam), PluginConfig.particlespam },
                         { typeof(FakeLag), PluginConfig.fakelag },
                         { typeof(PullMod), PluginConfig.pullmod },
-                        { typeof(ElfLauncherSpam), PluginConfig.ElfSpammer },
+                        //{ typeof(ElfLauncherSpam), PluginConfig.ElfSpammer },
                         { typeof(WaterSplash), PluginConfig.WaterSplash },
                         { typeof(SpazAllRopes), PluginConfig.spazallropes },
                         //{ typeof(SmoothRig), PluginConfig.smoothrig },

@@ -27,16 +27,13 @@ namespace Mercury.Mods
 
                 if (ControlsV2.GetControl(bind))
                 {
-                    Vector3 plrTrans = GTPlayer.Instance.transform.position;
-                    if (GTPlayer.Instance.IsHandTouching(false) || GTPlayer.Instance.IsHandTouching(true))
+                    if (GTPlayer.Instance.IsHandTouching(true) || GTPlayer.Instance.IsHandTouching(false))
                     {
-                        //GTPlayer.Instance.transform.forward += new Vector3(plrTrans.x * 10f, 0, plrTrans.z * 10f);
-                        var local = plrTrans;
-                        local.x += local.z * 2 / 0.5f;
-                        // trust me this will work
-                        GTPlayer.Instance.transform.position += GTPlayer.Instance.transform.forward + local;
+                        // Im lazy to code credits to ii
+                        Vector3 normal = GTPlayer.Instance.lastHitInfoHand.normal;
+                        Vector3 direction = GorillaTagger.Instance.rigidbody.linearVelocity.X_Z();
+                        GTPlayer.Instance.transform.position += (direction - normal * Vector3.Dot(direction, normal)).normalized * (direction.magnitude / GTPlayer.Instance.maxJumpSpeed * 0.15f * 1f);
                     }
-                    return;
                 }
             }
             else
