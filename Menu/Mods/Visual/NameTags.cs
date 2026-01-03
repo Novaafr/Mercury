@@ -129,21 +129,22 @@ namespace Mercury.Mods
             AddLine(rig, 0, rig.OwningNetPlayer.NickName);
             if (PluginConfig.ShowColourCode)
             {
-                string colorcode = rig.playerColor.ToString();
-                AddLine(rig, 1, colorcode);
+                Color playerColor = rig.playerColor;
+                string colorText = $"{(int)(playerColor.r * 9)}{(int)(playerColor.g * 9)}{(int)(playerColor.b * 9)}";
+                AddLine(rig, 1, colorText);
             }
             else { RemoveLine(rig, 1); }
             if (PluginConfig.ShowDistance)
             {
                 float distance = Vector3.Distance(Camera.main.transform.position, rig.headMesh.transform.position);
-                string distancestring = $"[{distance}]M";
+                string distancestring = $"[{distance.ToString("F1")}]M";
                 AddLine(rig, 2, distancestring);
             }
             else { RemoveLine(rig, 2); }
-            if (PluginConfig.ShowDistance)
+            if (PluginConfig.ShowFPS)
             {
                 int fps = rig.fps;
-                string fpss = fps.ToString();
+                string fpss = "FPS: " + fps.ToString();
                 AddLine(rig, 3, fpss);
             }
             else { RemoveLine(rig, 3); }
@@ -151,11 +152,11 @@ namespace Mercury.Mods
             {
                 if (rig.concatStringOfCosmeticsAllowed.Contains("S. FIRST LOGIN"))
                 {
-                    AddLine(rig, 4, "Steam");
+                    AddLine(rig, 4, "STEAM");
                 }
                 else
                 {
-                    AddLine(rig, 4, "Quest");
+                    AddLine(rig, 4, "QUEST");
                 }
             }
             else { RemoveLine(rig, 4); }
