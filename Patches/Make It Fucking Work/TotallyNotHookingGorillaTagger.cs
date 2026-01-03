@@ -12,8 +12,8 @@ namespace Mercury.Patches
         public static string hash;
         public static string betahash;
 
-        public static string localversion = "8.5";
-        public static string serverversion = "8.5";
+        public static string localversion = "8.6";
+        public static string serverversion = "8.6";
 
         public static string hwid;
         public static string CredentialEncryptionKey;
