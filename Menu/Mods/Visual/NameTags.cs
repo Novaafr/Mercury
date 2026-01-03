@@ -178,7 +178,7 @@ namespace Mercury.Mods
             tag.text = builder.ToString();
 
             Transform head = rig.headMesh.transform;
-            tag.transform.position = head.position + Vector3.up * 0.5f;
+            tag.transform.position = head.position + Vector3.up * 0.65f;
             tag.transform.LookAt(Camera.main.transform);
             tag.transform.Rotate(0f, 180f, 0f);
         }
