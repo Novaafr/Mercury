@@ -869,7 +869,7 @@ namespace Mercury.Menu
 				Visual[1].AssociatedBool = PluginConfig.boxesp;
 				Visual[2].AssociatedBool = PluginConfig.hollowboxesp;
 				Visual[3].AssociatedBool = PluginConfig.boneesp;
-				Visual[5].AssociatedBool = PluginConfig.NameTags;
+				//Visual[5].AssociatedBool = PluginConfig.NameTags;
 				Visual[6].AssociatedBool = PluginConfig.ProximityAlert;
 				Visual[7].AssociatedBool = PluginConfig.fullbright;
 				Visual[8].stringsliderind = PluginConfig.skycolour;
@@ -887,16 +887,11 @@ namespace Mercury.Menu
 				Tracers[1].stringsliderind = PluginConfig.tracersize;
 
 				NameTags[0].AssociatedBool = PluginConfig.NameTags;
-				NameTags[1].AssociatedBool = PluginConfig.ShowCreationDate;
-				NameTags[2].AssociatedBool = PluginConfig.ShowColourCode;
-				NameTags[3].AssociatedBool = PluginConfig.ShowDistance;
-				NameTags[4].AssociatedBool = PluginConfig.AlwaysVisible;
-				NameTags[5].AssociatedBool = PluginConfig.ShowFPS;
-				NameTags[6].AssociatedBool = PluginConfig.showelo;
-				NameTags[7].AssociatedBool = PluginConfig.showplatform;
-				NameTags[8].stringsliderind = PluginConfig.nametagheight;
-				NameTags[9].stringsliderind = PluginConfig.nametagsize;
-				NameTags[10].stringsliderind = PluginConfig.nametagcolour;
+				NameTags[1].AssociatedBool = PluginConfig.ShowColourCode;
+				NameTags[2].AssociatedBool = PluginConfig.ShowDistance;
+				NameTags[3].AssociatedBool = PluginConfig.ShowFPS;
+				NameTags[4].AssociatedBool = PluginConfig.showplatform;
+				NameTags[5].stringsliderind = PluginConfig.nametagcolour;
 
 				Player[0].AssociatedBool = PluginConfig.nofinger;
 				Player[1].AssociatedBool = PluginConfig.taggun;
