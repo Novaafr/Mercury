@@ -43,7 +43,7 @@ namespace Mercury.Patches
                     {
                         foreach(string item in cosmetics)
                         {
-                            if (rig.concatStringOfCosmeticsAllowed.Contains(item))
+                            if (rig.rawCosmeticString.Contains(item))
                             {
                                 rarecosmetic += item;
                             }

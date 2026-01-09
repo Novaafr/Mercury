@@ -30,7 +30,7 @@ namespace Mercury
                 {
                     foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
                     {
-                        string info = $"{DateTime.Now},{vrrig.Creator.NickName},{vrrig.Creator.UserId},{vrrig.concatStringOfCosmeticsAllowed}";
+                        string info = $"{DateTime.Now},{vrrig.Creator.NickName},{vrrig.Creator.UserId},{vrrig.rawCosmeticString}";
 
                         bool found = false;
                         for (int i = 0; i < cachedLogs.Count; i++)

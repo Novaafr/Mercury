@@ -134,24 +134,26 @@ namespace Mercury
             Menu.Menu.Player2[10] = new MenuOption { DisplayName = "FPS Spoof", _type = "togglethingy", AssociatedBool = PluginConfig.fpsspoof };
             Menu.Menu.Player2[11] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Exploits = new MenuOption[8];
+            Menu.Menu.Exploits = new MenuOption[9];
             Menu.Menu.Exploits[0] = new MenuOption { DisplayName = "Break NameTags", _type = "togglethingy", AssociatedBool = PluginConfig.breaknametags };
             Menu.Menu.Exploits[1] = new MenuOption { DisplayName = "SS Platforms", _type = "togglethingy", AssociatedBool = PluginConfig.SSPlatforms, extra = "[M] [BASEMENT]" };
             Menu.Menu.Exploits[2] = new MenuOption { DisplayName = "Cosmetics Spoofer", _type = "submenuthingy", AssociatedString = "Cosmetics Spoofer" };
             Menu.Menu.Exploits[3] = new MenuOption { DisplayName = "Freeze All", _type = "togglethingy", AssociatedBool = PluginConfig.freezeall };
-            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Snowball Gun", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
-            Menu.Menu.Exploits[5] = new MenuOption { DisplayName = "Max Quest Score", _type = "buttonthingy", AssociatedString = "Max Quest Score" };
-            Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
-            Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Exploits[4] = new MenuOption { DisplayName = "Lag All", _type = "togglethingy", AssociatedBool = PluginConfig.lagall };
+            Menu.Menu.Exploits[5] = new MenuOption { DisplayName = "Snowball Gun", _type = "togglethingy", AssociatedBool = PluginConfig.snowballgun };
+            Menu.Menu.Exploits[6] = new MenuOption { DisplayName = "Max Quest Score", _type = "buttonthingy", AssociatedString = "Max Quest Score" };
+            Menu.Menu.Exploits[7] = new MenuOption { DisplayName = "Next", _type = "submenuthingy", AssociatedString = "Exploits2" };
+            Menu.Menu.Exploits[8] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Exploits2 = new MenuOption[7];
+            Menu.Menu.Exploits2 = new MenuOption[8];
             Menu.Menu.Exploits2[0] = new MenuOption { DisplayName = "Disable Snowball Throw", _type = "togglethingy", AssociatedBool = PluginConfig.disablesnowballthrow };
             Menu.Menu.Exploits2[1] = new MenuOption { DisplayName = "Anti Snowball Fling", _type = "togglethingy", AssociatedBool = PluginConfig.antisnowballfling };
             Menu.Menu.Exploits2[2] = new MenuOption { DisplayName = "WaterSplash", _type = "togglethingy", AssociatedBool = PluginConfig.WaterSplash };
             Menu.Menu.Exploits2[3] = new MenuOption { DisplayName = "SpazAllRopes", _type = "togglethingy", AssociatedBool = PluginConfig.spazallropes };
             Menu.Menu.Exploits2[4] = new MenuOption { DisplayName = "Unlock All Gadgets", _type = "buttonthingy", AssociatedString = "UnlockAllGadgets", extra = "[SUPERINFECTION]" };
             Menu.Menu.Exploits2[5] = new MenuOption { DisplayName = "Complete All Quests", _type = "buttonthingy", AssociatedString = "CompleteAllQuests", extra = "[SUPERINFECTION]" };
-            Menu.Menu.Exploits2[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Exploits2[6] = new MenuOption { DisplayName = "VC Mute Evade", _type = "buttonthingy", AssociatedString = "VC Mute Evade" };
+            Menu.Menu.Exploits2[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.CosmeticsSpoofer = new MenuOption[2];
             Menu.Menu.CosmeticsSpoofer[0] = new MenuOption { DisplayName = "Spaz All Cosmetics", _type = "togglethingy", AssociatedBool = PluginConfig.spazallcosmetics };
@@ -190,7 +192,7 @@ namespace Mercury
             Menu.Menu.Safety[5] = new MenuOption { DisplayName = "Fake Report Menu", _type = "togglethingy", AssociatedBool = PluginConfig.fakereportmenu };
             Menu.Menu.Safety[6] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
-            Menu.Menu.Settings = new MenuOption[8];
+            Menu.Menu.Settings = new MenuOption[9];
             Menu.Menu.Settings[0] = new MenuOption { DisplayName = "Colour Settings", _type = "submenuthingy", AssociatedString = "ColourSettings" };
             Menu.Menu.Settings[1] = new MenuOption { DisplayName = "MenuPosition", _type = "sliderthingy", StringArray = new string[] { "Top Left", "Middle", "Top Right" } };
             Menu.Menu.Settings[2] = new MenuOption { DisplayName = "Config", _type = "sliderthingy", StringArray = new string[] { } };
@@ -198,7 +200,8 @@ namespace Mercury
             Menu.Menu.Settings[4] = new MenuOption { DisplayName = "Save Config", _type = "buttonthingy", AssociatedString = "saveconfig" };
             Menu.Menu.Settings[5] = new MenuOption { DisplayName = "Player Logging", _type = "togglethingy", AssociatedBool = PluginConfig.PlayerLogging };
             Menu.Menu.Settings[6] = new MenuOption { DisplayName = "Inverted Controls", _type = "togglethingy", AssociatedBool = PluginConfig.invertedControls };
-            Menu.Menu.Settings[7] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
+            Menu.Menu.Settings[7] = new MenuOption { DisplayName = "Watermark", _type = "togglethingy", AssociatedBool = PluginConfig.Watermark };
+            Menu.Menu.Settings[8] = new MenuOption { DisplayName = "Back", _type = "submenuthingy", AssociatedString = "backthingy" };
 
             Menu.Menu.Info = new MenuOption[5];
             Menu.Menu.Info[0] = new MenuOption { DisplayName = "PlayerList", _type = "buttonthingy" };

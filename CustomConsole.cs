@@ -19,6 +19,7 @@ namespace Mercury
         private StreamWriter logWriter;
         private StreamWriter fileWriter; // StreamWriter to log to a file
 
+
         [DllImport("kernel32.dll")]
         private static extern IntPtr GetConsoleWindow();
 

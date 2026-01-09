@@ -223,6 +223,7 @@ namespace Mercury.Menu
             $"<color={Menu.MenuColour}>R Trigger (Other Player: Fist)</color>\nGives selected players platforms",
             $"<color={Menu.MenuColour}>SubMenu</color>\nDifferent cosmetic options",
             $"<color={Menu.MenuColour}>Passive</color>\nFreezes everyone (takes a while)",
+            $"<color={Menu.MenuColour}>Passive</color>\nLags everyones game",
             $"<color={Menu.MenuColour}>Custom</color>\nA gun that launches giant snowballs",
             $"<color={Menu.MenuColour}>Passive</color>\nGives quest badge 99999",
                 };
@@ -291,6 +292,7 @@ namespace Mercury.Menu
             $"<color={Menu.MenuColour}>Passive</color>\nSave menu settings",
             $"<color={Menu.MenuColour}>Passive</color>\nLogs all player info in every room into a database",
             $"<color={Menu.MenuColour}>Passive</color>\nSets menu control scheme to inverted",
+            $"<color={Menu.MenuColour}>Passive</color>\nAdds a watermark on your pc screens",
                 };
             }
         }

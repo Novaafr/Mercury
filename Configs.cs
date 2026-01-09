@@ -161,6 +161,7 @@ namespace Mercury.Menu
         public static int volume = 0; public static string playmusic_bind = "";
 
         public static bool invertedControls = false;
+        public static bool Watermark = true;
 
         // Macro
         public static bool recordmacro = false; public static string recordmacro_bind = "";

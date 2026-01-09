@@ -1,8 +1,8 @@
 ﻿using BepInEx;
-using Mercury.Console;
-using Mercury.Menu;
 using Fusion;
 ﻿using HarmonyLib;
+using Mercury.Console;
+using Mercury.Menu;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Pathfinding;
@@ -30,6 +30,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using WebSocketSharp;
 using static Mercury.Patches.BepInPatcher;
+using static OVRColocationSession;
 using static UnityEngine.Rendering.DebugUI;
 using Debug = UnityEngine.Debug;
 

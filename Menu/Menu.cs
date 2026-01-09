@@ -920,7 +920,8 @@ namespace Mercury.Menu
 				Exploits[0].AssociatedBool = PluginConfig.breaknametags;
 				Exploits[1].AssociatedBool = PluginConfig.SSPlatforms;
 				Exploits[3].AssociatedBool = PluginConfig.freezeall;
-                Exploits[4].AssociatedBool = PluginConfig.snowballgun;
+				Exploits[4].AssociatedBool = PluginConfig.lagall;
+                Exploits[5].AssociatedBool = PluginConfig.snowballgun;
 
 
                 Exploits2[0].AssociatedBool = PluginConfig.disablesnowballthrow;
@@ -943,9 +944,10 @@ namespace Mercury.Menu
 				Settings[1].stringsliderind = PluginConfig.MenuPosition;
 				Settings[5].AssociatedBool = PluginConfig.PlayerLogging;
 				Settings[6].AssociatedBool = PluginConfig.invertedControls;
-				//Settings[7].AssociatedBool = PluginConfig.legacyUi;
+				Settings[7].AssociatedBool = PluginConfig.Watermark;
+                //Settings[7].AssociatedBool = PluginConfig.legacyUi;
 
-				MusicPlayer[4].AssociatedBool = PluginConfig.loopmusic;
+                MusicPlayer[4].AssociatedBool = PluginConfig.loopmusic;
 				MusicPlayer[5].AssociatedBool = PluginConfig.soundboard;
 				MusicPlayer[6].stringsliderind = PluginConfig.volume;
 

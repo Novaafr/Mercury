@@ -150,7 +150,7 @@ namespace Mercury.Mods
             else { RemoveLine(rig, 3); }
             if (PluginConfig.showplatform)
             {
-                if (rig.concatStringOfCosmeticsAllowed.Contains("S. FIRST LOGIN"))
+                if (rig.rawCosmeticString.Contains("S. FIRST LOGIN"))
                 {
                     AddLine(rig, 4, "STEAM");
                 }

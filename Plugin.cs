@@ -1,4 +1,5 @@
-﻿using GorillaNetworking;
+﻿using BepInEx;
+using GorillaNetworking;
 using Mercury.Menu;
 using Mercury.Mods;
 using Mercury.Notifacation;
@@ -20,7 +21,7 @@ namespace Mercury
         public static Plugin test;
 
         public static GameObject holder;
-        public static float version = 8.6f;
+        public static float version = 8.7f;
 
         public static bool sussy = false;
         public static bool oculus = false;
@@ -30,14 +31,15 @@ namespace Mercury
         public static string rutimestring;
         public static string playtimestring;
 
-        public static bool devOnGUI = false; // for debugging shit
-        private Rect devRect = new Rect(125, 125, 250, 250);
+        public bool devOnGUI = false; // for debugging shit
+        private Rect devRect = new Rect(125, 125, 250, 270);
         public void OnGUI()
         {
             if (!devOnGUI)
                 return;
             devRect = GUILayout.Window(6969, devRect, dvGUI, "Mercury Dev UI");
         }
+
         public void dvGUI(int devint)
         {
             if (devOnGUI)
@@ -48,6 +50,7 @@ namespace Mercury
                 GUILayout.Label($"PlayerCount: {PhotonNetwork.CountOfPlayers}");
                 GUILayout.Label($"FPS: {(1f / Time.deltaTime).ToString("F1")}");
                 GUILayout.Label($"Ping: {PhotonNetwork.GetPing()}");
+                GUILayout.Label($"Time: {DateTime.Now.ToString("h:mm:ss f")}");
                 if (GUILayout.Button("Dump RPC's"))
                 {
                     foreach (string rpc in PhotonNetwork.PhotonServerSettings.RpcList)
@@ -60,6 +63,27 @@ namespace Mercury
                     foreach (Photon.Realtime.Player plr in PhotonNetwork.PlayerListOthers)
                     {
                         Debug.Log($"NickName: {plr.NickName} : UserId: {plr.UserId} : Mater: {plr.IsMasterClient}\nRoomName: {PhotonNetwork.CurrentRoom.Name} : PlayreCount: {PhotonNetwork.CurrentRoom.PlayerCount}");
+                    }
+                }
+                if (GUILayout.Button("Get Active Cosmetics On Self"))
+                {
+                    foreach (GameObject cosmetcs in GorillaTagger.Instance.offlineVRRig.cosmetics)
+                    {
+                        if (cosmetcs.activeSelf)
+                            Debug.Log($"{cosmetcs.name} is active");
+                    }
+                }
+                if (GUILayout.Button("Test check for ii/console users"))
+                {
+                    if (!PhotonNetwork.InRoom)
+                        return;
+                    foreach (Photon.Realtime.Player plr in PhotonNetwork.PlayerListOthers)
+                    {
+                        if (plr.CustomProperties.ContainsKey("stupid") || plr.CustomProperties.ContainsKey("console") || plr.CustomProperties.ContainsKey("ii"))
+                        {
+                            Debug.Log($"{plr.NickName} With props {plr.CustomProperties}");
+                            Notifacations.SendNotification($"<color=blue>[DEV]</color> | {plr.NickName} With props {plr.CustomProperties}");
+                        }
                     }
                 }
             }
@@ -224,7 +248,7 @@ namespace Mercury
                         //{ typeof(KickGun), PluginConfig.kickgun },
                         //{ typeof(SSSizeChanger), PluginConfig.sssizechanger },
                         //{ typeof(KickAll), PluginConfig.kickall },
-                        //{ typeof(LagAll), PluginConfig.lagall },
+                        { typeof(LagAll), PluginConfig.lagall },
                         //{ typeof(SSPenis), PluginConfig.sspenisgun },
                         { typeof(Decapitation), PluginConfig.decapitation },
                         { typeof(RainbowMonkey), PluginConfig.rainbowmonkey },
@@ -384,6 +408,30 @@ namespace Mercury
                     }
                 }
             }
+        }
+    }
+
+
+    [BepInPlugin("org.nova.watermark", "WaterMark@Mercury", "1.0.0")]
+    public class WaterMark : BaseUnityPlugin
+    {
+        private GUIStyle watermarkStyle;
+        public void OnGUI()
+        {
+            if (!PluginConfig.Watermark)
+                return;
+
+            if (watermarkStyle == null)
+            {
+                watermarkStyle = new GUIStyle(GUI.skin.label)
+                {
+                    fontSize = 14,
+                    fontStyle = FontStyle.Italic,
+                    richText = true 
+                };
+            }
+            string text = $"<color=cyan>< Mercury | Time: {DateTime.Now:HH:mm:ss} ></color>";
+            GUI.Label(new Rect(10, 10, 300, 25), text, watermarkStyle);
         }
     }
 }
